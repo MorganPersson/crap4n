@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crap4n", "Crap4n\Crap4n.csproj", "{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAssembly", "TestAssembly\TestAssembly.csproj", "{A2C741AD-C156-4ACE-8F44-8CF40C1C7BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spec", "Spec\Spec.csproj", "{29E8B448-D7E8-4182-A881-85DAF0CAFB86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crap4n.Console", "Crap4n.Console\Crap4n.Console.csproj", "{C15A0235-46BC-40E8-A11F-A4F1D0A5D051}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crap4n.Specs", "Crap4n.Specs\Crap4n.Specs.csproj", "{C3B23948-7ACA-42E0-80AE-C9F6D8110CCB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9833909F-2F01-4E0F-8840-AE05CACC8982}"
+	ProjectSection(SolutionItems) = preProject
+		..\Crap4n.build = ..\Crap4n.build
+		Installer\Crap4n.nsi = Installer\Crap4n.nsi
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		AutomatedDebug|Any CPU = AutomatedDebug|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}.AutomatedDebug|Any CPU.ActiveCfg = AutomatedDebug|Any CPU
+		{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}.AutomatedDebug|Any CPU.Build.0 = AutomatedDebug|Any CPU
+		{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2C741AD-C156-4ACE-8F44-8CF40C1C7BF3}.AutomatedDebug|Any CPU.ActiveCfg = AutomatedDebug|Any CPU
+		{A2C741AD-C156-4ACE-8F44-8CF40C1C7BF3}.AutomatedDebug|Any CPU.Build.0 = AutomatedDebug|Any CPU
+		{A2C741AD-C156-4ACE-8F44-8CF40C1C7BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2C741AD-C156-4ACE-8F44-8CF40C1C7BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2C741AD-C156-4ACE-8F44-8CF40C1C7BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2C741AD-C156-4ACE-8F44-8CF40C1C7BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E8B448-D7E8-4182-A881-85DAF0CAFB86}.AutomatedDebug|Any CPU.ActiveCfg = AutomatedDebug|Any CPU
+		{29E8B448-D7E8-4182-A881-85DAF0CAFB86}.AutomatedDebug|Any CPU.Build.0 = AutomatedDebug|Any CPU
+		{29E8B448-D7E8-4182-A881-85DAF0CAFB86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E8B448-D7E8-4182-A881-85DAF0CAFB86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E8B448-D7E8-4182-A881-85DAF0CAFB86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E8B448-D7E8-4182-A881-85DAF0CAFB86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C15A0235-46BC-40E8-A11F-A4F1D0A5D051}.AutomatedDebug|Any CPU.ActiveCfg = AutomatedDebug|Any CPU
+		{C15A0235-46BC-40E8-A11F-A4F1D0A5D051}.AutomatedDebug|Any CPU.Build.0 = AutomatedDebug|Any CPU
+		{C15A0235-46BC-40E8-A11F-A4F1D0A5D051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C15A0235-46BC-40E8-A11F-A4F1D0A5D051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C15A0235-46BC-40E8-A11F-A4F1D0A5D051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C15A0235-46BC-40E8-A11F-A4F1D0A5D051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B23948-7ACA-42E0-80AE-C9F6D8110CCB}.AutomatedDebug|Any CPU.ActiveCfg = AutomatedDebug|Any CPU
+		{C3B23948-7ACA-42E0-80AE-C9F6D8110CCB}.AutomatedDebug|Any CPU.Build.0 = AutomatedDebug|Any CPU
+		{C3B23948-7ACA-42E0-80AE-C9F6D8110CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B23948-7ACA-42E0-80AE-C9F6D8110CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B23948-7ACA-42E0-80AE-C9F6D8110CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B23948-7ACA-42E0-80AE-C9F6D8110CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

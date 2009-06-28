@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" ?>
+<project name="Crap4n" default="test" xmlns="http://nant.sf.net/schemas/nant.xsd">
+	<property name="solution.dir" value="src" />
+	<property name="build.dir" value="build" />
+	<property name="test.dir" value ="${build.dir}\Debug\UnitTests" />
+	<property name="company.name" value="${project::get-name()}"/>
+	<property name="project.fullversion" value="0.1.0.0" dynamic="true" />
+	<property name="project.config" value="release" />
+	
+	<!-- User targets -->
+	<target name="init" description="Initializes build properties">
+		<tstamp>
+			<formatter property="datetime.buildtime" pattern="yyyy-MM-dd, HH:mm:ss" />
+		</tstamp>
+		<echo message="Current Directory: ${project::get-base-directory()}"/>
+	</target>
+	
+	<target name="clean" depends="init" description="Delete automated build artifacts">
+		<delete dir="${build.dir}/Debug" if="${directory::exists(build.dir)}"/>
+		<delete dir="${build.dir}/dist" if="${directory::exists(build.dir)}"/>
+		<delete dir="${build.dir}/test-reports" if="${directory::exists(build.dir)}"/>
+	</target>
+	
+	<target name="compile">
+		<exec program="${environment::get-folder-path('System')}\..\Microsoft.NET\Framework\v3.5\msbuild.exe"
+		      commandline="/property:Configuration=AutomatedDebug /v:m src\Crap4n.sln" />
+	</target>
+	
+	<target name="test" depends="compile, run-unit-tests"
+	        description="Compile and run tests" />
+	
+	<target name="full" depends="clean, commonassemblyinfo, test, dist"
+	        description="Compiles, tests, and produces distributions" />
+	
+	<target name="version" description="mark AssemblyInfo builds with the build number">
+		<if test="${property::exists('build.number')}">
+			<property name="project.fullversion" value="${build.number}" />
+		</if>
+		<echo message="MARKING THIS BUILD AS VERSION ${project.fullversion}" />
+	</target>
+	
+	<target name="commonassemblyinfo" depends="version, init">
+		<delete file="${solution.dir}/CommonAssemblyInfo.cs" failonerror="false"/>
+		<asminfo output="${solution.dir}/CommonAssemblyInfo.cs" language="CSharp">
+			<imports>
+				<import namespace="System" />
+				<import namespace="System.Reflection" />
+				<import namespace="System.Runtime.InteropServices" />
+			</imports>
+			<attributes>
+				<attribute type="ComVisibleAttribute" value="false" />
+				<attribute type="AssemblyVersionAttribute" value="${project.fullversion}" />
+				<attribute type="AssemblyFileVersionAttribute" value="${project.fullversion}" />
+				<attribute type="AssemblyCopyrightAttribute" value="Copyright Â© ${company.name} 2007-${datetime::get-year(datetime::now())}" />
+				<attribute type="AssemblyProductAttribute" value="${project::get-name()}" />
+				<attribute type="AssemblyCompanyAttribute" value="${company.name}" />
+				<attribute type="AssemblyConfigurationAttribute" value="${project.config}" />
+				<attribute type="AssemblyInformationalVersionAttribute" value="${project.fullversion}" />
+			</attributes>
+			<references>
+				<include name="System.dll" />
+			</references>
+		</asminfo>
+	</target>
+	
+	<!-- Internal targets -->
+	<target name="run-unit-tests" depends="teamcity-nunit-addin">
+		<mkdir dir="${build.dir}\test-reports" />
+		
+		<exec program="nunit-console.exe" basedir="tools\nunit" workingdir="${test.dir}">
+			<arg value="Crap4n.Specs.dll" />
+			<arg value="/xml:..\..\test-reports\UnitTests.xml" />
+      <arg value="/noshadow" />
+		</exec>
+	</target>
+	
+	<target name="teamcity-nunit-addin" if="${property::exists('teamcity.dotnet.nunitaddin')}" >
+		<mkdir dir="tools/nunit/addins" />
+		<copy todir ="tools/nunit/addins">
+			<fileset>
+				<include name="${teamcity.dotnet.nunitaddin}-2.4.8.*" />
+			</fileset>
+		</copy>
+		<copy todir ="tools/nunit">
+			<fileset>
+				<include name="${teamcity.dotnet.nunitaddin}-2.4.8.*" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="dist" depends="test">
+		<copy todir="${build.dir}\dist">
+			<fileset basedir="${build.dir}\Debug\Crap4n">
+				<include name="**\Crap4n*"/>
+        <include name="**\Autofac.dll"/>
+        <exclude name="**\*.pdb" />
+			</fileset>
+		</copy>
+		<zip zipfile="${build.dir}\Crap4n_${project.fullversion}.zip">
+			<fileset basedir="${build.dir}\dist">
+				<include name="**\*" />
+			</fileset>
+		</zip>
+		
+		<exec
+			program="tools\nsis\makensis.exe"
+			workingdir="src\Installer">
+			<arg value="/DVERSION=${project.fullversion}" />
+			<arg value="Crap4n.nsi" />
+		</exec>
+	</target>
+	
+</project>
+
+
