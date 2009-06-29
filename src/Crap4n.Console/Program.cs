@@ -9,7 +9,6 @@ namespace Crap4n.Console
 {
     public class Program
     {
-        // params to implement cc (code coverage file), cm (Code Metrics file), xml (xml output)
         public static int Main(string[] args)
         {
             var p = new Program();
@@ -20,8 +19,6 @@ namespace Crap4n.Console
                 return returnVal;
 
             p.Run(options, output);
-            System.Console.Write("Press any key to continue . . . ");
-            System.Console.ReadKey(true);
             return 0;
         }
 

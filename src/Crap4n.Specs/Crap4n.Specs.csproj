@@ -91,4 +91,14 @@
       <Name>Crap4n</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="SourceMonitorInterfaceResult.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SourceMonitorPropertyResult.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

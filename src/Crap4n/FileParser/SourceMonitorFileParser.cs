@@ -41,13 +41,31 @@ namespace Crap4n.FileParser
 
         private CodeMetrics CreateCodeMetricsForMethodFromXml(XmlNode methodMetrics)
         {
-            var classAndName = methodMetrics.Attributes["name"].Value.Split('.');
-            return new CodeMetrics
-                       {
-                           Class = classAndName[0],
-                           Method = classAndName[1].Replace("()", ""),
-                           CyclomaticComplexity = int.Parse(methodMetrics.SelectSingleNode("complexity").InnerText)
-                       };
+            string[] classAndName = methodMetrics.Attributes["name"].Value.Split('.');
+            var codeMetrics = new CodeMetrics { Class = classAndName[0] };
+            if (classAndName.Length == 3)
+            {
+                if (IsProperty(classAndName))
+                    codeMetrics.Method = GetPropertyName(classAndName); //Explicit interface with property is bugged in SourceMonitor
+                else
+                    codeMetrics.Method = classAndName[2];
+            }
+            else
+                codeMetrics.Method = classAndName[1];
+
+            codeMetrics.Method = codeMetrics.Method.Replace("()", "");
+            codeMetrics.CyclomaticComplexity = int.Parse(methodMetrics.SelectSingleNode("complexity").InnerText);
+            return codeMetrics;
+        }
+
+        private string GetPropertyName(string[] classAndName)
+        {
+            return classAndName.Last().Replace("()", "") + "_" + classAndName[1];
+        }
+
+        private bool IsProperty(string[] classAndName)
+        {
+            return classAndName.Last().Equals("get()") || classAndName.Last().Equals("set()");
         }
 
         private XmlNodeList GetMethodMetricNodes(XmlNode checkPoint)

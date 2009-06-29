@@ -67,7 +67,4 @@
       <Name>Crap4n</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="crap4n.snk" />
-  </ItemGroup>
 </Project>

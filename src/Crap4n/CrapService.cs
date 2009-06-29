@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Crap4n
@@ -16,14 +17,25 @@ namespace Crap4n
 
         public IEnumerable<Crap> BuildResult(string codeCoverageFileName, string codeMetricsFileName)
         {
-            IFileParser<CodeCoverage> cc = _metricsParser.FindFileParser<CodeCoverage>(codeCoverageFileName);
-            IEnumerable<CodeCoverage> codeCoverage = cc.ParseFile(codeCoverageFileName);
-
-            IFileParser<CodeMetrics> cm = _metricsParser.FindFileParser<CodeMetrics>(codeMetricsFileName);
-            IEnumerable<CodeMetrics> codeMetrics = cm.ParseFile(codeMetricsFileName);
-
+            IEnumerable<CodeCoverage> codeCoverage = null;
+            Action async = () => codeCoverage = GetCodeCoverage(codeCoverageFileName);
+            var asyncResult = async.BeginInvoke(null, null);
+            IEnumerable<CodeMetrics> codeMetrics = GetCodeMetrics(codeMetricsFileName);
+            asyncResult.AsyncWaitHandle.WaitOne();
             var merger = new ResultMerger();
             return merger.GetMetrics(codeCoverage, codeMetrics);
+        }
+
+        private IEnumerable<CodeCoverage> GetCodeCoverage(string codeCoverageFileName)
+        {
+            IFileParser<CodeCoverage> cc = _metricsParser.FindFileParser<CodeCoverage>(codeCoverageFileName);
+            return cc.ParseFile(codeCoverageFileName);
+        }
+
+        private IEnumerable<CodeMetrics> GetCodeMetrics(string codeMetricsFileName)
+        {
+            IFileParser<CodeMetrics> cm = _metricsParser.FindFileParser<CodeMetrics>(codeMetricsFileName);
+            return cm.ParseFile(codeMetricsFileName);
         }
     }
 }
