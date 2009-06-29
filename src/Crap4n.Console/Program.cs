@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
+using System.Threading;
 using Autofac;
-using Autofac.Builder;
 
 namespace Crap4n.Console
 {
     public class Program
     {
+        private IoCBuilder _iocBuilder = new IoCBuilder();
+
         public static int Main(string[] args)
         {
             var p = new Program();
@@ -49,16 +50,19 @@ namespace Crap4n.Console
 
         private void Run(ConsoleOptions options, PlainTextOutput output)
         {
-            CrapService crapService = GetCrapService();
+            var stopWatch = new StopWatch();
+            stopWatch.Start();
+            var container = _iocBuilder.BuildContainer();
+            var crapService = container.Resolve<CrapService>();
             IEnumerable<Crap> result = crapService.BuildResult(options.codeCoverage, options.codeMetrics);
-            var sortedResult = from r in result
-                               orderby r.Value
-                               select r;
-            WriteOutput(options, sortedResult, output);
+            WriteOutput(options, result, output);
+            stopWatch.Stop();
+            output.WriteLine(string.Format("Took {0:0.00}s to execute", stopWatch.TimeTaken.TotalSeconds));
         }
 
-        private void WriteOutput(ConsoleOptions options, IEnumerable<Crap> sortedResult, PlainTextOutput output)
+        private void WriteOutput(ConsoleOptions options, IEnumerable<Crap> crapResult, PlainTextOutput output)
         {
+            var report = new OutputReport(crapResult, output);
             if (options.HasXmlOutput)
             {
                 //TODO: implement
@@ -66,52 +70,26 @@ namespace Crap4n.Console
             }
             else
             {
-                foreach (var crap in sortedResult)
-                    output.WriteLine(crap.ToString());
+                report.OutputMethodsAboveCrapThreshold(options.crapThreshold);
+                report.OutputCrapSummary(options.crapThreshold);
             }
         }
+    }
 
-        private CrapService GetCrapService()
+    public class StopWatch
+    {
+        private DateTime _started;
+
+        public void Start()
         {
-            IContainer container = GetContainer();
-            return container.Resolve<CrapService>();
+            _started = DateTime.Now;
         }
 
-        public IContainer GetContainer()
+        public void Stop()
         {
-            var builder = new ContainerBuilder();
-            RegisterWithContainer(builder);
-            return builder.Build();
+            TimeTaken = DateTime.Now.Subtract(_started);
         }
 
-        private void RegisterWithContainer(ContainerBuilder builder)
-        {
-            builder.Register<CrapService>().As<CrapService>();
-            var asm = typeof (CrapService).Assembly;
-
-            builder.RegisterCollection<IFileParser<CodeMetrics>>().As<IEnumerable<IFileParser<CodeMetrics>>>();
-            builder.RegisterCollection<IFileParser<CodeCoverage>>().As<IEnumerable<IFileParser<CodeCoverage>>>();
-
-            IEnumerable<Type> types = GetTypes(asm);
-            foreach (var type in types)
-            {
-                foreach (var @interface in type.GetInterfaces())
-                {
-                    builder.Register(type).As(@interface);
-                    if (@interface == typeof (IFileParser<CodeMetrics>))
-                        builder.Register(type).As(@interface).MemberOf(typeof (IEnumerable<IFileParser<CodeMetrics>>));
-                    if (@interface == typeof (IFileParser<CodeCoverage>))
-                        builder.Register(type).As(@interface).MemberOf<IEnumerable<IFileParser<CodeCoverage>>>();
-                }
-            }
-        }
-
-        private IEnumerable<Type> GetTypes(Assembly asm)
-        {
-            return from t in asm.GetTypes()
-                   where t.IsAbstract == false
-                         && t.IsInterface == false
-                   select t;
-        }
+        public TimeSpan TimeTaken { get; private set; }
     }
 }

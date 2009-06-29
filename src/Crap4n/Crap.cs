@@ -16,7 +16,9 @@ namespace Crap4n
 
         public override string ToString()
         {
-            return string.Format("{0}.{1} : CRAP: {2} (CC: {3}, COV: {4}%)", Class, Method, Value, CyclomaticComplexity, CodeCoverage);
+            if (string.IsNullOrEmpty(NameSpace))
+                return string.Format("{0}.{1} : CRAP: {2:0.0} (CC: {3}, COV: {4}%)", Class, Method, Value, CyclomaticComplexity, CodeCoverage);
+            return string.Format("{0}.{1}.{2} : CRAP: {3:0.0} (CC: {4}, COV: {5}%)", NameSpace, Class, Method, Value, CyclomaticComplexity, CodeCoverage);
         }
     }
 }

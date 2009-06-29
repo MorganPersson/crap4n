@@ -3,7 +3,8 @@
 	<property name="solution.dir" value="src" />
 	<property name="build.dir" value="build" />
 	<property name="test.dir" value ="${build.dir}\Debug\UnitTests" />
-	<property name="company.name" value="${project::get-name()}"/>
+  <property name="currentContributors" value="Morgan Persson" />
+	<property name="company.name" value="${project::get-name()}" />
 	<property name="project.fullversion" value="0.1.0.0" dynamic="true" />
 	<property name="project.config" value="release" />
 	
@@ -21,7 +22,7 @@
 		<delete dir="${build.dir}/test-reports" if="${directory::exists(build.dir)}"/>
 	</target>
 	
-	<target name="compile">
+	<target name="compile" depends="commonassemblyinfo">
 		<exec program="${environment::get-folder-path('System')}\..\Microsoft.NET\Framework\v3.5\msbuild.exe"
 		      commandline="/property:Configuration=AutomatedDebug /v:m src\Crap4n.sln" />
 	</target>
@@ -51,7 +52,7 @@
 				<attribute type="ComVisibleAttribute" value="false" />
 				<attribute type="AssemblyVersionAttribute" value="${project.fullversion}" />
 				<attribute type="AssemblyFileVersionAttribute" value="${project.fullversion}" />
-				<attribute type="AssemblyCopyrightAttribute" value="Copyright Â© ${company.name} 2007-${datetime::get-year(datetime::now())}" />
+				<attribute type="AssemblyCopyrightAttribute" value="Copyright Â© ${currentContributors} 2009-${datetime::get-year(datetime::now())}" />
 				<attribute type="AssemblyProductAttribute" value="${project::get-name()}" />
 				<attribute type="AssemblyCompanyAttribute" value="${company.name}" />
 				<attribute type="AssemblyConfigurationAttribute" value="${project.config}" />

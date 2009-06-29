@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Text;
 using Crap4n.Console;
 using NBehave.Spec.NUnit;
@@ -39,23 +37,14 @@ namespace Crap4n.Specs.Console
 
             Assert.That(_output.ToString(), Text.DoesNotContain("Copyright"));
         }
-
+    
         [Specification]
-        public void Should_register_services()
+        public void Should_take_crapThreshold_parameter()
         {
-            var p = new Program();
-            var ioc = p.GetContainer();
-            ioc.Resolve<CrapService>().ShouldNotBeNull();
-        }
+            Program.Main(new[] { "/crapThreshold:7", "/cc:PartCoverResult.xml", "/cm:SourceMonitorResult.xml" });
 
-        [Specification]
-        public void Should_resolve_all_IFileParsers_for_CodeMetrics()
-        {
-            var p = new Program();
-            var ioc = p.GetContainer();
-            var parsers = ioc.Resolve<IEnumerable<IFileParser<CodeMetrics>>>();
-            parsers.ShouldNotBeNull();
-            parsers.Count().ShouldBeGreaterThan(0);
+            Assert.That(_output.ToString(), Text.DoesNotContain("NoCoverage"));
+            Assert.That(_output.ToString(), Text.Contains("CompleteCoverage"));
         }
     }
 }

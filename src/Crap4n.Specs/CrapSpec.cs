@@ -30,7 +30,7 @@ namespace Crap4n.Specs
             [Specification]
             public void Should_get_formatted_result_from_ToString()
             {
-                _crap.ToString().ShouldEqual("Foo.Bar : CRAP: 5 (CC: 5, COV: 100,0%)");
+                _crap.ToString().ShouldEqual("Foo.Bar : CRAP: 5,0 (CC: 5, COV: 100,0%)");
             }
         }
 

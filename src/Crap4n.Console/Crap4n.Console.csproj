@@ -57,6 +57,8 @@
     </Compile>
     <Compile Include="CommandLineOptions.cs" />
     <Compile Include="ConsoleOptions.cs" />
+    <Compile Include="IoCBuilder.cs" />
+    <Compile Include="OutputReport.cs" />
     <Compile Include="PlainTextOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

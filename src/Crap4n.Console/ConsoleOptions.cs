@@ -6,6 +6,9 @@ namespace Crap4n.Console
     {
         private bool _isInvalid;
 
+        [Option(Short = "c", Description = "")]
+        public int crapThreshold = 30;
+
         [Option(Short = "cc", Description = "CodeCoverage file to use. Ex: CodeCoverage:PartCoverResult.xml")]
         public string codeCoverage;
 
@@ -60,11 +63,9 @@ namespace Crap4n.Console
         {
 
             System.Console.WriteLine();
-            System.Console.WriteLine("NBehave-Console [inputfiles] [options]");
+            System.Console.WriteLine("Crap4n-Console [inputfiles] [options]");
             System.Console.WriteLine();
-            System.Console.WriteLine("Runs a set of NBehave stories from the console.");
-            System.Console.WriteLine();
-            System.Console.WriteLine("You may specify one or more assemblies.");
+            System.Console.WriteLine("Calculate CRAP values from the console.");
             System.Console.WriteLine();
             System.Console.WriteLine("Options:");
             base.Help();

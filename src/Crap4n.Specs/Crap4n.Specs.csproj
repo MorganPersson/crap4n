@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Console\IocBuilderSpec.cs" />
     <Compile Include="Console\ProgamSpec.cs" />
     <Compile Include="CrapServiceSpec.cs" />
     <Compile Include="CrapSpec.cs" />
