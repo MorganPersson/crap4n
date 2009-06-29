@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		..\Crap4n.build = ..\Crap4n.build
 		Installer\Crap4n.nsi = Installer\Crap4n.nsi
+		..\crap4n.partcover.config = ..\crap4n.partcover.config
+		..\crap4n.SourceMonitor.config = ..\crap4n.SourceMonitor.config
 	EndProjectSection
 EndProject
 Global

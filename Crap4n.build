@@ -9,38 +9,54 @@
 	<property name="project.config" value="release" />
 	
 	<!-- User targets -->
-	<target name="init" description="Initializes build properties">
-		<tstamp>
-			<formatter property="datetime.buildtime" pattern="yyyy-MM-dd, HH:mm:ss" />
-		</tstamp>
-		<echo message="Current Directory: ${project::get-base-directory()}"/>
-	</target>
-	
-	<target name="clean" depends="init" description="Delete automated build artifacts">
-		<delete dir="${build.dir}/Debug" if="${directory::exists(build.dir)}"/>
-		<delete dir="${build.dir}/dist" if="${directory::exists(build.dir)}"/>
-		<delete dir="${build.dir}/test-reports" if="${directory::exists(build.dir)}"/>
-	</target>
-	
-	<target name="compile" depends="commonassemblyinfo">
+  <target name="full" depends="clean, commonassemblyinfo, test, metrics, dist"
+	        description="Compiles, tests, and produces distributions" />
+
+  <target name="compile" depends="commonassemblyinfo">
 		<exec program="${environment::get-folder-path('System')}\..\Microsoft.NET\Framework\v3.5\msbuild.exe"
 		      commandline="/property:Configuration=AutomatedDebug /v:m src\Crap4n.sln" />
 	</target>
-	
+
+  <target name="metrics" depends="crap" />
+  
 	<target name="test" depends="compile, run-unit-tests"
 	        description="Compile and run tests" />
-	
-	<target name="full" depends="clean, commonassemblyinfo, test, dist"
-	        description="Compiles, tests, and produces distributions" />
-	
-	<target name="version" description="mark AssemblyInfo builds with the build number">
-		<if test="${property::exists('build.number')}">
-			<property name="project.fullversion" value="${build.number}" />
-		</if>
-		<echo message="MARKING THIS BUILD AS VERSION ${project.fullversion}" />
-	</target>
-	
-	<target name="commonassemblyinfo" depends="version, init">
+
+  <target name="codecoverage" depends="compile">
+    <mkdir dir="${build.dir}\reports" />
+    <exec program="regsvr32.exe" failonerror="false">
+      <arg value="-s" />
+      <arg value="tools\PartCover\PartCover.CorDriver.dll" />
+    </exec>
+    <exec program="tools\partcover\partcover.exe" failonerror="false">
+      <arg value="--settings" />
+      <arg value="crap4n.partcover.config" />
+    </exec>
+    <exec program="regsvr32.exe" failonerror="false">
+      <arg value="-u" />
+      <arg value="-s" />
+      <arg value="tools\PartCover\PartCover.CorDriver.dll" />
+    </exec>
+  </target>
+
+  <target name="sourcemonitor" depends="init">
+    <mkdir dir="${build.dir}\reports" />
+    <exec program="tools\sourcemonitor\sourcemonitor.exe" failonerror="false">
+      <arg value="/C" />
+      <arg value="crap4n.sourcemonitor.config" />
+    </exec>
+  </target>
+
+  <target name="crap" depends="codecoverage, sourcemonitor">
+    <mkdir dir="${build.dir}\reports" />
+    <exec program="build\debug\Crap4n\Crap4n-console.exe" failonerror="false">
+      <arg value="/cc=build\reports\PartCoverResults.xml" />
+      <arg value="/cm=build\reports\SourceMonitorDetails.xml" />
+      <arg value="/c=10" />
+    </exec>
+  </target>
+
+  <target name="commonassemblyinfo" depends="version, init">
 		<delete file="${solution.dir}/CommonAssemblyInfo.cs" failonerror="false"/>
 		<asminfo output="${solution.dir}/CommonAssemblyInfo.cs" language="CSharp">
 			<imports>
@@ -63,14 +79,33 @@
 			</references>
 		</asminfo>
 	</target>
-	
-	<!-- Internal targets -->
+
+  <target name="clean" depends="init" description="Delete automated build artifacts">
+    <delete dir="${build.dir}/Debug" if="${directory::exists(build.dir)}"/>
+    <delete dir="${build.dir}/dist" if="${directory::exists(build.dir)}"/>
+    <delete dir="${build.dir}/reports" if="${directory::exists(build.dir)}"/>
+  </target>
+
+  <target name="version" description="mark AssemblyInfo builds with the build number">
+    <if test="${property::exists('build.number')}">
+      <property name="project.fullversion" value="${build.number}" />
+    </if>
+    <echo message="MARKING THIS BUILD AS VERSION ${project.fullversion}" />
+  </target>
+
+  <target name="init" description="Initializes build properties">
+    <tstamp>
+      <formatter property="datetime.buildtime" pattern="yyyy-MM-dd, HH:mm:ss" />
+    </tstamp>
+    <echo message="Current Directory: ${project::get-base-directory()}"/>
+  </target>
+
+  <!-- Internal targets -->
 	<target name="run-unit-tests" depends="teamcity-nunit-addin">
-		<mkdir dir="${build.dir}\test-reports" />
-		
-		<exec program="nunit-console.exe" basedir="tools\nunit" workingdir="${test.dir}">
+    <mkdir dir="${build.dir}\reports" />
+    <exec program="nunit-console.exe" basedir="tools\nunit" workingdir="${test.dir}">
 			<arg value="Crap4n.Specs.dll" />
-			<arg value="/xml:..\..\test-reports\UnitTests.xml" />
+			<arg value="/xml:..\..\reports\UnitTests.xml" />
       <arg value="/noshadow" />
 		</exec>
 	</target>
