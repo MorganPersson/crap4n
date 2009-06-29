@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PartCoverReport ver="2.2.0.34630" exitCode="0">
-  <file id="1" url="d:\Code\Crap4n\src\TestAssembly\Tested.cs" />
+  <file id="1" url="C:\Code\crap4n.svn\src\TestAssembly\Tested.cs" />
   <type asm="TestAssembly" name="TestAssembly.Tested" flags="1048577">
     <method name=".ctor" sig="void  ()" flags="6278" iflags="0">
       <code>
@@ -10,68 +10,81 @@
     </method>
     <method name="CompleteCoverage" sig="int  (int, int, int)" flags="134" iflags="0">
       <code>
-        <pt visit="4" pos="52" len="2" fid="1" sl="37" sc="3" el="37" ec="4" />
-        <pt visit="1" pos="48" len="4" fid="1" sl="35" sc="6" el="35" ec="15" />
-        <pt visit="1" pos="44" len="4" fid="1" sl="33" sc="6" el="33" ec="15" />
-        <pt visit="2" pos="41" len="3" />
-        <pt visit="2" pos="33" len="8" fid="1" sl="32" sc="5" el="32" ec="13" />
-        <pt visit="2" pos="32" len="1" fid="1" sl="31" sc="4" el="31" ec="5" />
-        <pt visit="1" pos="28" len="4" fid="1" sl="28" sc="6" el="28" ec="15" />
-        <pt visit="1" pos="24" len="4" fid="1" sl="26" sc="6" el="26" ec="15" />
+        <pt visit="4" pos="51" len="2" fid="1" sl="42" sc="9" el="42" ec="10" />
+        <pt visit="1" pos="47" len="4" fid="1" sl="41" sc="13" el="41" ec="22" />
+        <pt visit="1" pos="43" len="4" fid="1" sl="40" sc="17" el="40" ec="26" />
+        <pt visit="2" pos="40" len="3" />
+        <pt visit="2" pos="32" len="8" fid="1" sl="39" sc="13" el="39" ec="23" />
+        <pt visit="1" pos="28" len="4" fid="1" sl="37" sc="17" el="37" ec="26" />
+        <pt visit="1" pos="24" len="4" fid="1" sl="36" sc="21" el="36" ec="30" />
         <pt visit="2" pos="21" len="3" />
-        <pt visit="2" pos="13" len="8" fid="1" sl="25" sc="5" el="25" ec="13" />
-        <pt visit="2" pos="12" len="1" fid="1" sl="24" sc="4" el="24" ec="5" />
+        <pt visit="2" pos="13" len="8" fid="1" sl="35" sc="17" el="35" ec="27" />
+        <pt visit="2" pos="12" len="1" fid="1" sl="34" sc="13" el="34" ec="14" />
         <pt visit="4" pos="9" len="3" />
-        <pt visit="4" pos="1" len="8" fid="1" sl="23" sc="4" el="23" ec="12" />
-        <pt visit="4" pos="0" len="1" fid="1" sl="22" sc="3" el="22" ec="4" />
+        <pt visit="4" pos="1" len="8" fid="1" sl="33" sc="13" el="33" ec="23" />
+        <pt visit="4" pos="0" len="1" fid="1" sl="32" sc="9" el="32" ec="10" />
       </code>
     </method>
-    <method name="SemiCoverage" sig="int  (int, int)" flags="134" iflags="0">
+    <method name="SemiCoverage" sig="int  (int, int, int)" flags="134" iflags="0">
       <code>
-        <pt visit="1" pos="20" len="2" fid="1" sl="19" sc="3" el="19" ec="4" />
-        <pt visit="0" pos="16" len="4" fid="1" sl="18" sc="4" el="18" ec="13" />
-        <pt visit="1" pos="12" len="4" fid="1" sl="17" sc="5" el="17" ec="14" />
+        <pt visit="1" pos="51" len="2" fid="1" sl="29" sc="9" el="29" ec="10" />
+        <pt visit="0" pos="47" len="4" fid="1" sl="28" sc="13" el="28" ec="22" />
+        <pt visit="0" pos="43" len="4" fid="1" sl="27" sc="17" el="27" ec="26" />
+        <pt visit="0" pos="40" len="3" />
+        <pt visit="0" pos="32" len="8" fid="1" sl="26" sc="13" el="26" ec="23" />
+        <pt visit="0" pos="28" len="4" fid="1" sl="24" sc="17" el="24" ec="26" />
+        <pt visit="1" pos="24" len="4" fid="1" sl="23" sc="21" el="23" ec="30" />
+        <pt visit="1" pos="21" len="3" />
+        <pt visit="1" pos="13" len="8" fid="1" sl="22" sc="17" el="22" ec="27" />
+        <pt visit="1" pos="12" len="1" fid="1" sl="21" sc="13" el="21" ec="14" />
         <pt visit="1" pos="9" len="3" />
-        <pt visit="1" pos="1" len="8" fid="1" sl="16" sc="4" el="16" ec="12" />
-        <pt visit="1" pos="0" len="1" fid="1" sl="15" sc="3" el="15" ec="4" />
+        <pt visit="1" pos="1" len="8" fid="1" sl="20" sc="13" el="20" ec="23" />
+        <pt visit="1" pos="0" len="1" fid="1" sl="19" sc="9" el="19" ec="10" />
       </code>
     </method>
-    <method name="NoCoverage" sig="int  (int, int)" flags="134" iflags="0">
+    <method name="NoCoverage" sig="int  (int, int, int)" flags="134" iflags="0">
       <code>
-        <pt visit="0" pos="20" len="2" fid="1" sl="12" sc="3" el="12" ec="4" />
-        <pt visit="0" pos="16" len="4" fid="1" sl="11" sc="4" el="11" ec="13" />
-        <pt visit="0" pos="12" len="4" fid="1" sl="10" sc="5" el="10" ec="14" />
+        <pt visit="0" pos="51" len="2" fid="1" sl="16" sc="9" el="16" ec="10" />
+        <pt visit="0" pos="47" len="4" fid="1" sl="15" sc="13" el="15" ec="22" />
+        <pt visit="0" pos="43" len="4" fid="1" sl="14" sc="17" el="14" ec="26" />
+        <pt visit="0" pos="40" len="3" />
+        <pt visit="0" pos="32" len="8" fid="1" sl="13" sc="13" el="13" ec="23" />
+        <pt visit="0" pos="28" len="4" fid="1" sl="11" sc="17" el="11" ec="26" />
+        <pt visit="0" pos="24" len="4" fid="1" sl="10" sc="21" el="10" ec="30" />
+        <pt visit="0" pos="21" len="3" />
+        <pt visit="0" pos="13" len="8" fid="1" sl="9" sc="17" el="9" ec="27" />
+        <pt visit="0" pos="12" len="1" fid="1" sl="8" sc="13" el="8" ec="14" />
         <pt visit="0" pos="9" len="3" />
-        <pt visit="0" pos="1" len="8" fid="1" sl="9" sc="4" el="9" ec="12" />
-        <pt visit="0" pos="0" len="1" fid="1" sl="8" sc="3" el="8" ec="4" />
+        <pt visit="0" pos="1" len="8" fid="1" sl="7" sc="13" el="7" ec="23" />
+        <pt visit="0" pos="0" len="1" fid="1" sl="6" sc="9" el="6" ec="10" />
       </code>
     </method>
   </type>
   <run>
     <tracker>
-      <message tm="633794665953906250">Start target</message>
-      <message tm="633794665953906250">open driver pipe</message>
-      <message tm="633794665953906250">modify target environment variables</message>
-      <message tm="633794665953906250">create target process</message>
-      <message tm="633794665954062500">wait for driver connection</message>
-      <message tm="633794665955625000">driver connected successfully</message>
-      <message tm="633794665955625000">send rules to the driver</message>
-      <message tm="633794665955625000">wait for rules confirm</message>
-      <message tm="633794665955625000">Wait results</message>
-      <message tm="633794665980312500">instrument data is being received</message>
-      <message tm="633794665980312500">InstrumentDataReceiveCountersBegin</message>
-      <message tm="633794665980312500">assembly count: 1</message>
-      <message tm="633794665980312500">load assembly TestAssembly (1 types)</message>
-      <message tm="633794665980468750">InstrumentDataReceiveCountersEnd</message>
-      <message tm="633794665980468750">file list is being received</message>
-      <message tm="633794665980468750">1 files to load</message>
-      <message tm="633794665980468750">file list load is complete</message>
-      <message tm="633794665980468750">instrument data load complete</message>
-      <message tm="633794665980468750">functions loading is being started</message>
-      <message tm="633794665980468750">functions count 0</message>
-      <message tm="633794665980468750">functions loading is complete</message>
-      <message tm="633794665980468750">request target shutdown</message>
-      <message tm="633794665980468750">Walk results</message>
+      <message tm="633819053404843750">Start target</message>
+      <message tm="633819053404843750">open driver pipe</message>
+      <message tm="633819053404843750">modify target environment variables</message>
+      <message tm="633819053404843750">create target process</message>
+      <message tm="633819053404843750">wait for driver connection</message>
+      <message tm="633819053405156250">driver connected successfully</message>
+      <message tm="633819053405156250">send rules to the driver</message>
+      <message tm="633819053405156250">wait for rules confirm</message>
+      <message tm="633819053405156250">Wait results</message>
+      <message tm="633819053420781250">instrument data is being received</message>
+      <message tm="633819053420781250">InstrumentDataReceiveCountersBegin</message>
+      <message tm="633819053420781250">assembly count: 1</message>
+      <message tm="633819053420781250">load assembly TestAssembly (1 types)</message>
+      <message tm="633819053420937500">InstrumentDataReceiveCountersEnd</message>
+      <message tm="633819053420937500">file list is being received</message>
+      <message tm="633819053420937500">1 files to load</message>
+      <message tm="633819053420937500">file list load is complete</message>
+      <message tm="633819053420937500">instrument data load complete</message>
+      <message tm="633819053420937500">functions loading is being started</message>
+      <message tm="633819053420937500">functions count 0</message>
+      <message tm="633819053420937500">functions loading is complete</message>
+      <message tm="633819053420937500">request target shutdown</message>
+      <message tm="633819053427187500">Walk results</message>
     </tracker>
     <log />
   </run>

@@ -41,10 +41,10 @@ namespace Crap4n.Specs.Console
         [Specification]
         public void Should_take_crapThreshold_parameter()
         {
-            Program.Main(new[] { "/crapThreshold:7", "/cc:PartCoverResult.xml", "/cm:SourceMonitorResult.xml" });
+            Program.Main(new[] { "/crapThreshold:10", "/cc:PartCoverResult.xml", "/cm:SourceMonitorResult.xml" });
 
-            Assert.That(_output.ToString(), Text.DoesNotContain("NoCoverage"));
-            Assert.That(_output.ToString(), Text.Contains("CompleteCoverage"));
+            Assert.That(_output.ToString(), Text.DoesNotContain("CompleteCoverage"));
+            Assert.That(_output.ToString(), Text.Contains("NoCoverage"));
         }
     }
 }

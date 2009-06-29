@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Crap4n.FileParser;
 using NBehave.Spec.NUnit;
+using NUnit.Framework;
 
 namespace Crap4n.Specs
 {
@@ -75,10 +76,10 @@ namespace Crap4n.Specs
             public void Should_get_codeCoverage()
             {
                 var coverage = (from m in _coverage
-                                 where m.Method == "SemiCoverage"
-                                 select m).FirstOrDefault();
-                coverage.ShouldNotBeNull();               
-                coverage.CoveragePercent.Value.ShouldEqual(50);
+                                where m.Method == "SemiCoverage"
+                                select m).FirstOrDefault();
+                coverage.ShouldNotBeNull();
+                Assert.AreEqual(42.86,coverage.CoveragePercent, 0.01);
             }
         }
     }

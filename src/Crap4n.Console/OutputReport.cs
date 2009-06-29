@@ -25,8 +25,8 @@ namespace Crap4n.Console
         public void OutputCrapSummary(double crapThreshold)
         {
             double crapLoad = GetCrapLoad(crapThreshold);
-            var percentCRAPmethods = (GetAboveThreshold(crapThreshold).Count() / 1.0 / _crapResult.Count()).ToPercent();
-            _output.WriteLine(string.Format("{0:0.0}% methods are CRAP. The CRAPload number for this project is {1:0.0}",percentCRAPmethods, crapLoad));
+            var crapMethodPercentage = (GetAboveThreshold(crapThreshold).Count() / 1.0 / _crapResult.Count()).ToPercent();
+            _output.WriteLine(string.Format("{0:0.0}% methods are CRAP. The CRAPload number for this project is {1:0.0}", crapMethodPercentage.Value, crapLoad));
         }
 
         private double GetCrapLoad(double crapThreshold)
