@@ -1,0 +1,24 @@
+[30Jun2009 00:57:07] sourcemonitor (V2.5.1.0): Begin Session
+[30Jun2009 00:57:07] Command File: Process Command File 'crap4n.sourcemonitor.config'
+[30Jun2009 00:57:07] Command File: Process Commands [Line 5]
+[30Jun2009 00:57:07] Command File: Process Command [Line 7]
+[30Jun2009 00:57:07] Command File: Create Project 'build\Crap4n.smp'
+[30Jun2009 00:57:07] Command File: Create Checkpoint 'Checkpoint1' dated '2009-06-30T00:57:07'
+[30Jun2009 00:57:07] Command File: Export Checkpoint Summary to XML
+[30Jun2009 00:57:07] Export Metrics: Begin XML Summary export to file 'build\reports\SourceMonitorSummary.xml'.
+[30Jun2009 00:57:07] Export Metrics: Export Checkpoint 'Checkpoint1'
+[30Jun2009 00:57:07] Export Metrics: End Export Checkpoint Summary to XML
+[30Jun2009 00:57:07] Command File: End Export
+[30Jun2009 00:57:07] Command File: End Command Execution
+[30Jun2009 00:57:07] Command File: Process Command [Line 29]
+[30Jun2009 00:57:08] Command File: Create Checkpoint 'Checkpoint2' dated '2009-06-30T00:57:07'
+[30Jun2009 00:57:08] Command File: Export Checkpoint Details to XML
+[30Jun2009 00:57:08] Export Metrics: Begin XML Details export to file 'build\reports\SourceMonitorDetails.xml'.
+[30Jun2009 00:57:08] Export Metrics: Export Checkpoint 'Checkpoint2'
+[30Jun2009 00:57:08] Export Metrics: End Export Checkpoint Details to XML
+[30Jun2009 00:57:08] Command File: End Export
+[30Jun2009 00:57:08] Command File: Checkpoint 'Checkpoint2' deleted
+[30Jun2009 00:57:08] Command File: End Command Execution
+[30Jun2009 00:57:08] Command File: End Commands
+[30Jun2009 00:57:08] Command File: End Command File Processing
+[30Jun2009 00:57:08] sourcemonitor (V2.5.1.0): End Session
