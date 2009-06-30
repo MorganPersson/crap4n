@@ -33,15 +33,7 @@ namespace Crap4n.Console
         {
             double crapLoad = 0;
             foreach (var crap in GetAboveThreshold(crapThreshold))
-            {
-                if (crap.Value >= crapThreshold)
-                {
-                    int complexity = crap.CyclomaticComplexity;
-                    var coverage = crap.CodeCoverage;
-                    crapLoad += complexity * (1.0 - coverage / 100);
-                    crapLoad += complexity / crapThreshold;
-                }
-            }
+                crapLoad += crap.CrapLoad(crapThreshold);
             return crapLoad;
         }
 

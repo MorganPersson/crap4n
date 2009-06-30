@@ -14,6 +14,16 @@ namespace Crap4n
             get { return _crap(CyclomaticComplexity, CodeCoverage); }
         }
 
+        public double CrapLoad(double crapThreshold)
+        {
+            if (Value < crapThreshold)
+                return 0;
+
+            double crapLoad = CyclomaticComplexity * (1.0 - CodeCoverage / 100);
+            crapLoad += CyclomaticComplexity / crapThreshold;
+            return crapLoad;
+        }
+
         public override string ToString()
         {
             if (string.IsNullOrEmpty(NameSpace))

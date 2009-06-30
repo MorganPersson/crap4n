@@ -5,17 +5,10 @@ namespace Crap4n.Specs
     public abstract class CrapSpec : SpecBase
     {
         private Crap _crap;
-        private double _expected = -1;
 
         protected override void Establish_context()
         {
             _crap = new Crap { Class = "Foo", Method = "Bar", CodeCoverage = 100.Percent(), CyclomaticComplexity = 5 };
-        }
-
-        [Specification]
-        public void Should_have_a_crap_value()
-        {
-            _crap.Value.ShouldEqual(_expected);
         }
 
         public class When_having_100_percent_coverage : CrapSpec
@@ -24,13 +17,18 @@ namespace Crap4n.Specs
             {
                 base.Establish_context();
                 _crap.CodeCoverage = 100.Percent();
-                _expected = 5;
             }
     
             [Specification]
             public void Should_get_formatted_result_from_ToString()
             {
                 _crap.ToString().ShouldEqual("Foo.Bar : CRAP: 5,0 (CC: 5, COV: 100,0%)");
+            }
+
+            [Specification]
+            public void Should_have_a_crap_value()
+            {
+                _crap.Value.ShouldEqual(5);
             }
         }
 
@@ -40,7 +38,12 @@ namespace Crap4n.Specs
             {
                 base.Establish_context();
                 _crap.CodeCoverage = 50.Percent();
-                _expected = 8.125;
+            }
+
+            [Specification]
+            public void Should_have_a_crap_value()
+            {
+                _crap.Value.ShouldEqual(8.125);
             }
         }
 
@@ -50,7 +53,30 @@ namespace Crap4n.Specs
             {
                 base.Establish_context();
                 _crap.CodeCoverage = 0.Percent();
-                _expected = 30;
+            }
+
+            [Specification]
+            public void Should_have_a_crap_value()
+            {
+                _crap.Value.ShouldEqual(30);
+            }
+        }
+
+        public class When_calculating_CrapLoad : CrapSpec
+        {
+            
+            [Specification]
+            public void CrapLoad_should_be_zero_if_crap_is_less_than_crap_threshold()
+            {
+                var crap = new Crap {CodeCoverage = 100.Percent(), CyclomaticComplexity = 1};
+                crap.CrapLoad(30).ShouldEqual(0);
+            }
+
+            [Specification]
+            public void CrapLoad_should_be_x_if_crap_is_less_than_crap_threshold()
+            {
+                var crap = new Crap { CodeCoverage = 0.Percent(), CyclomaticComplexity = 6 };
+                crap.CrapLoad(30).ShouldEqual(6.2);
             }
         }
     }
