@@ -6,6 +6,7 @@ namespace Crap4n.Specs
 {
     public abstract class ResultMergerSpec : SpecBase
     {
+        private const int CrapThreshold = 30;
         private ResultMerger _resultMerger;
         private IEnumerable<Crap> _metrics;
         private List<CodeCoverage> _codeCoverage;
@@ -53,7 +54,7 @@ namespace Crap4n.Specs
 
             protected override void Because_of()
             {
-                _metrics = _resultMerger.GetMetrics(_codeCoverage, _codeMetrics);
+                _metrics = _resultMerger.GetMetrics(_codeCoverage, _codeMetrics, CrapThreshold);
             }
 
             [Specification]
@@ -125,7 +126,7 @@ namespace Crap4n.Specs
 
             protected override void Because_of()
             {
-                _metrics = _resultMerger.GetMetrics(_codeCoverage, _codeMetrics);
+                _metrics = _resultMerger.GetMetrics(_codeCoverage, _codeMetrics, CrapThreshold);
             }
 
             [Specification]

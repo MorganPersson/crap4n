@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Crap4n.Console;
 using NBehave.Spec.NUnit;
 
 namespace Crap4n.Specs.Console

@@ -15,7 +15,7 @@ namespace Crap4n
             _metricsParser = metricsParser;
         }
 
-        public IEnumerable<Crap> BuildResult(string codeCoverageFileName, string codeMetricsFileName)
+        public IEnumerable<Crap> BuildResult(string codeCoverageFileName, string codeMetricsFileName, int crapThreshold)
         {
             IEnumerable<CodeCoverage> codeCoverage = null;
             Action async = () => codeCoverage = GetCodeCoverage(codeCoverageFileName);
@@ -23,7 +23,7 @@ namespace Crap4n
             IEnumerable<CodeMetrics> codeMetrics = GetCodeMetrics(codeMetricsFileName);
             asyncResult.AsyncWaitHandle.WaitOne();
             var merger = new ResultMerger();
-            return merger.GetMetrics(codeCoverage, codeMetrics);
+            return merger.GetMetrics(codeCoverage, codeMetrics, crapThreshold);
         }
 
         private IEnumerable<CodeCoverage> GetCodeCoverage(string codeCoverageFileName)

@@ -9,7 +9,7 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\crap4n.snk</AssemblyOriginatorKeyFile>	
+    <AssemblyOriginatorKeyFile>..\crap4n.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -61,6 +61,7 @@
     <Compile Include="Crap.cs" />
     <Compile Include="CrapService.cs" />
     <Compile Include="IFileParser.cs" />
+    <Compile Include="IoCBuilder.cs" />
     <Compile Include="IXmlFileLoader.cs" />
     <Compile Include="MetricsBase.cs" />
     <Compile Include="MetricsParserFinder.cs" />

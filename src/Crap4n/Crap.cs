@@ -6,21 +6,34 @@ namespace Crap4n
     {
         private readonly Func<int, double, double> _crap = (comp, cov) => comp * comp * Math.Pow((1 - cov / 100), 3) + comp;
 
+        private readonly double _crapThreshold;
+
+        public Crap(int crapThreshold)
+        {
+            _crapThreshold = crapThreshold;
+        }
+
         public Percent CodeCoverage { get; set; }
+
         public int CyclomaticComplexity { get; set; }
+
+        public string MethodSignature { get; set; }
+        public string SourceFile { get; set; }
+        public int SourceFileLineNumber { get; set; }
+
 
         public double Value
         {
             get { return _crap(CyclomaticComplexity, CodeCoverage); }
         }
 
-        public double CrapLoad(double crapThreshold)
+        public double CrapLoad()
         {
-            if (Value < crapThreshold)
+            if (Value < _crapThreshold)
                 return 0;
 
             double crapLoad = CyclomaticComplexity * (1.0 - CodeCoverage / 100);
-            crapLoad += CyclomaticComplexity / crapThreshold;
+            crapLoad += CyclomaticComplexity / _crapThreshold;
             return crapLoad;
         }
 

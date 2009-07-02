@@ -55,11 +55,11 @@ namespace Crap4n.Specs
             [Specification]
             public void Should_get_class_name()
             {
-                var ns = from m in _coverage
-                         where m.Method == "CompleteCoverage"
-                         select m.Class;
-                ns.Count().ShouldEqual(1);
-                ns.First().ShouldEqual("Tested");
+                var name = from m in _coverage
+                           where m.Method == "CompleteCoverage"
+                           select m.Class;
+                name.Count().ShouldEqual(1);
+                name.First().ShouldEqual("Tested");
             }
 
             [Specification]
@@ -69,6 +69,26 @@ namespace Crap4n.Specs
                                  where m.Method == "CompleteCoverage"
                                  select m.Method;
                 methodName.Count().ShouldEqual(1);
+            }
+
+            [Specification]
+            public void Should_get_SourceFile()
+            {
+                var name = from m in _coverage
+                           where m.Method == "CompleteCoverage"
+                           select m.SourceFile;
+                name.Count().ShouldEqual(1);
+                name.First().ShouldEqual("Tested.cs");
+            }
+
+            [Specification]
+            public void Should_get_SourceFile_line()
+            {
+                var name = from m in _coverage
+                           where m.Method == "CompleteCoverage"
+                           select m.SourceFileLineNumber;
+                name.Count().ShouldEqual(1);
+                name.First().ShouldEqual(31);
             }
         }
 

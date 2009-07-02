@@ -33,11 +33,17 @@ namespace Crap4n.FileParser
                                  Method = GetMethodName(methods[i]),
                                  Class = GetClassName(methods[i]),
                                  NameSpace = GetNamespace(methods[i]),
-                                 CoveragePercent = GetCoveragePercent(methods[i])
+                                 CoveragePercent = GetCoveragePercent(methods[i]),
+                                 MethodSignature=GetMethodSignature(methods[i])
                              };
                 coverage.Add(cc);
             }
             return coverage;
+        }
+
+        private string GetMethodSignature(XmlNode method)
+        {
+            return method.Attributes["sig"].Value;
         }
 
         private string GetNamespace(XmlNode node)

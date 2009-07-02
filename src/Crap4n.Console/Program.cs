@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using Autofac;
+using System.IO;
+using System.Text;
 
 namespace Crap4n.Console
 {
     public class Program
     {
-        private IoCBuilder _iocBuilder = new IoCBuilder();
+        private readonly IoCBuilder _iocBuilder = new IoCBuilder();
 
         public static int Main(string[] args)
         {
@@ -54,7 +53,7 @@ namespace Crap4n.Console
             stopWatch.Start();
             var container = _iocBuilder.BuildContainer();
             var crapService = container.Resolve<CrapService>();
-            IEnumerable<Crap> result = crapService.BuildResult(options.codeCoverage, options.codeMetrics);
+            IEnumerable<Crap> result = crapService.BuildResult(options.codeCoverage, options.codeMetrics, options.crapThreshold);
             WriteOutput(options, result, output);
             stopWatch.Stop();
             output.WriteLine(string.Format("Took {0:0.00}s to execute", stopWatch.TimeTaken.TotalSeconds));
@@ -65,8 +64,12 @@ namespace Crap4n.Console
             var report = new OutputReport(crapResult, output);
             if (options.HasXmlOutput)
             {
-                //TODO: implement
-                output.WriteLine("xml output not implemented yet");
+                string xml = report.GetReportAsXml(options.crapThreshold);
+                using (var stream = new StreamWriter(options.xml, false, Encoding.Unicode))
+                {
+                    stream.Write(xml);
+                    stream.Flush();
+                }
             }
             else
             {

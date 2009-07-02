@@ -81,6 +81,15 @@ namespace Crap4n.Specs
                 coverage.ShouldNotBeNull();
                 Assert.AreEqual(42.86,coverage.CoveragePercent, 0.01);
             }
+
+            [Specification]
+            public void Should_get_signature()
+            {
+                var methodName = from m in _coverage
+                                 where m.Method == "CompleteCoverage"
+                                 select m.MethodSignature;
+                methodName.First().ShouldEqual("int  (int, int, int)");
+            }
         }
     }
 }

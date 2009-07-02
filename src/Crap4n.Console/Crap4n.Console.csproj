@@ -46,6 +46,9 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -57,11 +60,14 @@
     </Compile>
     <Compile Include="CommandLineOptions.cs" />
     <Compile Include="ConsoleOptions.cs" />
-    <Compile Include="IoCBuilder.cs" />
+    <Compile Include="DataContract\CrapMethod.cs" />
+    <Compile Include="DataContract\CrapResult.cs" />
     <Compile Include="OutputReport.cs" />
     <Compile Include="PlainTextOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataContract\SourceFile.cs" />
+    <Compile Include="DataContract\Summary.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Crap4n\Crap4n.csproj">

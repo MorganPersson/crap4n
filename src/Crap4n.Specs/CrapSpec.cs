@@ -8,7 +8,7 @@ namespace Crap4n.Specs
 
         protected override void Establish_context()
         {
-            _crap = new Crap { Class = "Foo", Method = "Bar", CodeCoverage = 100.Percent(), CyclomaticComplexity = 5 };
+            _crap = new Crap(30) { Class = "Foo", Method = "Bar", CodeCoverage = 100.Percent(), CyclomaticComplexity = 5 };
         }
 
         public class When_having_100_percent_coverage : CrapSpec
@@ -68,15 +68,15 @@ namespace Crap4n.Specs
             [Specification]
             public void CrapLoad_should_be_zero_if_crap_is_less_than_crap_threshold()
             {
-                var crap = new Crap {CodeCoverage = 100.Percent(), CyclomaticComplexity = 1};
-                crap.CrapLoad(30).ShouldEqual(0);
+                var crap = new Crap(30) {CodeCoverage = 100.Percent(), CyclomaticComplexity = 1};
+                crap.CrapLoad().ShouldEqual(0);
             }
 
             [Specification]
             public void CrapLoad_should_be_x_if_crap_is_less_than_crap_threshold()
             {
-                var crap = new Crap { CodeCoverage = 0.Percent(), CyclomaticComplexity = 6 };
-                crap.CrapLoad(30).ShouldEqual(6.2);
+                var crap = new Crap(30) { CodeCoverage = 0.Percent(), CyclomaticComplexity = 6 };
+                crap.CrapLoad().ShouldEqual(6.2);
             }
         }
     }

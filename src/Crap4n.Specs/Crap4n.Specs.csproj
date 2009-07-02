@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Console\OutputReportSpec.cs" />
+    <Compile Include="Helper\CrapBuilder.cs" />
+    <Compile Include="Console\CrapResultSpec.cs" />
     <Compile Include="Console\IocBuilderSpec.cs" />
     <Compile Include="Console\ProgamSpec.cs" />
     <Compile Include="CrapServiceSpec.cs" />

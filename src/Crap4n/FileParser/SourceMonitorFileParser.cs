@@ -42,7 +42,7 @@ namespace Crap4n.FileParser
         private CodeMetrics CreateCodeMetricsForMethodFromXml(XmlNode methodMetrics)
         {
             string[] classAndName = methodMetrics.Attributes["name"].Value.Split('.');
-            var codeMetrics = new CodeMetrics { Class = classAndName[0] };
+            var codeMetrics = new CodeMetrics { Class = classAndName[0], SourceFile = GetSourceFile(methodMetrics), SourceFileLineNumber = GetSourceFileLineNumber(methodMetrics) };
             if (classAndName.Length == 3)
             {
                 if (IsProperty(classAndName))
@@ -56,6 +56,16 @@ namespace Crap4n.FileParser
             codeMetrics.Method = codeMetrics.Method.Replace("()", "");
             codeMetrics.CyclomaticComplexity = int.Parse(methodMetrics.SelectSingleNode("complexity").InnerText);
             return codeMetrics;
+        }
+
+        private int GetSourceFileLineNumber(XmlNode methodMetrics)
+        {
+            return int.Parse(methodMetrics.Attributes["line"].Value);
+        }
+
+        private string GetSourceFile(XmlNode methodMetrics)
+        {
+            return methodMetrics.ParentNode.ParentNode.Attributes["file_name"].Value;
         }
 
         private string GetPropertyName(string[] classAndName)

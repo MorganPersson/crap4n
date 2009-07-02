@@ -10,6 +10,7 @@ namespace Crap4n.Specs
     [TestFixture]
     public abstract class CrapServiceSpec : SpecBase<CrapService>
     {
+        private const int CrapThreshold = 30;
         private const string PartCoverResultFile = @"PartCoverResult.xml";
         private const string SourceMonitorResultFile = @"SourceMonitorResult.xml";
 
@@ -24,7 +25,7 @@ namespace Crap4n.Specs
             [Specification, ExpectedException(typeof(NotSupportedException))]
             public void Should_Throw_exception()
             {
-                Sut.BuildResult(PartCoverResultFile, SourceMonitorResultFile);
+                Sut.BuildResult(PartCoverResultFile, SourceMonitorResultFile, CrapThreshold);
             }
         }
 
@@ -41,7 +42,7 @@ namespace Crap4n.Specs
             private IEnumerable<Crap> _crapResult;
             protected override void Because_of()
             {
-                _crapResult = Sut.BuildResult(PartCoverResultFile, SourceMonitorResultFile);
+                _crapResult = Sut.BuildResult(PartCoverResultFile, SourceMonitorResultFile, CrapThreshold);
             }
 
             [Specification]
