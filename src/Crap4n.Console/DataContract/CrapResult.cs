@@ -5,7 +5,8 @@ using System.Xml.Serialization;
 
 namespace Crap4n.Console.DataContract
 {
-    [Serializable]
+    // <?xml-stylesheet type="text/xsl" href="crap4n-summary.xsl"?>
+    [XmlRoot(ElementName = "crapResult")]
     public class CrapResult
     {
         public const string Namespace = "Crap4n";
@@ -17,7 +18,9 @@ namespace Crap4n.Console.DataContract
         [XmlElement(ElementName = "summary", Order = 1)]
         public Summary Summary { get; set; }
 
-        [XmlElement(ElementName = "methods", Order = 2)]
+        //[XmlElement(ElementName = "methods", Order = 2)]
+        [XmlArray(ElementName = "methods", Order = 2)]
+        [XmlArrayItem(ElementName = "method")]
         public List<CrapMethod> Methods { get; set; }
 
         public static CrapResult Build(IEnumerable<Crap> crap, Func<int, IEnumerable<Crap>> aboveThreshold, int crapThreshold)

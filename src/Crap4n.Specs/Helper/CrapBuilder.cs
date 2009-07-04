@@ -6,7 +6,8 @@ namespace Crap4n.Specs.Helper
         {
             return GoodMethod(30);
         }
-        public static Crap GoodMethod(int crapThreshold)
+
+        private static Crap GoodMethod(int crapThreshold)
         {
             return new Crap(crapThreshold)
                        {
@@ -26,7 +27,7 @@ namespace Crap4n.Specs.Helper
             return CrappyMethod(30);
         }
 
-        public static Crap CrappyMethod(int crapThreshold)
+        private static Crap CrappyMethod(int crapThreshold)
         {
             return new Crap(crapThreshold)
                        {
