@@ -59,7 +59,11 @@ namespace Crap4n.FileParser
 
         private string GetMethodName(XmlNode node)
         {
-            return node.Attributes["name"].Value;
+        	string name = node.Attributes["name"].Value;
+        	int dotPos = name.LastIndexOf('.');
+        	if (dotPos > 0)
+        		name = name.Substring(dotPos + 1);
+        	return name;
         }
 
         private string GetClassName(XmlNode node)

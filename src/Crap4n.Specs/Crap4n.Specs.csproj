@@ -81,6 +81,9 @@
     <None Include="PartCoverResult.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="PartCoverResultWithExplicitInterface.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="SourceMonitorResult.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

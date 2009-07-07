@@ -91,5 +91,56 @@ namespace Crap4n.Specs
                 methodName.First().ShouldEqual("int  (int, int, int)");
             }
         }
+
+        [TestFixtureAttribute]
+        public class When_parsing_a_file_with_explicit_interface_implementation : PartCoverFileParserSpec
+        {
+            private IEnumerable<CodeCoverage> _coverage;
+
+            protected override void Because_of()
+            {
+                _coverage = Sut.ParseFile("PartCoverResultWithExplicitInterface.xml");
+            }
+
+            [Specification]
+            public void Should_get_namespace()
+            {
+                var ns = from m in _coverage
+                         where m.Method == "DoStuff"
+                         select m.NameSpace;
+                ns.Count().ShouldEqual(1);
+                ns.First().ShouldEqual("TestAssembly");
+            }
+
+            [Specification]
+            public void Should_get_class_name()
+            {
+                var ns = from m in _coverage
+                         where m.Method == "DoStuff"
+                         select m.Class;
+                ns.Count().ShouldEqual(1);
+                ns.First().ShouldEqual("Tested");
+            }
+
+            [Specification]
+            public void Should_get_Method_name()
+            {
+                var methodName = from m in _coverage
+                                 where m.Method == "DoStuff"
+                                 select m.Method;
+                methodName.Count().ShouldEqual(1);
+            }
+
+            //for explicit interfaces it seems this is broken in PartCover 2.2
+            [Specification]
+            public void Should_get_signature()
+            {
+                var methodName = from m in _coverage
+                                 where m.Method == "DoStuff"
+                                 select m.MethodSignature;
+                methodName.Count().ShouldEqual(1);
+                methodName.First().ShouldEqual("Foo.Bar.SomeClass");
+            }
+        }
     }
 }
