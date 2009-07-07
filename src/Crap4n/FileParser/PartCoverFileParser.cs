@@ -28,15 +28,18 @@ namespace Crap4n.FileParser
             XmlNodeList methods = xml.SelectNodes(@"/PartCoverReport/type/method");
             for (int i = 0; i < methods.Count; i++)
             {
-                var cc = new CodeCoverage
-                             {
-                                 Method = GetMethodName(methods[i]),
-                                 Class = GetClassName(methods[i]),
-                                 NameSpace = GetNamespace(methods[i]),
-                                 CoveragePercent = GetCoveragePercent(methods[i]),
-                                 MethodSignature=GetMethodSignature(methods[i])
-                             };
-                coverage.Add(cc);
+                if (GetValidNodes(methods[i]).Count > 0)
+                {
+                    var cc = new CodeCoverage
+                                {
+                                    Method = GetMethodName(methods[i]),
+                                    Class = GetClassName(methods[i]),
+                                    NameSpace = GetNamespace(methods[i]),
+                                    CoveragePercent = GetCoveragePercent(methods[i]),
+                                    MethodSignature = GetMethodSignature(methods[i])
+                                };
+                    coverage.Add(cc);
+                }
             }
             return coverage;
         }

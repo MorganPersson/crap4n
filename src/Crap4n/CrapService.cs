@@ -29,7 +29,9 @@ namespace Crap4n
         private IEnumerable<CodeCoverage> GetCodeCoverage(string codeCoverageFileName)
         {
             IFileParser<CodeCoverage> cc = _metricsParser.FindFileParser<CodeCoverage>(codeCoverageFileName);
-            return cc.ParseFile(codeCoverageFileName);
+            var methods = cc.ParseFile(codeCoverageFileName);
+
+            return methods;
         }
 
         private IEnumerable<CodeMetrics> GetCodeMetrics(string codeMetricsFileName)
