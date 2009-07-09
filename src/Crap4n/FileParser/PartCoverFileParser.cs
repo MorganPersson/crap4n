@@ -28,7 +28,7 @@ namespace Crap4n.FileParser
             XmlNodeList methods = xml.SelectNodes(@"/PartCoverReport/type/method");
             for (int i = 0; i < methods.Count; i++)
             {
-                if (GetValidNodes(methods[i]).Count > 0)
+            	if (IsValidMethod(methods[i]))
                 {
                     var cc = new CodeCoverage
                                 {
@@ -42,6 +42,12 @@ namespace Crap4n.FileParser
                 }
             }
             return coverage;
+        }
+        
+        private bool IsValidMethod(XmlNode method)
+        {
+        	return GetValidNodes(method).Count > 0
+        		|| GetMethodName(method) != ".ctor";
         }
 
         private string GetMethodSignature(XmlNode method)
