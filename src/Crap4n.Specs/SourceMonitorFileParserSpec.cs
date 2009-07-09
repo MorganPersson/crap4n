@@ -120,6 +120,7 @@ namespace Crap4n.Specs
                 methodName.Count().ShouldEqual(1);
             }
         }
+       
         public class When_parsing_a_file_with_class_that_has_a_property : SourceMonitorFileParserSpec
         {
             private IEnumerable<CodeMetrics> _coverage;

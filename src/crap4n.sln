@@ -1,6 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
+# SharpDevelop 3.0.0.3800
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crap4n", "Crap4n\Crap4n.csproj", "{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAssembly", "TestAssembly\TestAssembly.csproj", "{A2C741AD-C156-4ACE-8F44-8CF40C1C7BF3}"

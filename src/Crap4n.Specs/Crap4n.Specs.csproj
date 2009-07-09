@@ -75,6 +75,7 @@
     <Compile Include="Fake\FooCodeCoverageFileParser.cs" />
     <Compile Include="MetricsParserFinderSpec.cs" />
     <Compile Include="PartCoverFileParserSpec.cs" />
+    <Compile Include="PartCoverXmlNodeParserSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultMergerSpec.cs" />
     <Compile Include="SourceMonitorFileParserSpec.cs" />

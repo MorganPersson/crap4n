@@ -2,6 +2,7 @@
 	!define VERSION "0.1"
 !endif
 !define FILES "..\..\Build\dist"
+!define XSL_FILES "..\xsl"
 !define EXAMPLEFILES "..\..\Build"
 ; The name of the installer
 Name "Crap4n"
@@ -45,6 +46,7 @@ Section "Framework Files (required)" ;No components page, name is not important
 	File "${FILES}\Crap4n-Console.exe"	
 	File "${FILES}\Crap4n.dll"
 	File "${FILES}\Autofac.dll"
+	File "${XSL_FILES}\*.xsl"
 
 	; Write the installation path into the registry
 	WriteRegStr HKLM SOFTWARE\Crap4n\${VERSION} "Install_Dir" "$INSTDIR"

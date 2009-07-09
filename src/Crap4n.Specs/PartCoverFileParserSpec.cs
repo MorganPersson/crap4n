@@ -92,7 +92,6 @@ namespace Crap4n.Specs
             }
         }
 
-        [TestFixtureAttribute]
         public class When_parsing_a_file_with_explicit_interface_implementation : PartCoverFileParserSpec
         {
             private IEnumerable<CodeCoverage> _coverage;
