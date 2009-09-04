@@ -44,7 +44,7 @@ namespace Crap4n.Console
 		private IEnumerable<Crap> GetAboveThreshold(int crapThreshold)
 		{
 			return from c in _crapResult
-				where c.Value >= crapThreshold
+				where c.Value > crapThreshold
 				orderby c.Value descending
 				select c;
 		}

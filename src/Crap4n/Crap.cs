@@ -29,7 +29,7 @@ namespace Crap4n
 
         public double CrapLoad()
         {
-            if (Value < _crapThreshold)
+            if (Value <= _crapThreshold)
                 return 0;
 
             double crapLoad = CyclomaticComplexity * (1.0 - CodeCoverage / 100);
