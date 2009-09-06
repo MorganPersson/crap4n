@@ -1,4 +1,8 @@
 using NBehave.Spec.NUnit;
+using System.Globalization;
+using System.Threading;
+using NUnit.Framework;
+
 
 namespace Crap4n.Specs
 {
@@ -19,10 +23,12 @@ namespace Crap4n.Specs
                 _crap.CodeCoverage = 100.Percent();
             }
     
-            [Specification]
+            [Specification, Test]
             public void Should_get_formatted_result_from_ToString()
             {
-                _crap.ToString().ShouldEqual("Foo.Bar : CRAP: 5,0 (CC: 5, COV: 100,0%)");
+            	string decimalPoint  = Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+            	string expected = string.Format("Foo.Bar : CRAP: 5{0}0 (CC: 5, COV: 100{0}0%)", decimalPoint);
+                _crap.ToString().ShouldEqual(expected);
             }
 
             [Specification]
