@@ -39,6 +39,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="NBehave.Narrator.Framework">
+      <HintPath>..\..\lib\NBehave.Narrator.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="NBehave.Spec.Framework">
       <HintPath>..\..\lib\NBehave.Spec.Framework.dll</HintPath>
     </Reference>
@@ -74,15 +77,26 @@
     <Compile Include="Fake\FooCodeMetricFileParser.cs" />
     <Compile Include="Fake\FooCodeCoverageFileParser.cs" />
     <Compile Include="MetricsParserFinderSpec.cs" />
+    <Compile Include="NCover3FileParserSpec.cs" />
+    <Compile Include="NCoverFileParserSpec.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="PartCoverFileParserSpec.cs" />
     <Compile Include="PartCoverXmlNodeParserSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultMergerSpec.cs" />
+    <Compile Include="Steps\Crap4nSteps.cs" />
     <Compile Include="SourceMonitorFileParserSpec.cs" />
-    <None Include="PartCoverResult.xml">
+    <None Include="Crap4n.story">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="PartCoverResultWithExplicitInterface.xml">
+    <None Include="NCover15Result.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="NCover32Result.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="PartCoverResult.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="SourceMonitorResult.xml">
@@ -98,15 +112,6 @@
       <Project>{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}</Project>
       <Name>Crap4n</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="SourceMonitorInterfaceResult.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="SourceMonitorPropertyResult.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Folder Include="Steps" />
   </ItemGroup>
 </Project>

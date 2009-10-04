@@ -47,7 +47,7 @@ namespace Crap4n.Console
             return 0;
         }
 
-        private void Run(ConsoleOptions options, PlainTextOutput output)
+        public void Run(ConsoleOptions options, PlainTextOutput output)
         {
             var stopWatch = new StopWatch();
             stopWatch.Start();

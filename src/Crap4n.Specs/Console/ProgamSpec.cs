@@ -3,7 +3,7 @@ using System.Text;
 using Crap4n.Console;
 using NBehave.Spec.NUnit;
 using NUnit.Framework;
-using NUnit.Framework.SyntaxHelpers;
+using Context = NUnit.Framework.TestFixtureAttribute;
 
 namespace Crap4n.Specs.Console
 {
@@ -35,7 +35,7 @@ namespace Crap4n.Specs.Console
         {
             Program.Main(new[] { "/nologo" });
 
-            Assert.That(_output.ToString(), Text.DoesNotContain("Copyright"));
+            Assert.That(_output.ToString(), Is.Not.StringContaining("Copyright"));
         }
     
         [Specification]
@@ -43,8 +43,8 @@ namespace Crap4n.Specs.Console
         {
             Program.Main(new[] { "/crapThreshold:10", "/cc:PartCoverResult.xml", "/cm:SourceMonitorResult.xml" });
 
-            Assert.That(_output.ToString(), Text.DoesNotContain("CompleteCoverage"));
-            Assert.That(_output.ToString(), Text.Contains("NoCoverage"));
+            Assert.That(_output.ToString(), Is.Not.StringContaining("CompleteCoverage"));
+            Assert.That(_output.ToString(), Is.StringContaining("NoCoverage"));
         }
     }
 }

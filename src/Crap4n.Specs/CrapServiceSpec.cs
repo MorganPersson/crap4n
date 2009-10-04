@@ -46,9 +46,9 @@ namespace Crap4n.Specs
             }
 
             [Specification]
-            public void Should_have_three_results()
+            public void Should_have_all_results()
             {
-                _crapResult.Count().ShouldEqual(3);
+                _crapResult.Count().ShouldEqual(9);
             }
         }
     }

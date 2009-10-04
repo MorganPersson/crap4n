@@ -74,7 +74,6 @@ Section "Uninstall"
   ; Remove registry keys
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Crap4n ${VERSION}"
   DeleteRegKey HKLM SOFTWARE\Crap4n\${VERSION}
-  DeleteRegKey HKLM "SOFTWARE\MutantDesign\TestDriven.NET\TestRunners\Crap4n ${VERSION}"
   ; Remove files and uninstaller
   Delete $INSTDIR\*.dll
   Delete $INSTDIR\*.zip

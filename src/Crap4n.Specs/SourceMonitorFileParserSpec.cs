@@ -59,7 +59,7 @@ namespace Crap4n.Specs
                            where m.Method == "CompleteCoverage"
                            select m.Class;
                 name.Count().ShouldEqual(1);
-                name.First().ShouldEqual("Tested");
+                name.First().ShouldEqual("Example");
             }
 
             [Specification]
@@ -98,7 +98,7 @@ namespace Crap4n.Specs
 
             protected override void Because_of()
             {
-                _coverage = Sut.ParseFile("SourceMonitorInterfaceResult.xml");
+                _coverage = Sut.ParseFile(SourceMonitorFile);
             }
 
             [Specification]
@@ -108,7 +108,7 @@ namespace Crap4n.Specs
                          where m.Method == "CompleteCoverage"
                          select m.Class;
                 ns.Count().ShouldEqual(1);
-                ns.First().ShouldEqual("Tested");
+                ns.First().ShouldEqual("Example");
             }
 
             [Specification]
@@ -127,24 +127,24 @@ namespace Crap4n.Specs
 
             protected override void Because_of()
             {
-                _coverage = Sut.ParseFile("SourceMonitorPropertyResult.xml");
+                _coverage = Sut.ParseFile(SourceMonitorFile);
             }
 
             [Specification]
             public void Should_get_class_name()
             {
                 var ns = from m in _coverage
-                         where m.Method == "get_CompleteCoverage"
+                         where m.Method == "get_BarProp"
                          select m.Class;
                 ns.Count().ShouldEqual(1);
-                ns.First().ShouldEqual("Tested");
+                ns.First().ShouldEqual("Example");
             }
 
             [Specification]
             public void Should_get_get_Property_name()
             {
                 var name = from m in _coverage
-                           where m.Method == "get_CompleteCoverage"
+                           where m.Method == "get_BarProp"
                            select m.Method;
                 name.Count().ShouldEqual(1);
             }
@@ -153,11 +153,10 @@ namespace Crap4n.Specs
             public void Should_get_set_Property_name()
             {
                 var name = from m in _coverage
-                           where m.Method == "set_CompleteCoverage"
+                           where m.Method == "set_BarProp"
                            select m.Method;
                 name.Count().ShouldEqual(1);
             }
         }
-
     }
 }

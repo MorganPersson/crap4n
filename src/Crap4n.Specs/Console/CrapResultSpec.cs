@@ -4,6 +4,7 @@ using System.Linq;
 using Crap4n.Console.DataContract;
 using Crap4n.Specs.Helper;
 using NBehave.Spec.NUnit;
+using Context = NUnit.Framework.TestFixtureAttribute;
 
 namespace Crap4n.Specs.Console
 {

@@ -3,6 +3,7 @@ using System.IO;
 using System.Xml;
 using Crap4n.Console;
 using NBehave.Spec.NUnit;
+using Context = NUnit.Framework.TestFixtureAttribute;
 
 namespace Crap4n.Specs.Console
 {

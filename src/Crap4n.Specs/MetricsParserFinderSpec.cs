@@ -8,7 +8,7 @@ namespace Crap4n.Specs
     [TestFixture]
     public abstract class MetricsParserFinderSpec : SpecBase<MetricsParserFinder>
     {
-        //private const string SourceMonitorFileName = "SourceMonitorResult.xml";
+        //private const string SourceMonitorFileName = "SourceMonitorDetails.xml";
         //private const string PartCoverFileName = "PartCoverResult.xml";
 
         public class When_resolving_CodeMetricsFileParser : MetricsParserFinderSpec

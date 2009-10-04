@@ -1,11 +1,11 @@
 ﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{A2C741AD-C156-4ACE-8F44-8CF40C1C7BF3}</ProjectGuid>
+    <ProjectGuid>{EF8F9D61-1424-4B4B-A094-BD057E29BE06}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
-    <RootNamespace>TestAssembly</RootNamespace>
-    <AssemblyName>TestAssembly</AssemblyName>
+    <RootNamespace>Example</RootNamespace>
+    <AssemblyName>Example</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Morgan\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
   </PropertyGroup>
@@ -35,6 +35,15 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
   <ItemGroup>
+    <Reference Include="NBehave.Spec.Framework">
+      <HintPath>..\..\lib\NBehave.Spec.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="NBehave.Spec.NUnit">
+      <HintPath>..\..\lib\NBehave.Spec.NUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -42,6 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tested.cs" />
+    <Compile Include="Interface.cs" />
+    <Compile Include="Specs\TestAssemblySpec.cs" />
+    <Compile Include="Example.cs" />
+    <None Include="partcover.config" />
+    <None Include="RunTools.cmd" />
+    <None Include="sourcemonitor.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Specs" />
   </ItemGroup>
 </Project>

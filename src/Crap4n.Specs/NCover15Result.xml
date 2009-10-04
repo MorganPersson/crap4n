@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="coverage.xsl" type="text/xsl"?>
+<!-- saved from url=(0022)http://www.ncover.org/ -->
+<coverage profilerVersion="1.5.8 Beta" driverVersion="1.5.8.0" startTime="2009-09-30T12:51:31.921875+02:00" measureTime="2009-09-30T12:51:35.28125+02:00">
+  <module moduleId="18" name="D:\Code\crap4n\src\Example\bin\debug\Example.dll" assembly="Example" assemblyIdentity="Example, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null, processorArchitecture=MSIL">
+    <method name="NoCoverage" excluded="false" instrumented="true" class="Example.Example">
+      <seqpnt visitcount="0" line="7" column="4" endline="7" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="9" column="5" endline="9" endcolumn="15" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="10" column="6" endline="10" endcolumn="15" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="11" column="5" endline="11" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="13" column="4" endline="13" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="14" column="5" endline="14" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="15" column="4" endline="15" endcolumn="13" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="16" column="3" endline="16" endcolumn="4" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+    </method>
+    <method name="SemiCoverage" excluded="false" instrumented="true" class="Example.Example">
+      <seqpnt visitcount="1" line="20" column="4" endline="20" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="1" line="22" column="5" endline="22" endcolumn="15" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="1" line="23" column="6" endline="23" endcolumn="15" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="24" column="5" endline="24" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="26" column="4" endline="26" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="27" column="5" endline="27" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="28" column="4" endline="28" endcolumn="13" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="1" line="29" column="3" endline="29" endcolumn="4" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+    </method>
+    <method name="CompleteCoverage" excluded="false" instrumented="true" class="Example.Example">
+      <seqpnt visitcount="4" line="33" column="4" endline="33" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="2" line="35" column="5" endline="35" endcolumn="15" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="1" line="36" column="6" endline="36" endcolumn="15" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="1" line="37" column="5" endline="37" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="2" line="39" column="4" endline="39" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="1" line="40" column="5" endline="40" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="1" line="41" column="4" endline="41" endcolumn="13" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="4" line="42" column="3" endline="42" endcolumn="4" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+    </method>
+    <method name="Example.IFoo.FooMethod" excluded="false" instrumented="true" class="Example.Example">
+      <seqpnt visitcount="0" line="52" column="4" endline="52" endcolumn="17" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="53" column="3" endline="53" endcolumn="4" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+    </method>
+    <method name=".ctor" excluded="false" instrumented="true" class="Example.Example">
+      <seqpnt visitcount="5" line="55" column="3" endline="55" endcolumn="28" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+    </method>
+    <method name="get_BarProp" excluded="false" instrumented="true" class="Example.Example">
+      <seqpnt visitcount="0" line="58" column="10" endline="58" endcolumn="26" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="58" column="27" endline="58" endcolumn="28" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+    </method>
+    <method name="set_BarProp" excluded="false" instrumented="true" class="Example.Example">
+      <seqpnt visitcount="0" line="59" column="10" endline="59" endcolumn="27" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="59" column="28" endline="59" endcolumn="29" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+    </method>
+    <method name="BarMethod" excluded="false" instrumented="true" class="Example.Example">
+      <seqpnt visitcount="0" line="64" column="4" endline="64" endcolumn="15" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+      <seqpnt visitcount="0" line="65" column="3" endline="65" endcolumn="4" excluded="false" document="d:\Code\crap4n\src\Example\Tested.cs" />
+    </method>
+    <method name="Because_of" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec">
+      <seqpnt visitcount="4" line="16" column="13" endline="16" endcolumn="61" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="4" line="17" column="9" endline="17" endcolumn="10" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+    <method name="Establish_context" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec+When_a_is_bigger_than_b_and_c">
+      <seqpnt visitcount="1" line="23" column="17" endline="23" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="24" column="17" endline="24" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="25" column="17" endline="25" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="26" column="17" endline="26" endcolumn="38" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="27" column="13" endline="27" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+    <method name="should_get_value_a" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec+When_a_is_bigger_than_b_and_c">
+      <seqpnt visitcount="1" line="32" column="17" endline="32" endcolumn="46" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="33" column="13" endline="33" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+    <method name="Establish_context" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec+When_b_is_bigger_than_a_and_c">
+      <seqpnt visitcount="1" line="40" column="17" endline="40" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="41" column="17" endline="41" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="42" column="17" endline="42" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="43" column="17" endline="43" endcolumn="38" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="44" column="13" endline="44" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+    <method name="should_get_value_b" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec+When_b_is_bigger_than_a_and_c">
+      <seqpnt visitcount="1" line="49" column="17" endline="49" endcolumn="46" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="50" column="13" endline="50" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+    <method name="Establish_context" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec+When_c_is_bigger_than_a_and_a_is_bigger_than_c">
+      <seqpnt visitcount="1" line="57" column="17" endline="57" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="58" column="17" endline="58" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="59" column="17" endline="59" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="60" column="17" endline="60" endcolumn="38" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="61" column="13" endline="61" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+    <method name="should_get_value_c" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec+When_c_is_bigger_than_a_and_a_is_bigger_than_c">
+      <seqpnt visitcount="1" line="66" column="17" endline="66" endcolumn="46" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="67" column="13" endline="67" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+    <method name="Establish_context" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec+When_c_is_bigger_than_b_and_b_is_bigger_than_a">
+      <seqpnt visitcount="1" line="74" column="17" endline="74" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="75" column="17" endline="75" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="76" column="17" endline="76" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="77" column="17" endline="77" endcolumn="38" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="78" column="13" endline="78" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+    <method name="should_get_value_c" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec+When_c_is_bigger_than_b_and_b_is_bigger_than_a">
+      <seqpnt visitcount="1" line="83" column="17" endline="83" endcolumn="46" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="84" column="13" endline="84" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+    <method name="Establish_context" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec+When_calling_SemiCoverage_with_a_larger_than_b">
+      <seqpnt visitcount="1" line="91" column="17" endline="91" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="92" column="17" endline="92" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="93" column="17" endline="93" endcolumn="24" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="94" column="17" endline="94" endcolumn="38" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="95" column="13" endline="95" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+    <method name="Because_of" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec+When_calling_SemiCoverage_with_a_larger_than_b">
+      <seqpnt visitcount="1" line="99" column="17" endline="99" endcolumn="61" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="100" column="13" endline="100" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+    <method name="should_get_value_a" excluded="false" instrumented="true" class="Example.Specs.TestAssemblySpec+When_calling_SemiCoverage_with_a_larger_than_b">
+      <seqpnt visitcount="1" line="106" column="17" endline="106" endcolumn="46" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+      <seqpnt visitcount="1" line="107" column="13" endline="107" endcolumn="14" excluded="false" document="d:\Code\crap4n\src\Example\Specs\TestAssemblySpec.cs" />
+    </method>
+  </module>
+</coverage>

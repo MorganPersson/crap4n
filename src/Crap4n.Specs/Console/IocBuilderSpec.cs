@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using NBehave.Spec.NUnit;
+using Context = NUnit.Framework.TestFixtureAttribute;
 
 namespace Crap4n.Specs.Console
 {

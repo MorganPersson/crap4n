@@ -60,6 +60,9 @@
     <Compile Include="CodeMetrics.cs" />
     <Compile Include="Crap.cs" />
     <Compile Include="CrapService.cs" />
+    <Compile Include="FileParser\CodeCoverageXmlNodeParser.cs" />
+    <Compile Include="FileParser\NCover3FileParser.cs" />
+    <Compile Include="FileParser\NCoverFileParser.cs" />
     <Compile Include="IFileParser.cs" />
     <Compile Include="IoCBuilder.cs" />
     <Compile Include="IXmlFileLoader.cs" />

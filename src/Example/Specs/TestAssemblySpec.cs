@@ -1,11 +1,10 @@
 using NBehave.Spec.NUnit;
 using NUnit.Framework;
-using TestAssembly;
 
-namespace Spec
+namespace Example.Specs
 {
     [TestFixture]
-    public abstract class TestAssemblySpec : SpecBase<Tested>
+    public abstract class TestAssemblySpec : SpecBase<Example>
     {
         private int _a;
         private int _b;
@@ -19,12 +18,12 @@ namespace Spec
 
         public class When_a_is_bigger_than_b_and_c : TestAssemblySpec
         {
-            protected override Tested Establish_context()
+            protected override Example Establish_context()
             {
                 _a = 3;
                 _b = 2;
                 _c = 1;
-                return new Tested();
+                return new Example();
             }
 
             [Specification]
@@ -36,12 +35,12 @@ namespace Spec
 
         public class When_b_is_bigger_than_a_and_c : TestAssemblySpec
         {
-            protected override Tested Establish_context()
+            protected override Example Establish_context()
             {
                 _a = 3;
                 _b = 4;
                 _c = 1;
-                return new Tested();
+                return new Example();
             }
 
             [Specification]
@@ -53,12 +52,12 @@ namespace Spec
 
         public class When_c_is_bigger_than_a_and_a_is_bigger_than_c : TestAssemblySpec
         {
-            protected override Tested Establish_context()
+            protected override Example Establish_context()
             {
                 _a = 3;
                 _b = 2;
                 _c = 5;
-                return new Tested();
+                return new Example();
             }
 
             [Specification]
@@ -70,12 +69,12 @@ namespace Spec
 
         public class When_c_is_bigger_than_b_and_b_is_bigger_than_a : TestAssemblySpec
         {
-            protected override Tested Establish_context()
+            protected override Example Establish_context()
             {
                 _a = 3;
                 _b = 4;
                 _c = 5;
-                return new Tested();
+                return new Example();
             }
 
             [Specification]
@@ -87,12 +86,12 @@ namespace Spec
 
         public class When_calling_SemiCoverage_with_a_larger_than_b : TestAssemblySpec
         {
-            protected override Tested Establish_context()
+            protected override Example Establish_context()
             {
                 _a = 3;
                 _b = 1;
                 _c = 0;
-                return new Tested();
+                return new Example();
             }
 
             protected override void Because_of()

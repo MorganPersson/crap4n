@@ -28,7 +28,7 @@ namespace Crap4n.Specs
         public class When_file_used_is_not_PartCover_file : PartCoverFileParserSpec
         {
             [Specification]
-            public void Should_say_file_is_PartCover_result_file()
+            public void Should_say_file_is_not_PartCover_result_file()
             {
                 Sut.CanParseFile(SourceMonitorFileParserSpec.SourceMonitorFile).ShouldBeFalse();
             }
@@ -50,7 +50,7 @@ namespace Crap4n.Specs
                          where m.Method == "CompleteCoverage"
                          select m.NameSpace;
                 ns.Count().ShouldEqual(1);
-                ns.First().ShouldEqual("TestAssembly");
+                ns.First().ShouldEqual("Example");
             }
 
             [Specification]
@@ -60,7 +60,7 @@ namespace Crap4n.Specs
                          where m.Method == "CompleteCoverage"
                          select m.Class;
                 ns.Count().ShouldEqual(1);
-                ns.First().ShouldEqual("Tested");
+                ns.First().ShouldEqual("Example");
             }
 
             [Specification]
@@ -98,34 +98,34 @@ namespace Crap4n.Specs
 
             protected override void Because_of()
             {
-                _coverage = Sut.ParseFile("PartCoverResultWithExplicitInterface.xml");
+                _coverage = Sut.ParseFile(PartCoverFile);
             }
 
             [Specification]
             public void Should_get_namespace()
             {
                 var ns = from m in _coverage
-                         where m.Method == "DoStuff"
+                         where m.Method == "FooMethod"
                          select m.NameSpace;
                 ns.Count().ShouldEqual(1);
-                ns.First().ShouldEqual("TestAssembly");
+                ns.First().ShouldEqual("Example");
             }
 
             [Specification]
             public void Should_get_class_name()
             {
                 var ns = from m in _coverage
-                         where m.Method == "DoStuff"
+                         where m.Method == "FooMethod"
                          select m.Class;
                 ns.Count().ShouldEqual(1);
-                ns.First().ShouldEqual("Tested");
+                ns.First().ShouldEqual("Example");
             }
 
             [Specification]
             public void Should_get_Method_name()
             {
                 var methodName = from m in _coverage
-                                 where m.Method == "DoStuff"
+                                 where m.Method == "FooMethod"
                                  select m.Method;
                 methodName.Count().ShouldEqual(1);
             }
@@ -135,10 +135,10 @@ namespace Crap4n.Specs
             public void Should_get_signature()
             {
                 var methodName = from m in _coverage
-                                 where m.Method == "DoStuff"
+                                 where m.Method == "FooMethod"
                                  select m.MethodSignature;
                 methodName.Count().ShouldEqual(1);
-                methodName.First().ShouldEqual("Foo.Bar.SomeClass");
+                methodName.First().ShouldEqual("int  (int)");
             }
         }
     }

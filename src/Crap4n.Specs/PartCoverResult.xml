@@ -1,90 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PartCoverReport ver="2.2.0.34630" exitCode="0">
-  <file id="1" url="C:\Code\crap4n.svn\src\TestAssembly\Tested.cs" />
-  <type asm="TestAssembly" name="TestAssembly.Tested" flags="1048577">
-    <method name=".ctor" sig="void  ()" flags="6278" iflags="0">
+  <file id="1" url="d:\Code\crap4n\src\Example\Tested.cs" />
+  <type asm="Example" name="Example.Example" flags="1048577">
+    <method name="BarMethod" sig="int  (int)" flags="486" iflags="0">
       <code>
-        <pt visit="5" pos="6" len="1" />
-        <pt visit="5" pos="0" len="6" />
+        <pt visit="0" pos="7" len="2" fid="1" sl="65" sc="3" el="65" ec="4" />
+        <pt visit="0" pos="1" len="6" fid="1" sl="64" sc="4" el="64" ec="15" />
+        <pt visit="0" pos="0" len="1" fid="1" sl="63" sc="3" el="63" ec="4" />
       </code>
     </method>
-    <method name="CompleteCoverage" sig="int  (int, int, int)" flags="134" iflags="0">
+    <method name="Example.IFoo.set_FooProp" sig="void  (int)" flags="2529" iflags="0">
       <code>
-        <pt visit="4" pos="51" len="2" fid="1" sl="42" sc="9" el="42" ec="10" />
-        <pt visit="1" pos="47" len="4" fid="1" sl="41" sc="13" el="41" ec="22" />
-        <pt visit="1" pos="43" len="4" fid="1" sl="40" sc="17" el="40" ec="26" />
-        <pt visit="2" pos="40" len="3" />
-        <pt visit="2" pos="32" len="8" fid="1" sl="39" sc="13" el="39" ec="23" />
-        <pt visit="1" pos="28" len="4" fid="1" sl="37" sc="17" el="37" ec="26" />
-        <pt visit="1" pos="24" len="4" fid="1" sl="36" sc="21" el="36" ec="30" />
-        <pt visit="2" pos="21" len="3" />
-        <pt visit="2" pos="13" len="8" fid="1" sl="35" sc="17" el="35" ec="27" />
-        <pt visit="2" pos="12" len="1" fid="1" sl="34" sc="13" el="34" ec="14" />
-        <pt visit="4" pos="9" len="3" />
-        <pt visit="4" pos="1" len="8" fid="1" sl="33" sc="13" el="33" ec="23" />
-        <pt visit="4" pos="0" len="1" fid="1" sl="32" sc="9" el="32" ec="10" />
-      </code>
-    </method>
-    <method name="SemiCoverage" sig="int  (int, int, int)" flags="134" iflags="0">
-      <code>
-        <pt visit="1" pos="51" len="2" fid="1" sl="29" sc="9" el="29" ec="10" />
-        <pt visit="0" pos="47" len="4" fid="1" sl="28" sc="13" el="28" ec="22" />
-        <pt visit="0" pos="43" len="4" fid="1" sl="27" sc="17" el="27" ec="26" />
-        <pt visit="0" pos="40" len="3" />
-        <pt visit="0" pos="32" len="8" fid="1" sl="26" sc="13" el="26" ec="23" />
-        <pt visit="0" pos="28" len="4" fid="1" sl="24" sc="17" el="24" ec="26" />
-        <pt visit="1" pos="24" len="4" fid="1" sl="23" sc="21" el="23" ec="30" />
-        <pt visit="1" pos="21" len="3" />
-        <pt visit="1" pos="13" len="8" fid="1" sl="22" sc="17" el="22" ec="27" />
-        <pt visit="1" pos="12" len="1" fid="1" sl="21" sc="13" el="21" ec="14" />
-        <pt visit="1" pos="9" len="3" />
-        <pt visit="1" pos="1" len="8" fid="1" sl="20" sc="13" el="20" ec="23" />
-        <pt visit="1" pos="0" len="1" fid="1" sl="19" sc="9" el="19" ec="10" />
+        <pt visit="0" pos="0" len="8" />
       </code>
     </method>
     <method name="NoCoverage" sig="int  (int, int, int)" flags="134" iflags="0">
       <code>
-        <pt visit="0" pos="51" len="2" fid="1" sl="16" sc="9" el="16" ec="10" />
-        <pt visit="0" pos="47" len="4" fid="1" sl="15" sc="13" el="15" ec="22" />
-        <pt visit="0" pos="43" len="4" fid="1" sl="14" sc="17" el="14" ec="26" />
+        <pt visit="0" pos="51" len="2" fid="1" sl="16" sc="3" el="16" ec="4" />
+        <pt visit="0" pos="47" len="4" fid="1" sl="15" sc="4" el="15" ec="13" />
+        <pt visit="0" pos="43" len="4" fid="1" sl="14" sc="5" el="14" ec="14" />
         <pt visit="0" pos="40" len="3" />
-        <pt visit="0" pos="32" len="8" fid="1" sl="13" sc="13" el="13" ec="23" />
-        <pt visit="0" pos="28" len="4" fid="1" sl="11" sc="17" el="11" ec="26" />
-        <pt visit="0" pos="24" len="4" fid="1" sl="10" sc="21" el="10" ec="30" />
+        <pt visit="0" pos="32" len="8" fid="1" sl="13" sc="4" el="13" ec="14" />
+        <pt visit="0" pos="28" len="4" fid="1" sl="11" sc="5" el="11" ec="14" />
+        <pt visit="0" pos="24" len="4" fid="1" sl="10" sc="6" el="10" ec="15" />
         <pt visit="0" pos="21" len="3" />
-        <pt visit="0" pos="13" len="8" fid="1" sl="9" sc="17" el="9" ec="27" />
-        <pt visit="0" pos="12" len="1" fid="1" sl="8" sc="13" el="8" ec="14" />
+        <pt visit="0" pos="13" len="8" fid="1" sl="9" sc="5" el="9" ec="15" />
+        <pt visit="0" pos="12" len="1" fid="1" sl="8" sc="4" el="8" ec="5" />
         <pt visit="0" pos="9" len="3" />
-        <pt visit="0" pos="1" len="8" fid="1" sl="7" sc="13" el="7" ec="23" />
-        <pt visit="0" pos="0" len="1" fid="1" sl="6" sc="9" el="6" ec="10" />
+        <pt visit="0" pos="1" len="8" fid="1" sl="7" sc="4" el="7" ec="14" />
+        <pt visit="0" pos="0" len="1" fid="1" sl="6" sc="3" el="6" ec="4" />
+      </code>
+    </method>
+    <method name=".ctor" sig="void  ()" flags="6278" iflags="0">
+      <code>
+        <pt visit="5" pos="7" len="8" />
+        <pt visit="5" pos="0" len="7" fid="1" sl="55" sc="3" el="55" ec="28" />
+      </code>
+    </method>
+    <method name="set_BarProp" sig="void  (int)" flags="2534" iflags="0">
+      <code>
+        <pt visit="0" pos="8" len="1" fid="1" sl="59" sc="28" el="59" ec="29" />
+        <pt visit="0" pos="1" len="7" fid="1" sl="59" sc="10" el="59" ec="27" />
+        <pt visit="0" pos="0" len="1" fid="1" sl="59" sc="8" el="59" ec="9" />
+      </code>
+    </method>
+    <method name="Example.IFoo.FooMethod" sig="int  (int)" flags="481" iflags="0">
+      <code>
+        <pt visit="0" pos="7" len="2" fid="1" sl="53" sc="3" el="53" ec="4" />
+        <pt visit="0" pos="1" len="6" fid="1" sl="52" sc="4" el="52" ec="17" />
+        <pt visit="0" pos="0" len="1" fid="1" sl="51" sc="3" el="51" ec="4" />
+      </code>
+    </method>
+    <method name="Example.IFoo.get_FooProp" sig="int  ()" flags="2529" iflags="0">
+      <code>
+        <pt visit="0" pos="9" len="2" />
+        <pt visit="0" pos="0" len="9" />
+      </code>
+    </method>
+    <method name="SemiCoverage" sig="int  (int, int, int)" flags="134" iflags="0">
+      <code>
+        <pt visit="1" pos="51" len="2" fid="1" sl="29" sc="3" el="29" ec="4" />
+        <pt visit="0" pos="47" len="4" fid="1" sl="28" sc="4" el="28" ec="13" />
+        <pt visit="0" pos="43" len="4" fid="1" sl="27" sc="5" el="27" ec="14" />
+        <pt visit="0" pos="40" len="3" />
+        <pt visit="0" pos="32" len="8" fid="1" sl="26" sc="4" el="26" ec="14" />
+        <pt visit="0" pos="28" len="4" fid="1" sl="24" sc="5" el="24" ec="14" />
+        <pt visit="1" pos="24" len="4" fid="1" sl="23" sc="6" el="23" ec="15" />
+        <pt visit="1" pos="21" len="3" />
+        <pt visit="1" pos="13" len="8" fid="1" sl="22" sc="5" el="22" ec="15" />
+        <pt visit="1" pos="12" len="1" fid="1" sl="21" sc="4" el="21" ec="5" />
+        <pt visit="1" pos="9" len="3" />
+        <pt visit="1" pos="1" len="8" fid="1" sl="20" sc="4" el="20" ec="14" />
+        <pt visit="1" pos="0" len="1" fid="1" sl="19" sc="3" el="19" ec="4" />
+      </code>
+    </method>
+    <method name="get_BarProp" sig="int  ()" flags="2534" iflags="0">
+      <code>
+        <pt visit="0" pos="10" len="2" fid="1" sl="58" sc="27" el="58" ec="28" />
+        <pt visit="0" pos="1" len="9" fid="1" sl="58" sc="10" el="58" ec="26" />
+        <pt visit="0" pos="0" len="1" fid="1" sl="58" sc="8" el="58" ec="9" />
+      </code>
+    </method>
+    <method name="CompleteCoverage" sig="int  (int, int, int)" flags="134" iflags="0">
+      <code>
+        <pt visit="4" pos="51" len="2" fid="1" sl="42" sc="3" el="42" ec="4" />
+        <pt visit="1" pos="47" len="4" fid="1" sl="41" sc="4" el="41" ec="13" />
+        <pt visit="1" pos="43" len="4" fid="1" sl="40" sc="5" el="40" ec="14" />
+        <pt visit="2" pos="40" len="3" />
+        <pt visit="2" pos="32" len="8" fid="1" sl="39" sc="4" el="39" ec="14" />
+        <pt visit="1" pos="28" len="4" fid="1" sl="37" sc="5" el="37" ec="14" />
+        <pt visit="1" pos="24" len="4" fid="1" sl="36" sc="6" el="36" ec="15" />
+        <pt visit="2" pos="21" len="3" />
+        <pt visit="2" pos="13" len="8" fid="1" sl="35" sc="5" el="35" ec="15" />
+        <pt visit="2" pos="12" len="1" fid="1" sl="34" sc="4" el="34" ec="5" />
+        <pt visit="4" pos="9" len="3" />
+        <pt visit="4" pos="1" len="8" fid="1" sl="33" sc="4" el="33" ec="14" />
+        <pt visit="4" pos="0" len="1" fid="1" sl="32" sc="3" el="32" ec="4" />
       </code>
     </method>
   </type>
   <run>
     <tracker>
-      <message tm="633819053404843750">Start target</message>
-      <message tm="633819053404843750">open driver pipe</message>
-      <message tm="633819053404843750">modify target environment variables</message>
-      <message tm="633819053404843750">create target process</message>
-      <message tm="633819053404843750">wait for driver connection</message>
-      <message tm="633819053405156250">driver connected successfully</message>
-      <message tm="633819053405156250">send rules to the driver</message>
-      <message tm="633819053405156250">wait for rules confirm</message>
-      <message tm="633819053405156250">Wait results</message>
-      <message tm="633819053420781250">instrument data is being received</message>
-      <message tm="633819053420781250">InstrumentDataReceiveCountersBegin</message>
-      <message tm="633819053420781250">assembly count: 1</message>
-      <message tm="633819053420781250">load assembly TestAssembly (1 types)</message>
-      <message tm="633819053420937500">InstrumentDataReceiveCountersEnd</message>
-      <message tm="633819053420937500">file list is being received</message>
-      <message tm="633819053420937500">1 files to load</message>
-      <message tm="633819053420937500">file list load is complete</message>
-      <message tm="633819053420937500">instrument data load complete</message>
-      <message tm="633819053420937500">functions loading is being started</message>
-      <message tm="633819053420937500">functions count 0</message>
-      <message tm="633819053420937500">functions loading is complete</message>
-      <message tm="633819053420937500">request target shutdown</message>
-      <message tm="633819053427187500">Walk results</message>
+      <message tm="633899023979687500">Start target</message>
+      <message tm="633899023979687500">open driver pipe</message>
+      <message tm="633899023979687500">modify target environment variables</message>
+      <message tm="633899023979687500">create target process</message>
+      <message tm="633899023979843750">wait for driver connection</message>
+      <message tm="633899023980625000">driver connected successfully</message>
+      <message tm="633899023980625000">send rules to the driver</message>
+      <message tm="633899023980625000">wait for rules confirm</message>
+      <message tm="633899023980625000">Wait results</message>
+      <message tm="633899024022031250">instrument data is being received</message>
+      <message tm="633899024022031250">InstrumentDataReceiveCountersBegin</message>
+      <message tm="633899024022187500">assembly count: 1</message>
+      <message tm="633899024022187500">load assembly Example (1 types)</message>
+      <message tm="633899024022343750">InstrumentDataReceiveCountersEnd</message>
+      <message tm="633899024022343750">file list is being received</message>
+      <message tm="633899024022343750">1 files to load</message>
+      <message tm="633899024022343750">file list load is complete</message>
+      <message tm="633899024022343750">instrument data load complete</message>
+      <message tm="633899024022343750">functions loading is being started</message>
+      <message tm="633899024022343750">functions count 0</message>
+      <message tm="633899024022343750">functions loading is complete</message>
+      <message tm="633899024022343750">request target shutdown</message>
+      <message tm="633899024022500000">Walk results</message>
     </tracker>
     <log />
   </run>
