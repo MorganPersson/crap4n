@@ -24,8 +24,101 @@
       <metric_name id="M14" type="average">Average Complexity</metric_name>
     </metric_names>
     <checkpoints checkpoint_count="1">
-      <checkpoint checkpoint_name="Checkpoint2" checkpoint_date="2009-09-30">
+      <checkpoint checkpoint_name="Checkpoint7" checkpoint_date="2009-10-05">
         <files file_count="2">
+          <file file_name="Example.cs">
+            <metrics metric_count="15">
+              <metric id="M0">75</metric>
+              <metric id="M1">43</metric>
+              <metric id="M2">0.0</metric>
+              <metric id="M3">0.0</metric>
+              <metric id="M4">1</metric>
+              <metric id="M5">10.00</metric>
+              <metric id="M6">0.20</metric>
+              <metric id="M7">2.60</metric>
+              <metric id="M8">8</metric>
+              <metric id="M9">Example.NoCoverage()</metric>
+              <metric id="M10">4</metric>
+              <metric id="M11">12</metric>
+              <metric id="M12">3</metric>
+              <metric id="M13">1.86</metric>
+              <metric id="M14">1.90</metric>
+            </metrics>
+            <method_metrics method_count="10">
+              <method  name="Example.BarMethod()" line="65">
+                <complexity>1</complexity>
+                <statements>1</statements>
+                <maximum_depth>2</maximum_depth>
+                <calls>0</calls>
+              </method>
+              <method  name="Example.BarProp.get()" line="62">
+                <complexity>1</complexity>
+                <statements>1</statements>
+                <maximum_depth>3</maximum_depth>
+                <calls>0</calls>
+              </method>
+              <method  name="Example.BarProp.set()" line="63">
+                <complexity>1</complexity>
+                <statements>1</statements>
+                <maximum_depth>3</maximum_depth>
+                <calls>0</calls>
+              </method>
+              <method  name="Example.CompleteCoverage()" line="34">
+                <complexity>4</complexity>
+                <statements>7</statements>
+                <maximum_depth>3</maximum_depth>
+                <calls>0</calls>
+              </method>
+              <method  name="Example.GenericMethod&lt;T&gt;()" line="70">
+                <complexity>1</complexity>
+                <statements>1</statements>
+                <maximum_depth>2</maximum_depth>
+                <calls>2</calls>
+              </method>
+              <method  name="Example.IFoo.FooMethod()" line="53">
+                <complexity>1</complexity>
+                <statements>1</statements>
+                <maximum_depth>2</maximum_depth>
+                <calls>0</calls>
+              </method>
+              <method  name="Example.IFoo.get()" line="50">
+                <complexity>1</complexity>
+                <statements>0</statements>
+                <maximum_depth>0</maximum_depth>
+                <calls>0</calls>
+              </method>
+              <method  name="Example.IFoo.set()" line="51">
+                <complexity>1</complexity>
+                <statements>0</statements>
+                <maximum_depth>0</maximum_depth>
+                <calls>0</calls>
+              </method>
+              <method  name="Example.NoCoverage()" line="8">
+                <complexity>4</complexity>
+                <statements>7</statements>
+                <maximum_depth>3</maximum_depth>
+                <calls>0</calls>
+              </method>
+              <method  name="Example.SemiCoverage()" line="21">
+                <complexity>4</complexity>
+                <statements>7</statements>
+                <maximum_depth>3</maximum_depth>
+                <calls>0</calls>
+              </method>
+            </method_metrics>
+            <block_depths depth_count="10">
+              <block_depth level="0">4</block_depth>
+              <block_depth level="1">9</block_depth>
+              <block_depth level="2">19</block_depth>
+              <block_depth level="3">11</block_depth>
+              <block_depth level="4">0</block_depth>
+              <block_depth level="5">0</block_depth>
+              <block_depth level="6">0</block_depth>
+              <block_depth level="7">0</block_depth>
+              <block_depth level="8">0</block_depth>
+              <block_depth level="9+">0</block_depth>
+            </block_depths>
+          </file>
           <file file_name="Interface.cs">
             <metrics metric_count="15">
               <metric id="M0">14</metric>
@@ -49,93 +142,6 @@
               <block_depth level="1">4</block_depth>
               <block_depth level="2">4</block_depth>
               <block_depth level="3">0</block_depth>
-              <block_depth level="4">0</block_depth>
-              <block_depth level="5">0</block_depth>
-              <block_depth level="6">0</block_depth>
-              <block_depth level="7">0</block_depth>
-              <block_depth level="8">0</block_depth>
-              <block_depth level="9+">0</block_depth>
-            </block_depths>
-          </file>
-          <file file_name="Tested.cs">
-            <metrics metric_count="15">
-              <metric id="M0">67</metric>
-              <metric id="M1">39</metric>
-              <metric id="M2">0.0</metric>
-              <metric id="M3">0.0</metric>
-              <metric id="M4">1</metric>
-              <metric id="M5">9.00</metric>
-              <metric id="M6">0.00</metric>
-              <metric id="M7">2.78</metric>
-              <metric id="M8">5</metric>
-              <metric id="M9">Example.NoCoverage()</metric>
-              <metric id="M10">4</metric>
-              <metric id="M11">9</metric>
-              <metric id="M12">3</metric>
-              <metric id="M13">1.97</metric>
-              <metric id="M14">2.00</metric>
-            </metrics>
-            <method_metrics method_count="9">
-              <method  name="Example.BarMethod()" line="62">
-                <complexity>1</complexity>
-                <statements>1</statements>
-                <maximum_depth>2</maximum_depth>
-                <calls>0</calls>
-              </method>
-              <method  name="Example.BarProp.get()" line="59">
-                <complexity>1</complexity>
-                <statements>1</statements>
-                <maximum_depth>3</maximum_depth>
-                <calls>0</calls>
-              </method>
-              <method  name="Example.BarProp.set()" line="60">
-                <complexity>1</complexity>
-                <statements>1</statements>
-                <maximum_depth>3</maximum_depth>
-                <calls>0</calls>
-              </method>
-              <method  name="Example.CompleteCoverage()" line="31">
-                <complexity>4</complexity>
-                <statements>7</statements>
-                <maximum_depth>3</maximum_depth>
-                <calls>0</calls>
-              </method>
-              <method  name="Example.IFoo.FooMethod()" line="50">
-                <complexity>1</complexity>
-                <statements>1</statements>
-                <maximum_depth>2</maximum_depth>
-                <calls>0</calls>
-              </method>
-              <method  name="Example.IFoo.get()" line="47">
-                <complexity>1</complexity>
-                <statements>0</statements>
-                <maximum_depth>0</maximum_depth>
-                <calls>0</calls>
-              </method>
-              <method  name="Example.IFoo.set()" line="48">
-                <complexity>1</complexity>
-                <statements>0</statements>
-                <maximum_depth>0</maximum_depth>
-                <calls>0</calls>
-              </method>
-              <method  name="Example.NoCoverage()" line="5">
-                <complexity>4</complexity>
-                <statements>7</statements>
-                <maximum_depth>3</maximum_depth>
-                <calls>0</calls>
-              </method>
-              <method  name="Example.SemiCoverage()" line="18">
-                <complexity>4</complexity>
-                <statements>7</statements>
-                <maximum_depth>3</maximum_depth>
-                <calls>0</calls>
-              </method>
-            </method_metrics>
-            <block_depths depth_count="10">
-              <block_depth level="0">2</block_depth>
-              <block_depth level="1">8</block_depth>
-              <block_depth level="2">18</block_depth>
-              <block_depth level="3">11</block_depth>
               <block_depth level="4">0</block_depth>
               <block_depth level="5">0</block_depth>
               <block_depth level="6">0</block_depth>

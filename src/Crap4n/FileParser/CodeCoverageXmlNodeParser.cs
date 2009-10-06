@@ -10,7 +10,7 @@ namespace Crap4n.FileParser
 		protected abstract List<XmlNode> GetAllNodes(XmlNode node);
 		protected abstract void RemoveStartAndEndBrace(List<XmlNode> nodes);
 
-		public bool IsValidMethod(XmlNode method)
+		public virtual bool IsValidMethod(XmlNode method)
 		{
 			return GetValidNodes(method).Count > 0
 				|| GetMethodName(method) != ".ctor";
@@ -29,7 +29,7 @@ namespace Crap4n.FileParser
 			return name.Substring(0, lastDot);
 		}
 		
-		public string GetMethodName(XmlNode node)
+		public virtual string GetMethodName(XmlNode node)
 		{
 			string name = node.Attributes["name"].Value;
 			int dotPos = name.LastIndexOf('.');

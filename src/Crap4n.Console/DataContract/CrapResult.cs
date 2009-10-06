@@ -38,7 +38,7 @@ namespace Crap4n.Console.DataContract
 
             crapResult.Summary = new Summary
                                      {
-                                         CrapLoad = Math.Round(crappyMethods.Sum(c => c.CrapLoad()), 2),
+                                         CrapLoad = Math.Round(crappyMethods.Sum(c => c.CrapLoad()), 1),
                                          TotalMethods = crap.Count(),
                                          CrappyMethods = crappyMethods.Count(),
                                          CrapThreshold = crapThreshold
@@ -56,10 +56,10 @@ namespace Crap4n.Console.DataContract
                                          Class = method.Class,
                                          MethodName = method.Method,
                                          MethodSignature = method.MethodSignature,
-                                         CodeCoverage = Math.Round(method.CodeCoverage, 2),
+                                         CodeCoverage = Math.Round(method.CodeCoverage, 1),
                                          CyclomaticComplexity = method.CyclomaticComplexity,
-                                         CrapLoad = Math.Round(method.CrapLoad(), 2),
-                                         CrapValue = Math.Round(method.Value, 2),
+                                         CrapLoad = Math.Round(method.CrapLoad(), 1),
+                                         CrapValue = Math.Round(method.Value, 1),
                                          SourceFile = new SourceFile { FileName = method.SourceFile, LineNumber = method.SourceFileLineNumber }
                                      };
                 methods.Add(crapMethod);

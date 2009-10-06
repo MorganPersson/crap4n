@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace Crap4n.FileParser
@@ -48,6 +49,13 @@ namespace Crap4n.FileParser
 	
 	public class PartCoverXmlNodeParser : CodeCoverageXmlNodeParser
 	{
+		public override bool IsValidMethod(XmlNode method)
+		{
+			if (method.Attributes["name"].Value.StartsWith("<"))
+				return false;
+			return base.IsValidMethod(method);
+		}
+		
 		public string GetMethodSignature(XmlNode method)
 		{
 			return  GetMethodSignature(method, "sig");

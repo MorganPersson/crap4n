@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Example
 {
 	public class Example : IFoo, IBar
@@ -62,6 +65,11 @@ namespace Example
 		public int BarMethod(int a)
 		{
 			return a-1;
+		}
+	
+		public T GenericMethod<T>(int a, IEnumerable<T> items)
+		{
+			return items.Skip(a).FirstOrDefault();
 		}
 	}
 }

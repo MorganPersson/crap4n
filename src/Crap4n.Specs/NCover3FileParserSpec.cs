@@ -218,7 +218,7 @@ namespace Crap4n.Specs
 						where m.Method == "CompleteCoverage"
 						select m.SourceFile;
 					name.Count().ShouldEqual(1);
-					name.First().ShouldEqual("Tested.cs");
+					name.First().ShouldEqual("Example.cs");
 				}
 
 				[Specification]
@@ -228,7 +228,7 @@ namespace Crap4n.Specs
 						where m.Method == "CompleteCoverage"
 						select m.SourceFileLineNumber;
 					name.Count().ShouldEqual(1);
-					name.First().ShouldEqual(31);
+					name.First().ShouldEqual(34);
 				}
 			}
 

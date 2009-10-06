@@ -48,7 +48,7 @@ namespace Crap4n.Specs
             [Specification]
             public void Should_have_all_results()
             {
-                _crapResult.Count().ShouldEqual(9);
+                _crapResult.Count().ShouldEqual(10);
             }
         }
     }

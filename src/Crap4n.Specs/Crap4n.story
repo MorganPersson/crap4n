@@ -9,7 +9,7 @@ Scenario: PartCover and SourceMonitor 2.5
 	When the CRAP metric is calculated and stored in crapResult.xml
 	Then I should get a crapResult.xml result file 
 		And the method CompleteCoverage should have a CRAP value of 4
-		And the method SemiCoverage should have a CRAP value of 6.99
+		And the method SemiCoverage should have a CRAP value of 7
 		And the method NoCoverage should have a CRAP value of 20
 
 Scenario: NCover 1.5.8 and SourceMonitor 2.5
@@ -18,7 +18,7 @@ Scenario: NCover 1.5.8 and SourceMonitor 2.5
 	When the CRAP metric is calculated and stored in crapResult.xml
 	Then I should get a crapResult.xml result file 
 		And the method CompleteCoverage should have a CRAP value of 4
-		And the method SemiCoverage should have a CRAP value of 6.99
+		And the method SemiCoverage should have a CRAP value of 7
 		And the method NoCoverage should have a CRAP value of 20
 
 Scenario: NCover 3.2 and SourceMonitor 2.5
@@ -27,7 +27,7 @@ Scenario: NCover 3.2 and SourceMonitor 2.5
 	When the CRAP metric is calculated and stored in crapResult.xml
 	Then I should get a crapResult.xml result file 
 		And the method CompleteCoverage should have a CRAP value of 4
-		And the method SemiCoverage should have a CRAP value of 6.99
+		And the method SemiCoverage should have a CRAP value of 7
 		And the method NoCoverage should have a CRAP value of 20
 
 Scenario: NCover 3.2 only
@@ -36,5 +36,5 @@ Scenario: NCover 3.2 only
 	When the CRAP metric is calculated and stored in crapResult.xml
 	Then I should get a crapResult.xml result file 
 		And the method CompleteCoverage should have a CRAP value of 4
-		And the method SemiCoverage should have a CRAP value of 6.99
+		And the method SemiCoverage should have a CRAP value of 7
 		And the method NoCoverage should have a CRAP value of 20	

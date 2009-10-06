@@ -67,7 +67,6 @@ namespace Crap4n.Specs
 				Percent coverage = _partCoverXmlNodeParser.GetCoveragePercent(node);
 				coverage.Value.ShouldEqual(0);
 			}
-
 		}
 	}
 }
