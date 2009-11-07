@@ -9,7 +9,7 @@ namespace Crap4n.FileParser
 	
 	public class NCover3FileParser : IFileParser<CodeCoverage>, IFileParser<CodeMetrics>
 	{
-		private IXmlFileLoader _xmlFileLoader;
+		private readonly IXmlFileLoader _xmlFileLoader;
 		private readonly NCover3XmlNodeParser _ncover3XmlNodeParser = new NCover3XmlNodeParser();
 		
 		public NCover3FileParser(IXmlFileLoader xmlFileLoader)

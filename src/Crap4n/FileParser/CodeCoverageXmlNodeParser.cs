@@ -72,7 +72,6 @@ namespace Crap4n.FileParser
 		protected bool MethodVisited(XmlNode node)
 		{
 			var ptTempNode = node.SelectNodes("code/pt");
-			var ptNodes = new List<XmlNode>();
 			for (int i = 0; i < ptTempNode.Count; i++)
 			{
 				if (ptTempNode[i].Attributes["visit"] != null

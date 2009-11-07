@@ -86,7 +86,7 @@ namespace Crap4n.FileParser
 			return classAndName.Last().Replace("()", "") + "_" + classAndName[1];
 		}
 
-		private bool IsProperty(string[] classAndName)
+		private bool IsProperty(IEnumerable<string> classAndName)
 		{
 			return classAndName.Last().Equals("get()") || classAndName.Last().Equals("set()");
 		}
