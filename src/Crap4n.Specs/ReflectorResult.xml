@@ -1,0 +1,28 @@
+<Report>
+  <Metric Name="Type">
+    <Type Name="&lt;Module&gt;" CodeSize="0" WeightedCyclomaticComplexity="0" Fields="0" Methods="0" Properties="0" Events="0" NestedTypes="0" Attributes="0" DepthInTree="0" />
+    <Type Name="Example.IFoo" CodeSize="0" WeightedCyclomaticComplexity="-1" Fields="0" Methods="3" Properties="1" Events="0" NestedTypes="0" Attributes="0" DepthInTree="0" />
+    <Type Name="Example.IBar" CodeSize="0" WeightedCyclomaticComplexity="-1" Fields="0" Methods="3" Properties="1" Events="0" NestedTypes="0" Attributes="0" DepthInTree="0" />
+    <Type Name="Example.Example" CodeSize="250" WeightedCyclomaticComplexity="20" Fields="2" Methods="11" Properties="2" Events="0" NestedTypes="0" Attributes="0" DepthInTree="1" />
+    <Type Name="Example.Specs.TestAssemblySpec" CodeSize="439" WeightedCyclomaticComplexity="2" Fields="4" Methods="2" Properties="0" Events="0" NestedTypes="6" Attributes="1" DepthInTree="3" />
+    <Type Name="&lt;PrivateImplementationDetails&gt;{DED1B9CF-D92D-41E0-8259-6A6C9953C9C7}" CodeSize="0" WeightedCyclomaticComplexity="0" Fields="1" Methods="0" Properties="0" Events="0" NestedTypes="1" Attributes="1" DepthInTree="1" />
+  </Metric>
+  <Metric Name="Method">
+    <Method Name="Example.Example.NoCoverage(Int32, Int32, Int32) : Int32" CodeSize="53" CyclomaticComplexity="4" Instructions="40" Locals="2" MaxStack="2" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Example.SemiCoverage(Int32, Int32, Int32) : Int32" CodeSize="53" CyclomaticComplexity="4" Instructions="40" Locals="2" MaxStack="2" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Example.CompleteCoverage(Int32, Int32, Int32) : Int32" CodeSize="53" CyclomaticComplexity="4" Instructions="40" Locals="2" MaxStack="2" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Example.Example.IFoo.get_FooProp() : Int32" CodeSize="11" CyclomaticComplexity="1" Instructions="6" Locals="1" MaxStack="1" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Example.Example.IFoo.set_FooProp(Int32) : Void" CodeSize="8" CyclomaticComplexity="1" Instructions="4" Locals="0" MaxStack="8" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Example.Example.IFoo.FooMethod(Int32) : Int32" CodeSize="9" CyclomaticComplexity="1" Instructions="8" Locals="1" MaxStack="2" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Example.get_BarProp() : Int32" CodeSize="12" CyclomaticComplexity="1" Instructions="7" Locals="1" MaxStack="1" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Example.set_BarProp(Int32) : Void" CodeSize="9" CyclomaticComplexity="1" Instructions="5" Locals="0" MaxStack="8" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Example.BarMethod(Int32) : Int32" CodeSize="9" CyclomaticComplexity="1" Instructions="8" Locals="1" MaxStack="2" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Example.GenericMethod&lt;T&gt;(Int32, IEnumerable&lt;T&gt;) : T" CodeSize="18" CyclomaticComplexity="1" Instructions="9" Locals="1" MaxStack="2" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Example..ctor()" CodeSize="15" CyclomaticComplexity="1" Instructions="7" Locals="0" MaxStack="8" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Specs.TestAssemblySpec.Because_of() : Void" CodeSize="37" CyclomaticComplexity="1" Instructions="13" Locals="0" MaxStack="8" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+    <Method Name="Example.Specs.TestAssemblySpec..ctor()" CodeSize="7" CyclomaticComplexity="1" Instructions="3" Locals="0" MaxStack="8" ExceptionHandlers="0" Throw="0" NewObj="0" Ret="1" CastClass="0" />
+  </Metric>
+  <Metric Name="Module">
+    <Module Name="Example.dll" Size="7168" Types="6" Abstracts="3" EfferentCouplings="0" AfferentCouplings="3" Abstractness="0.5" Instability="0" Distance="0.25" />
+  </Metric>
+</Report>

@@ -34,8 +34,9 @@ namespace Crap4n.Specs.Scenarios
 			_codeMetricsFile = string.Empty;
 			_codeCoverageFile = string.Empty;
 		}
-		
-		[Given(@"a code metrics file (?<fileName>\w+.\w+) from SourceMonitor 2.5")]
+
+        [Given(@"a code metrics file (?<fileName>\w+.\w+) from Reflector")]
+        [Given(@"a code metrics file (?<fileName>\w+.\w+) from SourceMonitor 2.5")]
 		[Given(@"a code metrics file (?<fileName>\w+.\w+) from NCover 3.2.4")]
 		public void Given_a_code_metrics_file(string fileName)
 		{

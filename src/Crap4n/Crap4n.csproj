@@ -63,6 +63,7 @@
     <Compile Include="FileParser\CodeCoverageXmlNodeParser.cs" />
     <Compile Include="FileParser\NCover3FileParser.cs" />
     <Compile Include="FileParser\NCoverFileParser.cs" />
+    <Compile Include="FileParser\ReflectorFileParser.cs" />
     <Compile Include="IFileParser.cs" />
     <Compile Include="IoCBuilder.cs" />
     <Compile Include="IXmlFileLoader.cs" />

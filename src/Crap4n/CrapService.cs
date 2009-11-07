@@ -21,7 +21,7 @@ namespace Crap4n
             Action async = () => codeCoverage = GetCodeCoverage(codeCoverageFileName);
             var asyncResult = async.BeginInvoke(null, null);
             IEnumerable<CodeMetrics> codeMetrics = GetCodeMetrics(codeMetricsFileName);
-            asyncResult.AsyncWaitHandle.WaitOne();
+            async.EndInvoke(asyncResult);
             var merger = new ResultMerger();
             return merger.GetMetrics(codeCoverage, codeMetrics, crapThreshold);
         }

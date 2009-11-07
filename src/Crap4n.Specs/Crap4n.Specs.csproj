@@ -84,6 +84,7 @@
     <Compile Include="PartCoverFileParserSpec.cs" />
     <Compile Include="PartCoverXmlNodeParserSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReflectorFileParserSpec.cs" />
     <Compile Include="ResultMergerSpec.cs" />
     <Compile Include="Steps\Crap4nSteps.cs" />
     <Compile Include="SourceMonitorFileParserSpec.cs" />
@@ -112,6 +113,10 @@
       <Project>{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}</Project>
       <Name>Crap4n</Name>
     </ProjectReference>
-    <Folder Include="Steps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReflectorResult.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>
