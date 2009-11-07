@@ -1,62 +1,89 @@
 ﻿<?xml version="1.0" ?>
 <project name="Crap4n" default="test" xmlns="http://nant.sf.net/schemas/nant.xsd">
+	<loadtasks assembly="lib\NBehave.NAnt.dll" />
+	
 	<property name="solution.dir" value="src" />
 	<property name="build.dir" value="build" />
 	<property name="test.dir" value ="${build.dir}\Debug\UnitTests" />
-  <property name="currentContributors" value="Morgan Persson" />
+	<property name="currentContributors" value="Morgan Persson" />
 	<property name="company.name" value="${project::get-name()}" />
-	<property name="project.fullversion" value="0.1.0.0" dynamic="true" />
+	<property name="project.fullversion" value="0.2.0.0" dynamic="true" />
 	<property name="project.config" value="release" />
 	
 	<!-- User targets -->
-  <target name="full" depends="clean, commonassemblyinfo, test, metrics, dist"
+	<target name="full" depends="clean, commonassemblyinfo, scenarios, metrics, dist"
 	        description="Compiles, tests, and produces distributions" />
-
-  <target name="compile" depends="commonassemblyinfo">
+	
+	<target name="compile" depends="commonassemblyinfo">
 		<exec program="${environment::get-folder-path('System')}\..\Microsoft.NET\Framework\v3.5\msbuild.exe"
 		      commandline="/property:Configuration=AutomatedDebug /v:m src\Crap4n.sln" />
 	</target>
-
-  <target name="metrics" depends="crap" />
-  
-	<target name="test" depends="compile, run-unit-tests"
+	
+	<target name="metrics" depends="crap" />
+	
+	<target name="test" 
+	        depends="compile, run-unit-tests"
 	        description="Compile and run tests" />
-
-  <target name="codecoverage" depends="compile">
-    <mkdir dir="${build.dir}\reports" />
-    <exec program="regsvr32.exe" failonerror="false">
-      <arg value="-s" />
-      <arg value="tools\PartCover\PartCover.CorDriver.dll" />
-    </exec>
-    <exec program="tools\partcover\partcover.exe" failonerror="false">
-      <arg value="--settings" />
-      <arg value="crap4n.partcover.config" />
-    </exec>
-    <exec program="regsvr32.exe" failonerror="false">
-      <arg value="-u" />
-      <arg value="-s" />
-      <arg value="tools\PartCover\PartCover.CorDriver.dll" />
-    </exec>
-  </target>
-
-  <target name="sourcemonitor" depends="init">
-    <mkdir dir="${build.dir}\reports" />
-    <exec program="tools\sourcemonitor\sourcemonitor.exe" failonerror="false">
-      <arg value="/C" />
-      <arg value="crap4n.sourcemonitor.config" />
-    </exec>
-  </target>
-
-  <target name="crap" depends="codecoverage, sourcemonitor">
-    <mkdir dir="${build.dir}\reports" />
-    <exec program="build\debug\Crap4n\Crap4n-console.exe" failonerror="false">
-      <arg value="/cc=build\reports\PartCoverResults.xml" />
-      <arg value="/cm=build\reports\SourceMonitorDetails.xml" />
-      <arg value="/c=10" />
-    </exec>
-  </target>
-
-  <target name="commonassemblyinfo" depends="version, init">
+	
+	<target name="reports" depends="scenarios">
+		<style destdir="${build.dir}\reports"
+		       style="src\xsl\crap4n.xsl"
+		       in="${build.dir}\reports\crap.xml"
+		       out="${build.dir}\crap_${project.fullversion}.htm" />
+		<style destdir="${build.dir}\reports"
+		       style="tools\nbehave\NBehaveResults.xsl"
+		       in="${build.dir}\reports\nbehaveResult.xml"
+		       out="${build.dir}\nbehaveResult_${project.fullversion}.htm" />
+	</target>
+	
+	<target name="scenarios" depends="test">
+		<nbehave xmlOutputFile="${build.dir}\reports\nbehaveResult.xml" 
+				 failBuild="true">
+			<assemblies>
+				<include name="${test.dir}\Crap4n.Specs.dll" />
+			</assemblies>
+			<scenarioFiles>
+				<include name="${test.dir}\**\*.story" />
+			</scenarioFiles>
+		</nbehave>
+	</target>
+	
+	<target name="codecoverage" depends="compile">
+		<mkdir dir="${build.dir}\reports" />
+		<exec program="regsvr32.exe" failonerror="false">
+			<arg value="-s" />
+			<arg value="tools\PartCover\PartCover.CorDriver.dll" />
+		</exec>
+		<exec program="tools\partcover\partcover.exe" failonerror="false">
+			<arg value="--settings" />
+			<arg value="crap4n.partcover.config" />
+		</exec>
+		<exec program="regsvr32.exe" failonerror="false">
+			<arg value="-u" />
+			<arg value="-s" />
+			<arg value="tools\PartCover\PartCover.CorDriver.dll" />
+		</exec>
+	</target>
+	
+	<target name="sourcemonitor" depends="init">
+		<mkdir dir="${build.dir}\reports" />
+		<exec program="tools\sourcemonitor\sourcemonitor.exe" failonerror="false">
+			<arg value="/C" />
+			<arg value="crap4n.sourcemonitor.config" />
+		</exec>
+	</target>
+	
+	<target name="crap" depends="codecoverage, sourcemonitor">
+		<mkdir dir="${build.dir}\reports" />
+		<exec program="build\debug\Crap4n\Crap4n-console.exe" failonerror="false">
+			<arg value="/cc=build\reports\PartCoverResults.xml" />
+			<arg value="/cm=build\reports\SourceMonitorDetails.xml" />
+			<arg value="/c=10" />
+			<arg value="/xml=build\reports\crap.xml" />
+		</exec>
+	</target>
+	
+	<target name="commonassemblyinfo" depends="version, init">
 		<delete file="${solution.dir}/CommonAssemblyInfo.cs" failonerror="false"/>
 		<asminfo output="${solution.dir}/CommonAssemblyInfo.cs" language="CSharp">
 			<imports>
@@ -79,34 +106,34 @@
 			</references>
 		</asminfo>
 	</target>
-
-  <target name="clean" depends="init" description="Delete automated build artifacts">
-    <delete dir="${build.dir}/Debug" if="${directory::exists(build.dir)}"/>
-    <delete dir="${build.dir}/dist" if="${directory::exists(build.dir)}"/>
-    <delete dir="${build.dir}/reports" if="${directory::exists(build.dir)}"/>
-  </target>
-
-  <target name="version" description="mark AssemblyInfo builds with the build number">
-    <if test="${property::exists('build.number')}">
-      <property name="project.fullversion" value="${build.number}" />
-    </if>
-    <echo message="MARKING THIS BUILD AS VERSION ${project.fullversion}" />
-  </target>
-
-  <target name="init" description="Initializes build properties">
-    <tstamp>
-      <formatter property="datetime.buildtime" pattern="yyyy-MM-dd, HH:mm:ss" />
-    </tstamp>
-    <echo message="Current Directory: ${project::get-base-directory()}"/>
-  </target>
-
-  <!-- Internal targets -->
+	
+	<target name="clean" depends="init" description="Delete automated build artifacts">
+		<delete dir="${build.dir}/Debug" if="${directory::exists(build.dir)}"/>
+		<delete dir="${build.dir}/dist" if="${directory::exists(build.dir)}"/>
+		<delete dir="${build.dir}/reports" if="${directory::exists(build.dir)}"/>
+	</target>
+	
+	<target name="version" description="mark AssemblyInfo builds with the build number">
+		<if test="${property::exists('build.number')}">
+			<property name="project.fullversion" value="${build.number}" />
+		</if>
+		<echo message="MARKING THIS BUILD AS VERSION ${project.fullversion}" />
+	</target>
+	
+	<target name="init" description="Initializes build properties">
+		<tstamp>
+			<formatter property="datetime.buildtime" pattern="yyyy-MM-dd, HH:mm:ss" />
+		</tstamp>
+		<echo message="Current Directory: ${project::get-base-directory()}"/>
+	</target>
+	
+	<!-- Internal targets -->
 	<target name="run-unit-tests" depends="teamcity-nunit-addin">
-    <mkdir dir="${build.dir}\reports" />
-    <exec program="nunit-console.exe" basedir="tools\nunit" workingdir="${test.dir}">
+		<mkdir dir="${build.dir}\reports" />
+		<exec program="nunit-console.exe" basedir="tools\nunit" workingdir="${test.dir}">
 			<arg value="Crap4n.Specs.dll" />
 			<arg value="/xml:..\..\reports\UnitTests.xml" />
-      <arg value="/noshadow" />
+			<arg value="/noshadow" />
 		</exec>
 	</target>
 	
@@ -128,8 +155,8 @@
 		<copy todir="${build.dir}\dist">
 			<fileset basedir="${build.dir}\Debug\Crap4n">
 				<include name="**\Crap4n*"/>
-        <include name="**\Autofac.dll"/>
-        <exclude name="**\*.pdb" />
+				<include name="**\Autofac.dll"/>
+				<exclude name="**\*.pdb" />
 			</fileset>
 		</copy>
 		<zip zipfile="${build.dir}\Crap4n_${project.fullversion}.zip">
@@ -145,7 +172,7 @@
 			<arg value="Crap4n.nsi" />
 		</exec>
 	</target>
-	
+
 </project>
 
 
