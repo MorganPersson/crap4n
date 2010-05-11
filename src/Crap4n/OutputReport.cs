@@ -3,16 +3,16 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using Crap4n.Console.DataContract;
+using Crap4n.DataContract;
 
-namespace Crap4n.Console
+namespace Crap4n
 {
 	public class OutputReport
 	{
 		private readonly IEnumerable<Crap> _crapResult;
-		private readonly PlainTextOutput _output;
+		private readonly ITextOutput _output;
 
-		public OutputReport(IEnumerable<Crap> crapResult, PlainTextOutput output)
+		public OutputReport(IEnumerable<Crap> crapResult, ITextOutput output)
 		{
 			_crapResult = crapResult;
 			_output = output;
@@ -30,7 +30,7 @@ namespace Crap4n.Console
 		{
 			double crapLoad = GetCrapLoad(crapThreshold);
 			var crapMethodPercentage = (GetAboveThreshold(crapThreshold).Count() / 1.0 / _crapResult.Count()).ToPercent();
-			_output.WriteLine(string.Format("{0:0.0}% methods are CRAP. The CRAPload number for this project is {1:0.0}", crapMethodPercentage.Value, crapLoad));
+			_output.WriteLine(string.Format("{0:0.0}% methods are CRAP. The CRAPload for this project is {1:0.0}", crapMethodPercentage.Value, crapLoad));
 		}
 
 		private double GetCrapLoad(int crapThreshold)

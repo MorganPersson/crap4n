@@ -46,7 +46,6 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -59,7 +58,12 @@
     <Compile Include="CodeCoverage.cs" />
     <Compile Include="CodeMetrics.cs" />
     <Compile Include="Crap.cs" />
+    <Compile Include="CrapRunner.cs" />
     <Compile Include="CrapService.cs" />
+    <Compile Include="DataContract\CrapMethod.cs" />
+    <Compile Include="DataContract\CrapResult.cs" />
+    <Compile Include="DataContract\SourceFile.cs" />
+    <Compile Include="DataContract\Summary.cs" />
     <Compile Include="FileParser\CodeCoverageXmlNodeParser.cs" />
     <Compile Include="FileParser\NCover3FileParser.cs" />
     <Compile Include="FileParser\NCoverFileParser.cs" />
@@ -70,11 +74,16 @@
     <Compile Include="MetricsBase.cs" />
     <Compile Include="MetricsParserFinder.cs" />
     <Compile Include="FileParser\PartCoverFileParser.cs" />
+    <Compile Include="OutputReport.cs" />
     <Compile Include="Percent.cs" />
     <Compile Include="PercentExtension.cs" />
+    <Compile Include="PlainTextOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultMerger.cs" />
     <Compile Include="FileParser\SourceMonitorFileParser.cs" />
     <Compile Include="XmlFileLoader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataContract" />
   </ItemGroup>
 </Project>

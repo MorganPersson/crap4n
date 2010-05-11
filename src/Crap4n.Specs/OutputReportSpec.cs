@@ -5,7 +5,7 @@ using Crap4n.Console;
 using NBehave.Spec.NUnit;
 using Context = NUnit.Framework.TestFixtureAttribute;
 
-namespace Crap4n.Specs.Console
+namespace Crap4n.Specs
 {
     [Context]
     public class OutputReportSpec : SpecBase<OutputReport>

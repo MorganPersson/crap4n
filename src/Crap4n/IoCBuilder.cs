@@ -9,7 +9,6 @@ namespace Crap4n
 {
     public class IoCBuilder
     {
-
         public IContainer BuildContainer()
         {
             var builder = new ContainerBuilder();
@@ -19,7 +18,8 @@ namespace Crap4n
 
         private void RegisterWithContainer(ContainerBuilder builder)
         {
-            builder.Register<CrapService>().As<CrapService>();
+            builder.Register<CrapRunner>().As<CrapRunner>();
+            builder.Register<CrapService>().As<ICrapService>();
             var asm = typeof(CrapService).Assembly;
 
             builder.RegisterCollection<IFileParser<CodeMetrics>>().As<IEnumerable<IFileParser<CodeMetrics>>>();

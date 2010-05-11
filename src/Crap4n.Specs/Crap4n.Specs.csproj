@@ -8,6 +8,8 @@
     <AssemblyName>Crap4n.Specs</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>C:\Documents and Settings\Morgan\Application Data\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <StartArguments>/f:nant\crap.buil</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug\</OutputPath>
@@ -16,6 +18,8 @@
     <Optimize>False</Optimize>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <StartAction>Program</StartAction>
+    <StartProgram>d:\code\crap4n\tools\nant\nant</StartProgram>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -39,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="NAnt.Core">
+      <HintPath>..\..\tools\nant\NAnt.Core.dll</HintPath>
+    </Reference>
     <Reference Include="NBehave.Narrator.Framework">
       <HintPath>..\..\lib\NBehave.Narrator.Framework.dll</HintPath>
     </Reference>
@@ -56,6 +63,7 @@
       <HintPath>..\..\lib\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -66,26 +74,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Console\OutputReportSpec.cs" />
+    <Compile Include="CrapResultSpec.cs" />
     <Compile Include="Helper\CrapBuilder.cs" />
-    <Compile Include="Console\CrapResultSpec.cs" />
-    <Compile Include="Console\IocBuilderSpec.cs" />
     <Compile Include="Console\ProgamSpec.cs" />
     <Compile Include="CrapServiceSpec.cs" />
     <Compile Include="CrapSpec.cs" />
     <Compile Include="Fake\BarCodeMetricFileParser.cs" />
     <Compile Include="Fake\FooCodeMetricFileParser.cs" />
     <Compile Include="Fake\FooCodeCoverageFileParser.cs" />
+    <Compile Include="IocBuilderSpec.cs" />
     <Compile Include="MetricsParserFinderSpec.cs" />
     <Compile Include="NCover3FileParserSpec.cs" />
     <Compile Include="NCoverFileParserSpec.cs">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="OutputReportSpec.cs" />
     <Compile Include="PartCoverFileParserSpec.cs" />
     <Compile Include="PartCoverXmlNodeParserSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectorFileParserSpec.cs" />
     <Compile Include="ResultMergerSpec.cs" />
+    <Compile Include="Steps\CRap4nNantSteps.cs" />
     <Compile Include="Steps\Crap4nSteps.cs" />
     <Compile Include="SourceMonitorFileParserSpec.cs" />
     <None Include="Crap4n.story">

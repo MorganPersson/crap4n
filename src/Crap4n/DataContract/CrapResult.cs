@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace Crap4n.Console.DataContract
+namespace Crap4n.DataContract
 {
     // <?xml-stylesheet type="text/xsl" href="crap4n-summary.xsl"?>
     [XmlRoot(ElementName = "crapResult")]

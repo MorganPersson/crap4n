@@ -3,10 +3,12 @@ using System.Collections.Generic;
 
 namespace Crap4n
 {
-    /// <summary>
-    /// http://blog.objectmentor.com/articles/2009/05/20/clean-code-and-battle-scarred-architecture
-    /// </summary>
-    public class CrapService
+	public interface ICrapService
+	{
+		IEnumerable<Crap> BuildResult(string codeCoverageFileName, string codeMetricsFileName, int crapThreshold);
+	}
+	
+	public class CrapService : ICrapService
     {
         private readonly IMetricsParserFinder _metricsParser;
 
@@ -15,7 +17,7 @@ namespace Crap4n
             _metricsParser = metricsParser;
         }
 
-        public IEnumerable<Crap> BuildResult(string codeCoverageFileName, string codeMetricsFileName, int crapThreshold)
+        IEnumerable<Crap> ICrapService.BuildResult(string codeCoverageFileName, string codeMetricsFileName, int crapThreshold)
         {
             IEnumerable<CodeCoverage> codeCoverage = null;
             Action async = () => codeCoverage = GetCodeCoverage(codeCoverageFileName);

@@ -3,7 +3,7 @@ using System.Linq;
 using NBehave.Spec.NUnit;
 using Context = NUnit.Framework.TestFixtureAttribute;
 
-namespace Crap4n.Specs.Console
+namespace Crap4n.Specs
 {
     [Context]
     public class IocBuilderSpec
@@ -13,7 +13,7 @@ namespace Crap4n.Specs.Console
         {
             var p = new IoCBuilder();
             var ioc = p.BuildContainer();
-            ioc.Resolve<CrapService>().ShouldNotBeNull();
+            ioc.Resolve<ICrapService>().ShouldNotBeNull();
         }
 
         [Specification]

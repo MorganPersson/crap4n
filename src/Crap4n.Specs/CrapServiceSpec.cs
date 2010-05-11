@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace Crap4n.Specs
 {
     [TestFixture]
-    public abstract class CrapServiceSpec : SpecBase<CrapService>
+    public abstract class CrapServiceSpec : SpecBase<ICrapService>
     {
         private const int CrapThreshold = 30;
         private const string PartCoverResultFile = @"PartCoverResult.xml";
@@ -16,7 +16,7 @@ namespace Crap4n.Specs
 
         public class When_no_CodeMetric_implementation_found : CrapServiceSpec
         {
-            protected override CrapService Establish_context()
+            protected override ICrapService Establish_context()
             {
                 var metricsParserFinder = new MetricsParserFinder(new List<IFileParser<CodeMetrics>>(), new List<IFileParser<CodeCoverage>>());
                 return new CrapService(metricsParserFinder);                
@@ -31,7 +31,7 @@ namespace Crap4n.Specs
 
         public class When_building_the_result : CrapServiceSpec
         {
-            protected override CrapService Establish_context()
+            protected override ICrapService Establish_context()
             {
                 var codeMetrics = new List<IFileParser<CodeMetrics>> { new SourceMonitorFileParser(new XmlFileLoader()) };
                 IEnumerable<IFileParser<CodeCoverage>> codeCoverage = new List<IFileParser<CodeCoverage>> { new PartCoverFileParser(new XmlFileLoader()) };

@@ -16,7 +16,6 @@ namespace Crap4n.Specs.Scenarios
 		private XmlNamespaceManager _xmlNameSpaceManager;
 		private XmlDocument _crapResult;
 
-		//Does not work correctly
 		[BeforeScenario]
 		public void Before_each_scenario()
 		{
