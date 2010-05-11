@@ -94,7 +94,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReflectorFileParserSpec.cs" />
     <Compile Include="ResultMergerSpec.cs" />
-    <Compile Include="Steps\CRap4nNantSteps.cs" />
     <Compile Include="Steps\Crap4nSteps.cs" />
     <Compile Include="SourceMonitorFileParserSpec.cs" />
     <None Include="Crap4n.story">
