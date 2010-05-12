@@ -96,7 +96,7 @@
     <Compile Include="ResultMergerSpec.cs" />
     <Compile Include="Steps\Crap4nSteps.cs" />
     <Compile Include="SourceMonitorFileParserSpec.cs" />
-    <None Include="Crap4n.story">
+    <None Include="Crap4n.feature">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="NCover15Result.xml">

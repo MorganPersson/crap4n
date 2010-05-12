@@ -43,7 +43,7 @@
 				<include name="${test.dir}\Crap4n.Specs.dll" />
 			</assemblies>
 			<scenarioFiles>
-				<include name="${test.dir}\**\*.story" />
+				<include name="${test.dir}\**\*.feature" />
 			</scenarioFiles>
 		</nbehave>
 	</target>
