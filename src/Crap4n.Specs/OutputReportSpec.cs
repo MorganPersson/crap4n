@@ -36,7 +36,7 @@ namespace Crap4n.Specs
             var outputReport = new OutputReport(crapResult, outPut); 
             const int crapThreshold = 20;
             outputReport.OutputCrapSummary(crapThreshold);
-            stringWriter.ToString().ShouldContain("0,0% methods are CRAP. The CRAPload for this project is 0,0");
+            stringWriter.ToString().ShouldContain("0% methods are CRAP. The CRAPload for this project is 0");
         }
     }
 }
