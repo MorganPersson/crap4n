@@ -30,9 +30,17 @@ namespace Crap4n
         {
             double crapLoad = GetCrapLoad(crapThreshold);
             var crapMethodPercentage =
-                (GetAboveThreshold(crapThreshold).Count() / 1.0 / _crapResult.Count()).ToPercent();
+                CalculateMethodPercentage(crapThreshold);
             _output.WriteLine(string.Format("{0:0.0}% methods are CRAP. The CRAPload for this project is {1:0.0}",
                                             crapMethodPercentage.Value, crapLoad));
+        }
+
+        private Percent CalculateMethodPercentage(int crapThreshold)
+        {
+            var count = _crapResult.Count();
+            if (count == 0)
+                return 0.Percent();
+            return (GetAboveThreshold(crapThreshold).Count() / 1.0 / count).ToPercent();
         }
 
         private double GetCrapLoad(int crapThreshold)
@@ -55,7 +63,7 @@ namespace Crap4n
         {
             CrapResult crapResult = CrapResult.Build(_crapResult, GetAboveThreshold, crapThreshold);
 
-            var serializer = new XmlSerializer(typeof (CrapResult), CrapResult.Namespace);
+            var serializer = new XmlSerializer(typeof(CrapResult), CrapResult.Namespace);
             var sb = new StringBuilder();
             var stream = XmlWriter.Create(sb);
             serializer.Serialize(stream, crapResult);

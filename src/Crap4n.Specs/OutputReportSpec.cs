@@ -26,5 +26,17 @@ namespace Crap4n.Specs
             xmlDoc.LoadXml(xml);
             xmlDoc.ChildNodes.Count.ShouldNotBeNull();
         }
+
+        [Specification]
+        public void Should_return_0_Percent_if_0_methods()
+        {
+            var crapResult = new List<Crap>();
+            var stringWriter = new StringWriter();
+            var outPut = new PlainTextOutput(stringWriter);
+            var outputReport = new OutputReport(crapResult, outPut); 
+            const int crapThreshold = 20;
+            outputReport.OutputCrapSummary(crapThreshold);
+            stringWriter.ToString().ShouldContain("0,0% methods are CRAP. The CRAPload for this project is 0,0");
+        }
     }
 }
