@@ -17,11 +17,6 @@ namespace Crap4n
             _crapService = crapService;
         }
 
-        public IEnumerable<Crap> CrapResult
-        {
-            get { return _crapResult; }
-        }
-
         public void Run(string codeCoverageFile, string codeMetricsFile, int crapThreshold)
         {
             ValidateInput(codeCoverageFile, codeMetricsFile, crapThreshold);
