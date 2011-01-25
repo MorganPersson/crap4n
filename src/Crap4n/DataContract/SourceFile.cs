@@ -8,6 +8,7 @@ namespace Crap4n.DataContract
     {
         [XmlText]
         public string FileName { get; set; }
+
         [XmlAttribute(AttributeName = "lineNumber")]
         public int LineNumber { get; set; }
     }

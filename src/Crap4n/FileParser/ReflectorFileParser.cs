@@ -40,6 +40,8 @@ namespace Crap4n.FileParser
             return data;
         }
 
+        #endregion
+
         private string GetNameSpace(XElement method)
         {
             var fullMethodName = (string) method.Attribute("Name");
@@ -124,7 +126,6 @@ namespace Crap4n.FileParser
             return (int) method.Attribute("CyclomaticComplexity");
         }
 
-
         private IEnumerable<XElement> LoadMethodsDataFromFile(string reportFileName)
         {
             XDocument loaded = XDocument.Load(reportFileName);
@@ -133,7 +134,5 @@ namespace Crap4n.FileParser
                           select metric);
             return result;
         }
-
-        #endregion
     }
 }

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Crap4n;
 using Crap4n.DataContract;
 using Crap4n.Specs.Helper;
 using NBehave.Spec.NUnit;
@@ -17,9 +16,9 @@ namespace Crap4n.Specs
             var crappyMethod = CrapBuilder.CrappyMethod();
             var nonCrappyMethod = CrapBuilder.GoodMethod();
 
-            var crap = new List<Crap> { crappyMethod, nonCrappyMethod };
+            var crap = new List<Crap> {crappyMethod, nonCrappyMethod};
             const int crapThreshold = 20;
-            Func<int, IEnumerable<Crap>> aboveThresHold = f => new List<Crap> { crappyMethod };
+            Func<int, IEnumerable<Crap>> aboveThresHold = f => new List<Crap> {crappyMethod};
             return CrapResult.Build(crap, aboveThresHold, crapThreshold);
         }
 

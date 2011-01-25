@@ -8,10 +8,13 @@ namespace Crap4n.DataContract
     {
         [XmlAttribute(AttributeName = "totalMethods")]
         public int TotalMethods { get; set; }
+
         [XmlAttribute(AttributeName = "crappyMethods")]
         public int CrappyMethods { get; set; }
+
         [XmlAttribute(AttributeName = "crapLoad")]
         public double CrapLoad { get; set; }
+
         [XmlAttribute(AttributeName = "crapThreshold")]
         public int CrapThreshold { get; set; }
     }

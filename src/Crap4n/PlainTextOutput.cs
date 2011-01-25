@@ -4,73 +4,58 @@ using System.Reflection;
 
 namespace Crap4n
 {
-	public interface ITextOutput
-	{
-		void WriteLine(string text);
-		void WriteHeader();
-		void WriteSeparator();
-		void WriteRuntimeEnvironment();
-	}
-	
-	public class PlainTextOutput : ITextOutput
-	{
-		private readonly TextWriter _writer;
+    public interface ITextOutput
+    {
+        void WriteLine(string text);
+        void WriteHeader();
+        void WriteSeparator();
+        void WriteRuntimeEnvironment();
+    }
 
-		public PlainTextOutput(TextWriter writer)
-		{
-			_writer = writer;
-		}
+    public class PlainTextOutput : ITextOutput
+    {
+        private readonly TextWriter _writer;
 
-		void ITextOutput.WriteLine(string text)
-		{
-			_writer.WriteLine(text);
-		}
+        public PlainTextOutput(TextWriter writer)
+        {
+            _writer = writer;
+        }
 
-		void ITextOutput.WriteHeader()
-		{
-			Assembly executingAssembly = Assembly.GetExecutingAssembly();
-			Version version = executingAssembly.GetName().Version;
+        void ITextOutput.WriteLine(string text)
+        {
+            _writer.WriteLine(text);
+        }
 
-			var copyrights = (AssemblyCopyrightAttribute[])
-				Attribute.GetCustomAttributes(executingAssembly, typeof(AssemblyCopyrightAttribute));
+        void ITextOutput.WriteHeader()
+        {
+            Assembly executingAssembly = Assembly.GetExecutingAssembly();
+            Version version = executingAssembly.GetName().Version;
 
-			_writer.WriteLine("crap4n version {0}", version);
+            var copyrights = (AssemblyCopyrightAttribute[])
+                             Attribute.GetCustomAttributes(executingAssembly, typeof (AssemblyCopyrightAttribute));
 
-			foreach (AssemblyCopyrightAttribute copyrightAttribute in copyrights)
-			{
-				_writer.WriteLine(copyrightAttribute.Copyright);
-			}
+            _writer.WriteLine("crap4n version {0}", version);
 
-			if (copyrights.Length > 0)
-				_writer.WriteLine("All Rights Reserved.");
-		}
+            foreach (AssemblyCopyrightAttribute copyrightAttribute in copyrights)
+            {
+                _writer.WriteLine(copyrightAttribute.Copyright);
+            }
 
-		void ITextOutput.WriteSeparator()
-		{
-			_writer.WriteLine("");
-		}
+            if (copyrights.Length > 0)
+                _writer.WriteLine("All Rights Reserved.");
+        }
 
-		void ITextOutput.WriteRuntimeEnvironment()
-		{
-			string runtimeEnv =
-				string.Format("Runtime Environment -\r\n   OS Version: {0}\r\n  CLR Version: {1}", Environment.OSVersion,
-				              Environment.Version);
-			_writer.WriteLine(runtimeEnv);
-		}
-	}
+        void ITextOutput.WriteSeparator()
+        {
+            _writer.WriteLine("");
+        }
 
-	public class NullTextOutput : ITextOutput
-	{
-		void ITextOutput.WriteLine(string text)
-		{ }
-
-		void ITextOutput.WriteHeader()
-		{ }
-
-		void ITextOutput.WriteSeparator()
-		{ }
-
-		void ITextOutput.WriteRuntimeEnvironment()
-		{ }
-	}
+        void ITextOutput.WriteRuntimeEnvironment()
+        {
+            string runtimeEnv =
+                string.Format("Runtime Environment -\r\n   OS Version: {0}\r\n  CLR Version: {1}", Environment.OSVersion,
+                              Environment.Version);
+            _writer.WriteLine(runtimeEnv);
+        }
+    }
 }

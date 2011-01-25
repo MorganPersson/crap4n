@@ -29,13 +29,13 @@
 // Gert Lombard (gert@codeblast.com)
 // James Newkirk (jim@nunit.org)
 
+using System;
+using System.Collections;
+using System.Reflection;
+using System.Text;
+
 namespace Codeblast
 {
-    using System;
-    using System.Reflection;
-    using System.Collections;
-    using System.Text;
-
     //
     // The Attributes
     //
@@ -43,9 +43,9 @@ namespace Codeblast
     [AttributeUsage(AttributeTargets.Field)]
     public class OptionAttribute : Attribute
     {
-        protected object _optValue;
-        protected string _optName;
         protected string _description;
+        protected string _optName;
+        protected object _optValue;
 
         public string Short
         {
@@ -72,8 +72,8 @@ namespace Codeblast
 
     public abstract class CommandLineOptions
     {
-        protected ArrayList _parameters;
         private readonly int _optionCount;
+        protected ArrayList _parameters;
 
         protected CommandLineOptions(string[] args)
         {
@@ -82,10 +82,26 @@ namespace Codeblast
 
         public bool NoArgs
         {
+            get { return ParameterCount == 0 && _optionCount == 0; }
+        }
+
+        public string this[int index]
+        {
             get
             {
-                return ParameterCount == 0 && _optionCount == 0;
+                if (_parameters != null) return (string) _parameters[index];
+                return null;
             }
+        }
+
+        public ArrayList Parameters
+        {
+            get { return _parameters; }
+        }
+
+        public int ParameterCount
+        {
+            get { return _parameters == null ? 0 : _parameters.Count; }
         }
 
         public int Init(string[] args)
@@ -146,7 +162,7 @@ namespace Codeblast
 
         protected virtual bool MatchShortName(FieldInfo field, string name)
         {
-            object[] atts = field.GetCustomAttributes(typeof(OptionAttribute), true);
+            object[] atts = field.GetCustomAttributes(typeof (OptionAttribute), true);
             foreach (OptionAttribute att in atts)
             {
                 if (string.Compare(att.Short, name, true) == 0) return true;
@@ -168,10 +184,10 @@ namespace Codeblast
 
         protected virtual object GetOptionValue(FieldInfo field)
         {
-            object[] atts = field.GetCustomAttributes(typeof(OptionAttribute), true);
+            object[] atts = field.GetCustomAttributes(typeof (OptionAttribute), true);
             if (atts.Length > 0)
             {
-                var att = (OptionAttribute)atts[0];
+                var att = (OptionAttribute) atts[0];
                 return att.Value;
             }
             return null;
@@ -190,13 +206,13 @@ namespace Codeblast
                     object value = GetOptionValue(field);
                     if (value == null)
                     {
-                        if (field.FieldType == typeof(bool))
+                        if (field.FieldType == typeof (bool))
                             value = true; // default for bool values is true
-                        else if (field.FieldType == typeof(string))
+                        else if (field.FieldType == typeof (string))
                         {
                             value = cmdLineVal ?? args[++index];
                             field.SetValue(this, Convert.ChangeType(value, field.FieldType));
-                            var stringValue = (string)value;
+                            var stringValue = (string) value;
                             if (string.IsNullOrEmpty(stringValue))
                                 return false;
                             return true;
@@ -218,7 +234,7 @@ namespace Codeblast
         protected virtual void SplitOptionAndValue(ref string opt, ref object val)
         {
             // Look for ":" or "=" separator in the option:
-            int pos = opt.IndexOfAny(new[] { ':', '=' });
+            int pos = opt.IndexOfAny(new[] {':', '='});
             if (pos < 1) return;
 
             val = opt.Substring(pos + 1);
@@ -226,27 +242,6 @@ namespace Codeblast
         }
 
         // Parameter accessor:
-        public string this[int index]
-        {
-            get
-            {
-                if (_parameters != null) return (string)_parameters[index];
-                return null;
-            }
-        }
-
-        public ArrayList Parameters
-        {
-            get { return _parameters; }
-        }
-
-        public int ParameterCount
-        {
-            get
-            {
-                return _parameters == null ? 0 : _parameters.Count;
-            }
-        }
 
         public virtual void Help()
         {
@@ -261,18 +256,18 @@ namespace Codeblast
             FieldInfo[] fields = t.GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
             foreach (FieldInfo field in fields)
             {
-                object[] atts = field.GetCustomAttributes(typeof(OptionAttribute), true);
+                object[] atts = field.GetCustomAttributes(typeof (OptionAttribute), true);
                 if (atts.Length > 0)
                 {
-                    var att = (OptionAttribute)atts[0];
+                    var att = (OptionAttribute) atts[0];
                     if (att.Description != null)
                     {
                         string valType = "";
                         if (att.Value == null)
                         {
-                            if (field.FieldType == typeof(float)) valType = "=FLOAT";
-                            else if (field.FieldType == typeof(string)) valType = "=STR";
-                            else if (field.FieldType != typeof(bool)) valType = "=X";
+                            if (field.FieldType == typeof (float)) valType = "=FLOAT";
+                            else if (field.FieldType == typeof (string)) valType = "=STR";
+                            else if (field.FieldType != typeof (bool)) valType = "=X";
                         }
 
                         helpText.AppendFormat("/{0,-20}{1}", field.Name + valType, att.Description);

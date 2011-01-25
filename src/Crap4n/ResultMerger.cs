@@ -1,11 +1,12 @@
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Crap4n
 {
     public class ResultMerger
     {
-        public IEnumerable<Crap> GetMetrics(IEnumerable<CodeCoverage> codeCoverage, IEnumerable<CodeMetrics> codeMetrics, int crapThreshold)
+        public IEnumerable<Crap> GetMetrics(IEnumerable<CodeCoverage> codeCoverage, IEnumerable<CodeMetrics> codeMetrics,
+                                            int crapThreshold)
         {
             var crapMetrics = new List<Crap>();
             foreach (var coverage in codeCoverage)
@@ -28,7 +29,6 @@ namespace Crap4n
                     crap.SourceFileLineNumber = cm.SourceFileLineNumber;
                 }
                 crapMetrics.Add(crap);
-
             }
 
             return crapMetrics;

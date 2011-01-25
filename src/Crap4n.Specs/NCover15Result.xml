@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet href="coverage.xsl" type="text/xsl"?>
+
 <!-- saved from url=(0022)http://www.ncover.org/ -->
 <coverage profilerVersion="1.5.8 Beta" driverVersion="1.5.8.0" startTime="2009-10-05T17:10:54.140625+02:00" measureTime="2009-10-05T17:10:56.40625+02:00">
   <module moduleId="18" name="D:\Code\crap4n\src\Example\bin\debug\Example.dll" assembly="Example" assemblyIdentity="Example, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null, processorArchitecture=MSIL">

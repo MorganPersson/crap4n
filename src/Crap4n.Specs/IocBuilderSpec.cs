@@ -25,6 +25,5 @@ namespace Crap4n.Specs
             parsers.ShouldNotBeNull();
             parsers.Count().ShouldBeGreaterThan(0);
         }
-
     }
 }

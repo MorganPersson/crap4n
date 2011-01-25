@@ -6,23 +6,18 @@ namespace Crap4n.Console
     {
         private bool _isInvalid;
 
-        [Option(Short = "c", Description = "")]
-        public int crapThreshold = 30;
+        [Option(Short = "cc", Description = "CodeCoverage file to use. Ex: CodeCoverage:PartCoverResult.xml")] public
+            string codeCoverage;
 
-        [Option(Short = "cc", Description = "CodeCoverage file to use. Ex: CodeCoverage:PartCoverResult.xml")]
-        public string codeCoverage;
+        [Option(Short = "cm", Description = "CodeMetrics file to use. Ex: CodeMetrics:SourceMonitorResult.xml")] public
+            string codeMetrics;
 
-        [Option(Short = "x", Description = "Xml file to store crap output")]
-        public string xml;
+        [Option(Short = "c", Description = "")] public int crapThreshold = 30;
 
-        [Option(Short = "cm", Description = "CodeMetrics file to use. Ex: CodeMetrics:SourceMonitorResult.xml")]
-        public string codeMetrics;
+        [Option(Short = "?", Description = "Display help")] public bool help;
 
-        [Option(Short = "?", Description = "Display help")]
-        public bool help;
-
-        [Option(Description = "Do not display the logo")]
-        public bool nologo;
+        [Option(Description = "Do not display the logo")] public bool nologo;
+        [Option(Short = "x", Description = "Xml file to store crap output")] public string xml;
 
         public ConsoleOptions(params string[] args)
             : base(args)
@@ -32,26 +27,17 @@ namespace Crap4n.Console
 
         public bool HasCodeMetrics
         {
-            get
-            {
-                return !string.IsNullOrEmpty(codeMetrics);
-            }
+            get { return !string.IsNullOrEmpty(codeMetrics); }
         }
 
         public bool HasCodeCodeCoverage
         {
-            get
-            {
-                return !string.IsNullOrEmpty(codeCoverage);
-            }
+            get { return !string.IsNullOrEmpty(codeCoverage); }
         }
 
         public bool HasXmlOutput
         {
-            get
-            {
-                return !string.IsNullOrEmpty(xml);
-            }
+            get { return !string.IsNullOrEmpty(xml); }
         }
 
         public bool IsInvalid
@@ -61,7 +47,6 @@ namespace Crap4n.Console
 
         public override void Help()
         {
-
             System.Console.WriteLine();
             System.Console.WriteLine("Crap4n-Console [inputfiles] [options]");
             System.Console.WriteLine();

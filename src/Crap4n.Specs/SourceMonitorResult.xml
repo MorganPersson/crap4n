@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <sourcemonitor_metrics>
   <project version="2.5">
@@ -9,16 +9,30 @@
     <metric_names name_count="15">
       <metric_name id="M0" type="number">Lines</metric_name>
       <metric_name id="M1" type="number">Statements</metric_name>
-      <metric_name id="M2" type="percent" divisor="M1">Percent Comment Lines</metric_name>
-      <metric_name id="M3" type="percent" divisor="M1">Percent Documentation Lines</metric_name>
-      <metric_name id="M4" type="number">Classes, Interfaces, Structs</metric_name>
+      <metric_name id="M2" type="percent" divisor="M1">
+        Percent Comment Lines
+      </metric_name>
+      <metric_name id="M3" type="percent" divisor="M1">
+        Percent Documentation Lines
+      </metric_name>
+      <metric_name id="M4" type="number">
+        Classes, Interfaces, Structs
+      </metric_name>
       <metric_name id="M5" type="ratio" divisor="M4">Methods per Class</metric_name>
       <metric_name id="M6" type="ratio" divisor="M5">Calls per Method</metric_name>
-      <metric_name id="M7" type="ratio" divisor="M5">Statements per Method</metric_name>
-      <metric_name id="M8" type="string">Line Number of Most Complex Method</metric_name>
-      <metric_name id="M9" type="string">Name of Most Complex Method</metric_name>
+      <metric_name id="M7" type="ratio" divisor="M5">
+        Statements per Method
+      </metric_name>
+      <metric_name id="M8" type="string">
+        Line Number of Most Complex Method
+      </metric_name>
+      <metric_name id="M9" type="string">
+        Name of Most Complex Method
+      </metric_name>
       <metric_name id="M10" type="maximum">Maximum Complexity</metric_name>
-      <metric_name id="M11" type="string">Line Number of Deepest Block</metric_name>
+      <metric_name id="M11" type="string">
+        Line Number of Deepest Block
+      </metric_name>
       <metric_name id="M12" type="maximum">Maximum Block Depth</metric_name>
       <metric_name id="M13" type="average" values="block_depths">Average Block Depth</metric_name>
       <metric_name id="M14" type="average">Average Complexity</metric_name>
@@ -45,61 +59,61 @@
               <metric id="M14">1.90</metric>
             </metrics>
             <method_metrics method_count="10">
-              <method  name="Example.BarMethod()" line="65">
+              <method name="Example.BarMethod()" line="65">
                 <complexity>1</complexity>
                 <statements>1</statements>
                 <maximum_depth>2</maximum_depth>
                 <calls>0</calls>
               </method>
-              <method  name="Example.BarProp.get()" line="62">
+              <method name="Example.BarProp.get()" line="62">
                 <complexity>1</complexity>
                 <statements>1</statements>
                 <maximum_depth>3</maximum_depth>
                 <calls>0</calls>
               </method>
-              <method  name="Example.BarProp.set()" line="63">
+              <method name="Example.BarProp.set()" line="63">
                 <complexity>1</complexity>
                 <statements>1</statements>
                 <maximum_depth>3</maximum_depth>
                 <calls>0</calls>
               </method>
-              <method  name="Example.CompleteCoverage()" line="34">
+              <method name="Example.CompleteCoverage()" line="34">
                 <complexity>4</complexity>
                 <statements>7</statements>
                 <maximum_depth>3</maximum_depth>
                 <calls>0</calls>
               </method>
-              <method  name="Example.GenericMethod&lt;T&gt;()" line="70">
+              <method name="Example.GenericMethod&lt;T&gt;()" line="70">
                 <complexity>1</complexity>
                 <statements>1</statements>
                 <maximum_depth>2</maximum_depth>
                 <calls>2</calls>
               </method>
-              <method  name="Example.IFoo.FooMethod()" line="53">
+              <method name="Example.IFoo.FooMethod()" line="53">
                 <complexity>1</complexity>
                 <statements>1</statements>
                 <maximum_depth>2</maximum_depth>
                 <calls>0</calls>
               </method>
-              <method  name="Example.IFoo.get()" line="50">
+              <method name="Example.IFoo.get()" line="50">
                 <complexity>1</complexity>
                 <statements>0</statements>
                 <maximum_depth>0</maximum_depth>
                 <calls>0</calls>
               </method>
-              <method  name="Example.IFoo.set()" line="51">
+              <method name="Example.IFoo.set()" line="51">
                 <complexity>1</complexity>
                 <statements>0</statements>
                 <maximum_depth>0</maximum_depth>
                 <calls>0</calls>
               </method>
-              <method  name="Example.NoCoverage()" line="8">
+              <method name="Example.NoCoverage()" line="8">
                 <complexity>4</complexity>
                 <statements>7</statements>
                 <maximum_depth>3</maximum_depth>
                 <calls>0</calls>
               </method>
-              <method  name="Example.SemiCoverage()" line="21">
+              <method name="Example.SemiCoverage()" line="21">
                 <complexity>4</complexity>
                 <statements>7</statements>
                 <maximum_depth>3</maximum_depth>

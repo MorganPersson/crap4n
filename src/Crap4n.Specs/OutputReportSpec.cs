@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
-using Crap4n.Console;
+using Crap4n.Specs.Helper;
 using NBehave.Spec.NUnit;
 using Context = NUnit.Framework.TestFixtureAttribute;
 
@@ -12,7 +12,7 @@ namespace Crap4n.Specs
     {
         protected override OutputReport Establish_context()
         {
-            var crapResult = new List<Crap> { Helper.CrapBuilder.CrappyMethod(), Helper.CrapBuilder.GoodMethod() };
+            var crapResult = new List<Crap> {CrapBuilder.CrappyMethod(), CrapBuilder.GoodMethod()};
             var outPut = new PlainTextOutput(new StringWriter());
             return new OutputReport(crapResult, outPut);
         }

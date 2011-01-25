@@ -13,10 +13,9 @@ namespace Crap4n.Specs
 
         public class When_resolving_CodeMetricsFileParser : MetricsParserFinderSpec
         {
-
             protected override MetricsParserFinder Establish_context()
             {
-                var codeMetrics = new List<IFileParser<CodeMetrics>>(new[] { new FooCodeMetricFileParser() });
+                var codeMetrics = new List<IFileParser<CodeMetrics>>(new[] {new FooCodeMetricFileParser()});
                 return new MetricsParserFinder(codeMetrics, new List<IFileParser<CodeCoverage>>());
             }
 
@@ -24,7 +23,7 @@ namespace Crap4n.Specs
             public void Should_get_a_CodeMetricFileParser_instance()
             {
                 var codeMetricsFileParser = Sut.FindFileParser<CodeMetrics>("Foo.xml");
-                codeMetricsFileParser.ShouldBeInstanceOfType(typeof(FooCodeMetricFileParser));
+                codeMetricsFileParser.ShouldBeInstanceOfType(typeof (FooCodeMetricFileParser));
             }
         }
 
@@ -32,7 +31,8 @@ namespace Crap4n.Specs
         {
             protected override MetricsParserFinder Establish_context()
             {
-                IEnumerable<IFileParser<CodeCoverage>> codeCoverage = new List<IFileParser<CodeCoverage>>(new[] { new FooCodeCoverageFileParser() });
+                IEnumerable<IFileParser<CodeCoverage>> codeCoverage =
+                    new List<IFileParser<CodeCoverage>>(new[] {new FooCodeCoverageFileParser()});
                 return new MetricsParserFinder(new List<IFileParser<CodeMetrics>>(), codeCoverage);
             }
 
@@ -40,7 +40,7 @@ namespace Crap4n.Specs
             public void Should_get_a_CodeCoverageFileParser_instance()
             {
                 var codeCoverageFileParser = Sut.FindFileParser<CodeCoverage>("Foo.xml");
-                codeCoverageFileParser.ShouldBeInstanceOfType(typeof(FooCodeCoverageFileParser));
+                codeCoverageFileParser.ShouldBeInstanceOfType(typeof (FooCodeCoverageFileParser));
             }
         }
 
@@ -48,7 +48,11 @@ namespace Crap4n.Specs
         {
             protected override MetricsParserFinder Establish_context()
             {
-                var codeMetrics = new List<IFileParser<CodeMetrics>>(new IFileParser<CodeMetrics>[] { new FooCodeMetricFileParser(), new BarCodeMetricFileParser() });
+                var codeMetrics =
+                    new List<IFileParser<CodeMetrics>>(new IFileParser<CodeMetrics>[]
+                                                           {
+                                                               new FooCodeMetricFileParser(), new BarCodeMetricFileParser()
+                                                           });
                 return new MetricsParserFinder(codeMetrics, new List<IFileParser<CodeCoverage>>());
             }
 
@@ -56,14 +60,14 @@ namespace Crap4n.Specs
             public void Should_get_a_FooCodeMetricFileParser()
             {
                 var codeMetricsFileParser = Sut.FindFileParser<CodeMetrics>("Foo.xml");
-                codeMetricsFileParser.ShouldBeInstanceOfType(typeof(FooCodeMetricFileParser));
+                codeMetricsFileParser.ShouldBeInstanceOfType(typeof (FooCodeMetricFileParser));
             }
 
             [Specification]
             public void Should_get_a_BarCodeMetricFileParser()
             {
                 var codeMetricsFileParser = Sut.FindFileParser<CodeMetrics>("Bar.xml");
-                codeMetricsFileParser.ShouldBeInstanceOfType(typeof(BarCodeMetricFileParser));
+                codeMetricsFileParser.ShouldBeInstanceOfType(typeof (BarCodeMetricFileParser));
             }
         }
     }

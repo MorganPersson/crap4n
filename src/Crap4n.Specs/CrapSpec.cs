@@ -1,8 +1,6 @@
-using NBehave.Spec.NUnit;
-using System.Globalization;
 using System.Threading;
+using NBehave.Spec.NUnit;
 using NUnit.Framework;
-
 
 namespace Crap4n.Specs
 {
@@ -12,7 +10,7 @@ namespace Crap4n.Specs
 
         protected override void Establish_context()
         {
-            _crap = new Crap(30) { Class = "Foo", Method = "Bar", CodeCoverage = 100.Percent(), CyclomaticComplexity = 5 };
+            _crap = new Crap(30) {Class = "Foo", Method = "Bar", CodeCoverage = 100.Percent(), CyclomaticComplexity = 5};
         }
 
         public class When_having_100_percent_coverage : CrapSpec
@@ -22,19 +20,19 @@ namespace Crap4n.Specs
                 base.Establish_context();
                 _crap.CodeCoverage = 100.Percent();
             }
-    
-            [Specification, Test]
-            public void Should_get_formatted_result_from_ToString()
-            {
-            	string decimalPoint  = Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
-            	string expected = string.Format("Foo.Bar : CRAP: 5{0}0 (CC: 5, COV: 100{0}0%)", decimalPoint);
-                _crap.ToString().ShouldEqual(expected);
-            }
 
             [Specification]
             public void Should_have_a_crap_value()
             {
                 _crap.Value.ShouldEqual(5);
+            }
+
+            [Specification, Test]
+            public void Should_get_formatted_result_from_ToString()
+            {
+                string decimalPoint = Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+                string expected = string.Format("Foo.Bar : CRAP: 5{0}0 (CC: 5, COV: 100{0}0%)", decimalPoint);
+                _crap.ToString().ShouldEqual(expected);
             }
         }
 
@@ -70,7 +68,6 @@ namespace Crap4n.Specs
 
         public class When_calculating_CrapLoad : CrapSpec
         {
-            
             [Specification]
             public void CrapLoad_should_be_zero_if_crap_is_less_than_crap_threshold()
             {
@@ -79,9 +76,9 @@ namespace Crap4n.Specs
             }
 
             [Specification]
-            public void CrapLoad_should_be_x_if_crap_is_less_than_crap_threshold()
+            public void CrapLoad_should_be_x_if_crap_is_larger_than_crap_threshold()
             {
-                var crap = new Crap(30) { CodeCoverage = 0.Percent(), CyclomaticComplexity = 6 };
+                var crap = new Crap(30) {CodeCoverage = 0.Percent(), CyclomaticComplexity = 6};
                 crap.CrapLoad().ShouldEqual(6.2);
             }
         }

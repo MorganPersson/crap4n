@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <PartCoverReport ver="2.2.0.34630" exitCode="0">
   <file id="1" url="d:\Code\crap4n\src\Example\Example.cs" />
   <type asm="Example" name="Example.Example" flags="1048577">
@@ -110,26 +111,58 @@
     <tracker>
       <message tm="633903522499531250">Start target</message>
       <message tm="633903522499531250">open driver pipe</message>
-      <message tm="633903522499531250">modify target environment variables</message>
-      <message tm="633903522499531250">create target process</message>
-      <message tm="633903522499531250">wait for driver connection</message>
-      <message tm="633903522500312500">driver connected successfully</message>
-      <message tm="633903522500312500">send rules to the driver</message>
-      <message tm="633903522500312500">wait for rules confirm</message>
+      <message tm="633903522499531250">
+        modify target environment variables
+      </message>
+      <message tm="633903522499531250">
+        create target process
+      </message>
+      <message tm="633903522499531250">
+        wait for driver connection
+      </message>
+      <message tm="633903522500312500">
+        driver connected successfully
+      </message>
+      <message tm="633903522500312500">
+        send rules to the driver
+      </message>
+      <message tm="633903522500312500">
+        wait for rules confirm
+      </message>
       <message tm="633903522500312500">Wait results</message>
-      <message tm="633903522536718750">instrument data is being received</message>
-      <message tm="633903522536718750">InstrumentDataReceiveCountersBegin</message>
+      <message tm="633903522536718750">
+        instrument data is being received
+      </message>
+      <message tm="633903522536718750">
+        InstrumentDataReceiveCountersBegin
+      </message>
       <message tm="633903522536718750">assembly count: 1</message>
-      <message tm="633903522536718750">load assembly Example (1 types)</message>
-      <message tm="633903522536875000">InstrumentDataReceiveCountersEnd</message>
-      <message tm="633903522536875000">file list is being received</message>
+      <message tm="633903522536718750">
+        load assembly Example (1 types)
+      </message>
+      <message tm="633903522536875000">
+        InstrumentDataReceiveCountersEnd
+      </message>
+      <message tm="633903522536875000">
+        file list is being received
+      </message>
       <message tm="633903522536875000">1 files to load</message>
-      <message tm="633903522536875000">file list load is complete</message>
-      <message tm="633903522536875000">instrument data load complete</message>
-      <message tm="633903522536875000">functions loading is being started</message>
+      <message tm="633903522536875000">
+        file list load is complete
+      </message>
+      <message tm="633903522536875000">
+        instrument data load complete
+      </message>
+      <message tm="633903522536875000">
+        functions loading is being started
+      </message>
       <message tm="633903522536875000">functions count 0</message>
-      <message tm="633903522536875000">functions loading is complete</message>
-      <message tm="633903522536875000">request target shutdown</message>
+      <message tm="633903522536875000">
+        functions loading is complete
+      </message>
+      <message tm="633903522536875000">
+        request target shutdown
+      </message>
       <message tm="633903522537031250">Walk results</message>
     </tracker>
     <log />

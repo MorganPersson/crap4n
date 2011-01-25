@@ -74,6 +74,7 @@
     <Compile Include="MetricsBase.cs" />
     <Compile Include="MetricsParserFinder.cs" />
     <Compile Include="FileParser\PartCoverFileParser.cs" />
+    <Compile Include="NullTextOutput.cs" />
     <Compile Include="OutputReport.cs" />
     <Compile Include="Percent.cs" />
     <Compile Include="PercentExtension.cs" />
@@ -82,8 +83,5 @@
     <Compile Include="ResultMerger.cs" />
     <Compile Include="FileParser\SourceMonitorFileParser.cs" />
     <Compile Include="XmlFileLoader.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataContract" />
   </ItemGroup>
 </Project>

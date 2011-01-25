@@ -18,11 +18,12 @@ namespace Crap4n.Specs
         {
             protected override ICrapService Establish_context()
             {
-                var metricsParserFinder = new MetricsParserFinder(new List<IFileParser<CodeMetrics>>(), new List<IFileParser<CodeCoverage>>());
-                return new CrapService(metricsParserFinder);                
+                var metricsParserFinder = new MetricsParserFinder(new List<IFileParser<CodeMetrics>>(),
+                                                                  new List<IFileParser<CodeCoverage>>());
+                return new CrapService(metricsParserFinder);
             }
 
-            [Specification, ExpectedException(typeof(NotSupportedException))]
+            [Specification, ExpectedException(typeof (NotSupportedException))]
             public void Should_Throw_exception()
             {
                 Sut.BuildResult(PartCoverResultFile, SourceMonitorResultFile, CrapThreshold);
@@ -33,13 +34,15 @@ namespace Crap4n.Specs
         {
             protected override ICrapService Establish_context()
             {
-                var codeMetrics = new List<IFileParser<CodeMetrics>> { new SourceMonitorFileParser(new XmlFileLoader()) };
-                IEnumerable<IFileParser<CodeCoverage>> codeCoverage = new List<IFileParser<CodeCoverage>> { new PartCoverFileParser(new XmlFileLoader()) };
+                var codeMetrics = new List<IFileParser<CodeMetrics>> {new SourceMonitorFileParser(new XmlFileLoader())};
+                IEnumerable<IFileParser<CodeCoverage>> codeCoverage = new List<IFileParser<CodeCoverage>>
+                                                                          {new PartCoverFileParser(new XmlFileLoader())};
                 var metricsParserFinder = new MetricsParserFinder(codeMetrics, codeCoverage);
                 return new CrapService(metricsParserFinder);
             }
 
             private IEnumerable<Crap> _crapResult;
+
             protected override void Because_of()
             {
                 _crapResult = Sut.BuildResult(PartCoverResultFile, SourceMonitorResultFile, CrapThreshold);

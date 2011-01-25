@@ -10,8 +10,7 @@ namespace Crap4n.Specs.Console
     [Context]
     public class ProgamSpec
     {
-        private TextWriter _original;
-        private StringBuilder _output;
+        #region Setup/Teardown
 
         [SetUp]
         public void Redirect_console_out()
@@ -30,18 +29,23 @@ namespace Crap4n.Specs.Console
                 System.Console.SetOut(_original);
         }
 
+        #endregion
+
+        private TextWriter _original;
+        private StringBuilder _output;
+
         [Specification]
         public void Should_not_display_header_when_nologo_argument_set()
         {
-            Program.Main(new[] { "/nologo" });
+            Program.Main(new[] {"/nologo"});
 
             Assert.That(_output.ToString(), Is.Not.StringContaining("Copyright"));
         }
-    
+
         [Specification]
         public void Should_take_crapThreshold_parameter()
         {
-            Program.Main(new[] { "/crapThreshold:10", "/cc:PartCoverResult.xml", "/cm:SourceMonitorResult.xml" });
+            Program.Main(new[] {"/crapThreshold:10", "/cc:PartCoverResult.xml", "/cm:SourceMonitorResult.xml"});
 
             Assert.That(_output.ToString(), Is.Not.StringContaining("CompleteCoverage"));
             Assert.That(_output.ToString(), Is.StringContaining("NoCoverage"));

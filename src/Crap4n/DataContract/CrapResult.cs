@@ -23,7 +23,8 @@ namespace Crap4n.DataContract
         [XmlArrayItem(ElementName = "method")]
         public List<CrapMethod> Methods { get; set; }
 
-        public static CrapResult Build(IEnumerable<Crap> crap, Func<int, IEnumerable<Crap>> aboveThreshold, int crapThreshold)
+        public static CrapResult Build(IEnumerable<Crap> crap, Func<int, IEnumerable<Crap>> aboveThreshold,
+                                       int crapThreshold)
         {
             var crapResult = new CrapResult();
             GetSummary(crapResult, aboveThreshold, crapThreshold, crap);
@@ -32,7 +33,8 @@ namespace Crap4n.DataContract
             return crapResult;
         }
 
-        private static void GetSummary(CrapResult crapResult, Func<int, IEnumerable<Crap>> aboveThreshold, int crapThreshold, IEnumerable<Crap> crap)
+        private static void GetSummary(CrapResult crapResult, Func<int, IEnumerable<Crap>> aboveThreshold,
+                                       int crapThreshold, IEnumerable<Crap> crap)
         {
             var crappyMethods = aboveThreshold(crapThreshold);
 
@@ -60,11 +62,16 @@ namespace Crap4n.DataContract
                                          CyclomaticComplexity = method.CyclomaticComplexity,
                                          CrapLoad = Math.Round(method.CrapLoad(), 1),
                                          CrapValue = Math.Round(method.Value, 1),
-                                         SourceFile = new SourceFile { FileName = method.SourceFile, LineNumber = method.SourceFileLineNumber }
+                                         SourceFile =
+                                             new SourceFile
+                                                 {
+                                                     FileName = method.SourceFile,
+                                                     LineNumber = method.SourceFileLineNumber
+                                                 }
                                      };
                 methods.Add(crapMethod);
             }
-            return methods.OrderByDescending(c=>c.CrapValue).ThenBy(c=>c.CodeCoverage) .ToList();
+            return methods.OrderByDescending(c => c.CrapValue).ThenBy(c => c.CodeCoverage).ToList();
         }
     }
 }
