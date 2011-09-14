@@ -7,7 +7,7 @@
 	<property name="test.dir" value ="${build.dir}\Debug\UnitTests" />
 	<property name="currentContributors" value="Morgan Persson" />
 	<property name="company.name" value="${project::get-name()}" />
-	<property name="project.fullversion" value="0.2.0.0" dynamic="true" />
+	<property name="project.fullversion" value="0.3.0.0" dynamic="true" />
 	<property name="project.config" value="release" />
 	
 	<!-- User targets -->
@@ -95,7 +95,7 @@
 				<attribute type="ComVisibleAttribute" value="false" />
 				<attribute type="AssemblyVersionAttribute" value="${project.fullversion}" />
 				<attribute type="AssemblyFileVersionAttribute" value="${project.fullversion}" />
-				<attribute type="AssemblyCopyrightAttribute" value="Copyright Â© ${currentContributors} 2009-${datetime::get-year(datetime::now())}" />
+				<attribute type="AssemblyCopyrightAttribute" value="Copyright © ${currentContributors} 2009-${datetime::get-year(datetime::now())}" />
 				<attribute type="AssemblyProductAttribute" value="${project::get-name()}" />
 				<attribute type="AssemblyCompanyAttribute" value="${company.name}" />
 				<attribute type="AssemblyConfigurationAttribute" value="${project.config}" />

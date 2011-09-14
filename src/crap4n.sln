@@ -1,12 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crap4n", "Crap4n\Crap4n.csproj", "{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crap4n.Console", "Crap4n.Console\Crap4n.Console.csproj", "{C15A0235-46BC-40E8-A11F-A4F1D0A5D051}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crap4n.Specs", "Crap4n.Specs\Crap4n.Specs.csproj", "{C3B23948-7ACA-42E0-80AE-C9F6D8110CCB}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9833909F-2F01-4E0F-8840-AE05CACC8982}"
 	ProjectSection(SolutionItems) = preProject
 		..\Crap4n.build = ..\Crap4n.build
@@ -15,6 +9,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\crap4n.SourceMonitor.config = ..\crap4n.SourceMonitor.config
 		..\tools\Reflector\Reflector.cfg = ..\tools\Reflector\Reflector.cfg
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crap4n", "Crap4n\Crap4n.csproj", "{19283448-FBF9-4B71-8F44-0BBC7DB9CB0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crap4n.Console", "Crap4n.Console\Crap4n.Console.csproj", "{C15A0235-46BC-40E8-A11F-A4F1D0A5D051}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crap4n.Specs", "Crap4n.Specs\Crap4n.Specs.csproj", "{C3B23948-7ACA-42E0-80AE-C9F6D8110CCB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{EF8F9D61-1424-4B4B-A094-BD057E29BE06}"
 EndProject
