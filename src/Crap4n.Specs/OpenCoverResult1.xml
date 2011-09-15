@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Modules>
+    <Module hash="A3-C6-60-AD-A4-AA-CE-1E-39-83-63-74-87-48-79-7E-38-EC-8E-AD">
+      <FullName>C:\code\googlecode\crap4n\src\Example\bin\debug\Example.dll</FullName>
+      <ModuleName>Example</ModuleName>
+      <Files>
+        <File uid="1" fullPath="C:\code\googlecode\crap4n\src\Example\Example.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <FullName>&lt;Module&gt;</FullName>
+          <Methods />
+        </Class>
+        <Class>
+          <FullName>Example.Example</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="1" sequenceCoverage="0" branchCoverage="0">
+              <MetadataToken>100663313</MetadataToken>
+              <Name>System.Void Example.Example::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="12" uspid="1" ordinal="0" offset="0" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="1" sequenceCoverage="0" branchCoverage="0">
+              <MetadataToken>100663303</MetadataToken>
+              <Name>System.Int32 Example.Example::get_BarProp()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="2" ordinal="0" offset="0" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="1" sequenceCoverage="0" branchCoverage="0">
+              <MetadataToken>100663304</MetadataToken>
+              <Name>System.Void Example.Example::set_BarProp(System.Int32)</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="3" ordinal="0" offset="0" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="1" sequenceCoverage="0" branchCoverage="0">
+              <MetadataToken>100663305</MetadataToken>
+              <Name>System.Int32 Example.Example::BarMethod(System.Int32)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="4" ordinal="0" offset="0" sl="13" sc="9" el="13" ec="10" />
+                <SequencePoint vc="0" uspid="5" ordinal="1" offset="1" sl="14" sc="13" el="14" ec="26" />
+                <SequencePoint vc="0" uspid="6" ordinal="2" offset="7" sl="15" sc="9" el="15" ec="10" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="0" uspid="4" ordinal="0" offset="0" sl="13" sc="9" el="13" ec="10" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="1" sequenceCoverage="0" branchCoverage="0">
+              <MetadataToken>100663306</MetadataToken>
+              <Name>System.Int32 Example.Example::Example.IFoo.get_FooProp()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="7" ordinal="0" offset="0" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="1" sequenceCoverage="0" branchCoverage="0">
+              <MetadataToken>100663307</MetadataToken>
+              <Name>System.Void Example.Example::Example.IFoo.set_FooProp(System.Int32)</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="8" ordinal="0" offset="0" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="1" sequenceCoverage="0" branchCoverage="0">
+              <MetadataToken>100663308</MetadataToken>
+              <Name>System.Int32 Example.Example::Example.IFoo.FooMethod(System.Int32)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="9" ordinal="0" offset="0" sl="24" sc="9" el="24" ec="10" />
+                <SequencePoint vc="0" uspid="10" ordinal="1" offset="1" sl="25" sc="13" el="25" ec="26" />
+                <SequencePoint vc="0" uspid="11" ordinal="2" offset="7" sl="26" sc="9" el="26" ec="10" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="0" uspid="9" ordinal="0" offset="0" sl="24" sc="9" el="24" ec="10" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="4" sequenceCoverage="0" branchCoverage="0">
+              <MetadataToken>100663309</MetadataToken>
+              <Name>System.Int32 Example.Example::NoCoverage(System.Int32,System.Int32,System.Int32)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="12" ordinal="0" offset="0" sl="31" sc="9" el="31" ec="10" />
+                <SequencePoint vc="0" uspid="13" ordinal="1" offset="1" sl="32" sc="13" el="32" ec="23" />
+                <SequencePoint vc="0" uspid="14" ordinal="2" offset="12" sl="33" sc="13" el="33" ec="14" />
+                <SequencePoint vc="0" uspid="15" ordinal="3" offset="13" sl="34" sc="17" el="34" ec="27" />
+                <SequencePoint vc="0" uspid="16" ordinal="4" offset="24" sl="35" sc="21" el="35" ec="30" />
+                <SequencePoint vc="0" uspid="17" ordinal="5" offset="28" sl="36" sc="17" el="36" ec="26" />
+                <SequencePoint vc="0" uspid="18" ordinal="6" offset="32" sl="38" sc="13" el="38" ec="23" />
+                <SequencePoint vc="0" uspid="19" ordinal="7" offset="43" sl="39" sc="17" el="39" ec="26" />
+                <SequencePoint vc="0" uspid="20" ordinal="8" offset="47" sl="40" sc="13" el="40" ec="22" />
+                <SequencePoint vc="0" uspid="21" ordinal="9" offset="51" sl="41" sc="9" el="41" ec="10" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="22" ordinal="0" offset="10" path="0" />
+                <BranchPoint vc="0" uspid="23" ordinal="1" offset="10" path="1" />
+                <BranchPoint vc="0" uspid="24" ordinal="2" offset="22" path="0" />
+                <BranchPoint vc="0" uspid="25" ordinal="3" offset="22" path="1" />
+                <BranchPoint vc="0" uspid="26" ordinal="4" offset="41" path="0" />
+                <BranchPoint vc="0" uspid="27" ordinal="5" offset="41" path="1" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="0" uspid="12" ordinal="0" offset="0" sl="31" sc="9" el="31" ec="10" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="4" sequenceCoverage="60" branchCoverage="33">
+              <MetadataToken>100663310</MetadataToken>
+              <Name>System.Int32 Example.Example::SemiCoverage(System.Int32,System.Int32,System.Int32)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="28" ordinal="0" offset="0" sl="44" sc="9" el="44" ec="10" />
+                <SequencePoint vc="2" uspid="29" ordinal="1" offset="1" sl="45" sc="13" el="45" ec="23" />
+                <SequencePoint vc="2" uspid="30" ordinal="2" offset="12" sl="46" sc="13" el="46" ec="14" />
+                <SequencePoint vc="2" uspid="31" ordinal="3" offset="13" sl="47" sc="17" el="47" ec="27" />
+                <SequencePoint vc="2" uspid="32" ordinal="4" offset="24" sl="48" sc="21" el="48" ec="30" />
+                <SequencePoint vc="0" uspid="33" ordinal="5" offset="28" sl="49" sc="17" el="49" ec="26" />
+                <SequencePoint vc="0" uspid="34" ordinal="6" offset="32" sl="51" sc="13" el="51" ec="23" />
+                <SequencePoint vc="0" uspid="35" ordinal="7" offset="43" sl="52" sc="17" el="52" ec="26" />
+                <SequencePoint vc="0" uspid="36" ordinal="8" offset="47" sl="53" sc="13" el="53" ec="22" />
+                <SequencePoint vc="2" uspid="37" ordinal="9" offset="51" sl="54" sc="9" el="54" ec="10" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="2" uspid="38" ordinal="0" offset="10" path="0" />
+                <BranchPoint vc="0" uspid="39" ordinal="1" offset="10" path="1" />
+                <BranchPoint vc="2" uspid="40" ordinal="2" offset="22" path="0" />
+                <BranchPoint vc="0" uspid="41" ordinal="3" offset="22" path="1" />
+                <BranchPoint vc="0" uspid="42" ordinal="4" offset="41" path="0" />
+                <BranchPoint vc="0" uspid="43" ordinal="5" offset="41" path="1" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="2" uspid="28" ordinal="0" offset="0" sl="44" sc="9" el="44" ec="10" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="4" sequenceCoverage="100" branchCoverage="100">
+              <MetadataToken>100663311</MetadataToken>
+              <Name>System.Int32 Example.Example::CompleteCoverage(System.Int32,System.Int32,System.Int32)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="10" uspid="44" ordinal="0" offset="0" sl="57" sc="9" el="57" ec="10" />
+                <SequencePoint vc="10" uspid="45" ordinal="1" offset="1" sl="58" sc="13" el="58" ec="23" />
+                <SequencePoint vc="4" uspid="46" ordinal="2" offset="12" sl="59" sc="13" el="59" ec="14" />
+                <SequencePoint vc="4" uspid="47" ordinal="3" offset="13" sl="60" sc="17" el="60" ec="27" />
+                <SequencePoint vc="2" uspid="48" ordinal="4" offset="24" sl="61" sc="21" el="61" ec="30" />
+                <SequencePoint vc="2" uspid="49" ordinal="5" offset="28" sl="62" sc="17" el="62" ec="26" />
+                <SequencePoint vc="6" uspid="50" ordinal="6" offset="32" sl="64" sc="13" el="64" ec="23" />
+                <SequencePoint vc="2" uspid="51" ordinal="7" offset="43" sl="65" sc="17" el="65" ec="26" />
+                <SequencePoint vc="4" uspid="52" ordinal="8" offset="47" sl="66" sc="13" el="66" ec="22" />
+                <SequencePoint vc="10" uspid="53" ordinal="9" offset="51" sl="67" sc="9" el="67" ec="10" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="4" uspid="54" ordinal="0" offset="10" path="0" />
+                <BranchPoint vc="6" uspid="55" ordinal="1" offset="10" path="1" />
+                <BranchPoint vc="2" uspid="56" ordinal="2" offset="22" path="0" />
+                <BranchPoint vc="2" uspid="57" ordinal="3" offset="22" path="1" />
+                <BranchPoint vc="2" uspid="58" ordinal="4" offset="41" path="0" />
+                <BranchPoint vc="4" uspid="59" ordinal="5" offset="41" path="1" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="10" uspid="44" ordinal="0" offset="0" sl="57" sc="9" el="57" ec="10" />
+            </Method>
+            <Method visited="true" cyclomaticComplexity="1" sequenceCoverage="100" branchCoverage="100">
+              <MetadataToken>100663312</MetadataToken>
+              <Name>T Example.Example::GenericMethod(System.Int32,System.Collections.Generic.IEnumerable`1&lt;T&gt;)</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="2" uspid="60" ordinal="0" offset="0" sl="70" sc="9" el="70" ec="10" />
+                <SequencePoint vc="2" uspid="61" ordinal="1" offset="1" sl="71" sc="13" el="71" ec="51" />
+                <SequencePoint vc="2" uspid="62" ordinal="2" offset="16" sl="72" sc="9" el="72" ec="10" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="2" uspid="60" ordinal="0" offset="0" sl="70" sc="9" el="70" ec="10" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <FullName>&lt;PrivateImplementationDetails&gt;{B7B0D8F1-3165-4774-88ED-068787BB4CD8}</FullName>
+          <Methods />
+        </Class>
+      </Classes>
+    </Module>
+  </Modules>
+</CoverageSession>

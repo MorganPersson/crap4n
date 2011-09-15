@@ -6,32 +6,33 @@ using NUnit.Framework;
 
 namespace Crap4n.Specs
 {
-    public abstract class NCover3FileParserSpec
+    //turn of shadowcopy when you run these tests
+    public abstract class OpenCoverFileParserSpec : SpecBase<OpenCoverFileParser>
     {
-        public const string NCoverFile = @"NCover32Result.xml";
+        public const string OpenCoverFile = @"OpenCoverResult1.xml";
 
-        public abstract class When_playing_role_of_IFileParser_of_CodeCoverage : SpecBase<IFileParser<CodeCoverage>>
+        public abstract class When_playing_role_of_IFileParser_of_CodeCoverage : SpecBase<OpenCoverFileParser>
         {
-            protected override IFileParser<CodeCoverage> Establish_context()
+            protected override OpenCoverFileParser Establish_context()
             {
-                return new NCover3FileParser(new XmlFileLoader());
+                return new OpenCoverFileParser(new XmlFileLoader());
             }
 
-            public class When_file_used_is_NCover3_file : When_playing_role_of_IFileParser_of_CodeCoverage
+            public class When_file_used_is_OpenCover_file : When_playing_role_of_IFileParser_of_CodeCoverage
             {
                 [Specification]
-                public void Should_say_file_is_NCover3_result_file()
+                public void Should_say_file_is_OpenCover_result_file()
                 {
-                    Sut.CanParseFile(NCoverFile).ShouldBeTrue();
+                    Sut.CanParseFile(OpenCoverFile).ShouldBeTrue();
                 }
             }
 
-            public class When_file_used_is_not_NCover3_file : When_playing_role_of_IFileParser_of_CodeCoverage
+            public class When_file_used_is_not_OpenCover_file : When_playing_role_of_IFileParser_of_CodeCoverage
             {
                 [Specification]
-                public void Should_say_file_is_not_NCover3_result_file()
+                public void Should_say_file_is_not_OpenCover_result_file()
                 {
-                    Sut.CanParseFile(PartCoverFileParserSpec.PartCoverFile).ShouldBeFalse();
+                    Sut.CanParseFile(SourceMonitorFileParserSpec.SourceMonitorFile).ShouldBeFalse();
                 }
             }
 
@@ -41,7 +42,7 @@ namespace Crap4n.Specs
 
                 protected override void Because_of()
                 {
-                    _coverage = Sut.ParseFile(NCoverFile);
+                    _coverage = Sut.ParseFile(OpenCoverFile);
                 }
 
                 [Specification]
@@ -80,7 +81,9 @@ namespace Crap4n.Specs
                                     where m.Method == "SemiCoverage"
                                     select m).FirstOrDefault();
                     coverage.ShouldNotBeNull();
-                    Assert.AreEqual(42.86, coverage.CoveragePercent, 0.01);
+                    // Is there a way to detct brace-only lines and remove them?
+                    //Assert.AreEqual(42.86, coverage.CoveragePercent, 0.01);
+                    Assert.AreEqual(50.0, coverage.CoveragePercent, 0.01);
                 }
 
                 [Specification]
@@ -89,19 +92,24 @@ namespace Crap4n.Specs
                     var methodName = from m in _coverage
                                      where m.Method == "CompleteCoverage"
                                      select m.MethodSignature;
-                    methodName.First().ShouldEqual(
-                        "CompleteCoverage(System.Int32 a,System.Int32 b,System.Int32 c) : System.Int32");
+                    methodName.First().ShouldEqual("System.Int32 CompleteCoverage(System.Int32,System.Int32,System.Int32)");
+                }
+       
+                [Specification]
+                public void Should_not_include_ctor_if_no_FileRef()
+                {
+                    var ctor = _coverage.FirstOrDefault(m => m.Method == "ctor");
+                    Assert.IsNull(ctor);
                 }
             }
 
-            public class When_parsing_a_file_with_explicit_interface_implementation :
-                When_playing_role_of_IFileParser_of_CodeCoverage
+            public class When_parsing_a_file_with_explicit_interface_implementation : When_playing_role_of_IFileParser_of_CodeCoverage
             {
                 private IEnumerable<CodeCoverage> _coverage;
 
                 protected override void Because_of()
                 {
-                    _coverage = Sut.ParseFile(NCoverFile);
+                    _coverage = Sut.ParseFile(OpenCoverFile);
                 }
 
                 [Specification]
@@ -140,7 +148,7 @@ namespace Crap4n.Specs
                                      where m.Method == "FooMethod"
                                      select m.MethodSignature;
                     methodName.Count().ShouldEqual(1);
-                    methodName.First().ShouldEqual("Example.IFoo.FooMethod(System.Int32 a) : System.Int32");
+                    methodName.First().ShouldEqual("System.Int32 FooMethod(System.Int32)");
                 }
             }
         }
@@ -149,19 +157,19 @@ namespace Crap4n.Specs
         {
             protected override IFileParser<CodeMetrics> Establish_context()
             {
-                return new NCover3FileParser(new XmlFileLoader());
+                return new OpenCoverFileParser(new XmlFileLoader());
             }
 
             public class When_file_used_is_NCover3_result_file : When_playing_role_of_IFileParser_of_CodeMetrics
             {
                 [Specification]
-                public void Should_say_file_is_PartCover_result_file()
+                public void Should_say_file_is_OpenCover_result_file()
                 {
-                    Sut.CanParseFile(NCoverFile).ShouldBeTrue();
+                    Sut.CanParseFile(OpenCoverFile).ShouldBeTrue();
                 }
             }
 
-            public class When_file_used_is_not_NCover3_file : When_playing_role_of_IFileParser_of_CodeMetrics
+            public class When_file_used_is_not_OpenCover_file : When_playing_role_of_IFileParser_of_CodeMetrics
             {
                 [Specification]
                 public void Should_say_file_is_not_NCoverFile_result_file()
@@ -176,7 +184,7 @@ namespace Crap4n.Specs
 
                 protected override void Because_of()
                 {
-                    _coverage = Sut.ParseFile(NCoverFile);
+                    _coverage = Sut.ParseFile(OpenCoverFile);
                 }
 
                 [Specification]
@@ -215,7 +223,7 @@ namespace Crap4n.Specs
                                where m.Method == "CompleteCoverage"
                                select m.SourceFile;
                     name.Count().ShouldEqual(1);
-                    name.First().ShouldEqual("Example.cs");
+                    name.First().ShouldEndWith("Example.cs");
                 }
 
                 [Specification]
@@ -225,7 +233,16 @@ namespace Crap4n.Specs
                                where m.Method == "CompleteCoverage"
                                select m.SourceFileLineNumber;
                     name.Count().ShouldEqual(1);
-                    name.First().ShouldEqual(34);
+                    name.First().ShouldEqual(57);
+                }
+
+                [Specification]
+                public void Should_get_CyclomaticComplexity()
+                {
+                    var complexity = _coverage
+                        .Where(m => m.Method == "CompleteCoverage")
+                        .First().CyclomaticComplexity;
+                    complexity.ShouldEqual(4);
                 }
             }
 
@@ -236,7 +253,7 @@ namespace Crap4n.Specs
 
                 protected override void Because_of()
                 {
-                    _coverage = Sut.ParseFile(NCoverFile);
+                    _coverage = Sut.ParseFile(OpenCoverFile);
                 }
 
                 [Specification]
@@ -266,7 +283,7 @@ namespace Crap4n.Specs
 
                 protected override void Because_of()
                 {
-                    _coverage = Sut.ParseFile(NCoverFile);
+                    _coverage = Sut.ParseFile(OpenCoverFile);
                 }
 
                 [Specification]
@@ -298,5 +315,6 @@ namespace Crap4n.Specs
                 }
             }
         }
+
     }
 }

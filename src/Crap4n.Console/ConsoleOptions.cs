@@ -6,18 +6,22 @@ namespace Crap4n.Console
     {
         private bool _isInvalid;
 
-        [Option(Short = "cc", Description = "CodeCoverage file to use. Ex: CodeCoverage:PartCoverResult.xml")] public
-            string codeCoverage;
+        [Option(Short = "cc", Description = "CodeCoverage file to use. Ex: CodeCoverage:PartCoverResult.xml")]
+        public string codeCoverage;
 
-        [Option(Short = "cm", Description = "CodeMetrics file to use. Ex: CodeMetrics:SourceMonitorResult.xml")] public
-            string codeMetrics;
+        [Option(Short = "cm", Description = "CodeMetrics file to use. Ex: CodeMetrics:SourceMonitorResult.xml")]
+        public string codeMetrics;
 
-        [Option(Short = "c", Description = "")] public int crapThreshold = 30;
+        [Option(Short = "c", Description = "")]
+        public int crapThreshold = 30;
 
-        [Option(Short = "?", Description = "Display help")] public bool help;
+        [Option(Short = "?", Description = "Display help")]
+        public bool help;
 
-        [Option(Description = "Do not display the logo")] public bool nologo;
-        [Option(Short = "x", Description = "Xml file to store crap output")] public string xml;
+        [Option(Description = "Do not display the logo")]
+        public bool nologo;
+        [Option(Short = "x", Description = "Xml file to store crap output")]
+        public string xml;
 
         public ConsoleOptions(params string[] args)
             : base(args)

@@ -37,7 +37,7 @@ namespace Crap4n.Specs.Console
         [Specification]
         public void Should_not_display_header_when_nologo_argument_set()
         {
-            Program.Main(new[] {"/nologo"});
+            Program.Main(new[] { "/nologo", "/help" });
 
             Assert.That(_output.ToString(), Is.Not.StringContaining("Copyright"));
         }
@@ -45,7 +45,7 @@ namespace Crap4n.Specs.Console
         [Specification]
         public void Should_take_crapThreshold_parameter()
         {
-            Program.Main(new[] {"/crapThreshold:10", "/cc:PartCoverResult.xml", "/cm:SourceMonitorResult.xml"});
+            Program.Main(new[] { "/crapThreshold:10", "/cc:PartCoverResult.xml", "/cm:SourceMonitorResult.xml" });
 
             Assert.That(_output.ToString(), Is.Not.StringContaining("CompleteCoverage"));
             Assert.That(_output.ToString(), Is.StringContaining("NoCoverage"));

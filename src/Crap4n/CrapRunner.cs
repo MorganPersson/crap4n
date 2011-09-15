@@ -48,7 +48,7 @@ namespace Crap4n
         {
             ValidateFileParam(codeCoverageFile, "codeCoverageFile");
             ValidateFileParam(codeMetricsFile, "codeMetricsFile");
-            if (crapThreshold < 0)
+            if (crapThreshold <= 0)
                 throw new ArgumentOutOfRangeException("crapThreshold", "The crap threshold must be larger than 0");
         }
 

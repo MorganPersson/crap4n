@@ -14,7 +14,8 @@ namespace Crap4n.Console
             if (returnVal != 0)
                 return returnVal;
 
-            p.Run(options, output);
+            if (!options.help)
+                p.Run(options, output);
             return 0;
         }
 

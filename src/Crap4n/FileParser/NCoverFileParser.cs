@@ -115,8 +115,7 @@ namespace Crap4n.FileParser
             var ptTempNode = node.SelectNodes("code/pt");
             for (int i = 0; i < ptTempNode.Count; i++)
             {
-                if (ptTempNode[i].Attributes["visit"] != null
-                    && ptTempNode[i].Attributes["visit"].Value != "0")
+                if (ptTempNode[i].Attributes["visit"] != null && ptTempNode[i].Attributes["visit"].Value != "0")
                     return true;
             }
             return false;
